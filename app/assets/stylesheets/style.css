@@ -1,0 +1,245 @@
+/*** global ***/
+html, body {
+  height:100%;
+  color:#42484d;;
+}
+body {
+z-index: 0;
+background-position: top center;
+background-repeat: no-repeat;
+background:#eff0f2;
+font-family: "Open Sans",helvetica,arial,sans-serif;
+font-weight: 400;
+font-size: 10.5pt;
+}
+div {
+  display:block;
+}
+
+/************************************** HOME PAGE STYLES ***************/
+.jumbotron {
+    background: url(launch.jpg) no-repeat center center;
+    background-size:cover;
+    height:100%;
+    width:100%;
+    margin:auto 0;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: -99;
+    background-color:transparent;
+    background-color:rgba(255, 255, 255, 0.9);
+  }
+.home-content h1 {
+  padding-top:150px;
+  color:#fff;
+  line-height: 1.1;
+  font-family: "Abel", Arial, sans-serif;
+  font-weight: 400px;
+}
+.home-content p {
+  color:white;
+}
+/************************************* NAVIGATION-BAR STYLING  ***************************/
+
+.navbar-inverse{
+  background-color:#008f45;
+  border-color:#008f45;
+  margin-bottom:40px;
+}
+.navbar-inverse .navbar-brand {
+  color:white;
+  size:20px;
+  margin-top:15px;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+  margin-top:15px;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+  margin-top:15px;
+}
+.navbar-inverse .navbar-text {
+  color: white;
+}
+
+/** Search Bar **/
+.navbar-inverse .navbar-nav > ul> li:first-child {
+  margin-top:15px;
+}
+
+
+.form-search {
+  display:block;
+  float:left;
+  text-align: center;
+  display: fixed;
+  margin-right:200px;
+  margin-top:25px;
+  border-radius: 0px;
+}
+/************************************ User profile styles  ************************************/
+.container .profile-container{
+  width:100%;
+  position: relative;
+  min-height: 100%;
+  min-width: 960px;
+  border:1px solid black;
+}
+
+.wrapper {
+  position:relative;
+  margin:0 auto;
+  clear: both;
+  width: 100%;
+  margin-bottom: 100px !important;
+ // border:2px solid green;
+  margin-top:85px;
+  height:100%;
+}
+aside{
+  height:100%;
+  width:300px;
+  float:right;
+  border:1px solid black;
+}
+aside .user-navlist {
+  float:left;
+  width:280px;
+  padding-top:40px;
+  background:;
+  margin:none;
+}
+.profile-wrap {
+  display:block;
+  position:relative;
+  width:100%;
+  margin:10px;
+}
+.profile-wrap .content{
+  padding-top:30px;
+  margin-left:0px !important;
+  width:800px;
+  float:left;
+  border:1px solid green;
+}
+.dashboard .user-section {
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  padding: 30px;
+  overflow: auto;
+  margin-bottom: 20px;
+  border:10px solid #E3E8E6;
+
+}
+.user-avatar a{
+  margin-left:15px;
+  font-size:18pt;
+  color:#008f45;
+  list-style-type:none;
+  text-decoration: none;
+  padding-top: 5px;
+}
+.user-basic-info li {
+  list-style-type: none;
+  font-size:12pt;
+  margin-left:-50px;
+  line-height: 1.2em;
+  margin-top:5px;
+}
+.stats {
+  position:relative;
+  float:;
+  height:70px;
+  width:100%;
+  margin-left:-10px;
+}
+.stats .stat {
+  padding:10px;
+  width:100px;
+  text-transform: uppercase;
+}
+.stats .stat:first-child {
+  margin-right: 10px;
+}
+.stats .optional-info {
+  padding:20px;
+
+}
+.optional-info .small {
+  text-transform: uppercase;
+}
+/*****  Registrations Forms *****/
+
+/* Log in Form*/
+.user-log {
+  margin-top:120px;
+}
+.user-info-form {
+  padding:10px;
+}
+
+.form-wrap{
+  text-align: center;
+  width:500px;
+  background-color:#C3DED5;
+  padding:40px;
+}
+.form-wrap .
+.form-wrap .edit-page {
+  width:800px;
+}
+.edit-page .form-wrap{
+  text-align: center;
+  width:800px;
+  background-color:#C3DED5;
+  padding:40px;
+}
+
+/**** Posts Section Styling  ****/
+
+.dashboard .posts-section{
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  padding: 30px;
+  overflow: auto;
+  margin-bottom: 20px;
+  border:10px solid #E3E8E6;
+  height:auto;
+}
+
+.post-content {
+  padding:20px;
+  margin:20px;
+  border:5px solid #E3E8E6;
+}
+.form-control {
+  width:700px
+}
+.pull-left {
+  float:left;
+}
+.pull-right {
+  float:right
+}
+.user-post .image-for-poster{
+  padding-top:40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
