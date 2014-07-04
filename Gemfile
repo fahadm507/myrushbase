@@ -5,6 +5,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-rails'
 end
+gem "factory_girl_rails", "~> 4.0"
 gem 'devise'
 gem 'bootstrap_form'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'

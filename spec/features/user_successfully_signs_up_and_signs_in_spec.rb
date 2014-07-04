@@ -30,7 +30,7 @@ feature 'User signs up and sign in', %q{
 
     expect(page).to have_content "Logout"
 
-  end
+    end
 
 
    scenario "user gets errors if the input is invalid" do
@@ -41,44 +41,58 @@ feature 'User signs up and sign in', %q{
       click_on "Sign up"
     end
 
-    count = page.body.scan("can't be blank").count
-    expect(count).to eql(4)
+    # count = page.body.scan("can't be blank").count
+    # expect(count).to eql(4)
+    expect(page).to have_content "First name can't be blank"
+    expect(page).to have_content "Last name can't be blank"
+    expect(page).to have_content "Email can't be blank"
+    expect(page).to have_content "Password can't be blank"
   end
 
-  # scenario "does not sign up a new user if password confirmation does not match" do
+  scenario "does not sign up a new user if password confirmation does not match" do
 
-  #   visit new_user_registration_path
+    visit new_user_registration_path
 
-  #   fill_in "Email", with: "fahad5@gmail.com"
-  #   fill_in "Password", with: "password"
-  #   fill_in "Confirm password", with: "nomatch"
+    fill_in "Email", with: "fahad5@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "nomatch"
 
-  #   click_on "Sign up"
+    within('.sign-up-link') do
+      click_on "Sign up"
+    end
 
-  #   expect(page).to have_content "doesn't match Password"
-  #   expect(page).to have_content "Sign up"
-  # end
+    expect(page).to have_content "doesn't match Password"
+    expect(page).to have_content "Sign up"
+  end
 
-  # scenario "registered user sign in with invalid " do
-  #   visit new_user_session_path
+  scenario "registered user sign in with invalid " do
+     user = FactoryGirl.create(:user)
+    visit new_user_session_path
 
-  #   fill_in "Email", with: "fahadm5@gmail.com"
-  #   fill_in "Password", with: "password"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
 
-  #   click_on "Login"
+    within ('.sign-in-link') do
+      click_on "Login"
+    end
 
-  #   expect(page).to have_content "logout"
-  # end
+    expect(page).to have_content "Logout"
+    expect(page).to have_content user.first_name
+  end
 
-  # scenario "registered user sign in with invalid " do
-  #   visit new_user_session_path
+  scenario "registered user sign in with invalid " do
+    visit new_user_session_path
 
-  #   fill_in "Email", with: "fahadm5@gmail.com"
-  #   fill_in "Password", with: "pass"
+    user = FactoryGirl.create(:user)
 
-  #   click_on "Login"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: "pass"
 
-  #   expect(page).to have_content "checkout your password and try again"
-  # end
+    within ('.sign-in-link') do
+      click_on "Login"
+    end
+
+    expect(page).to have_content "Invalid email or password."
+  end
 end
 
