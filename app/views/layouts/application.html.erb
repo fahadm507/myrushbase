@@ -3,7 +3,7 @@
 <head>
   <title>Myrushbase</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -32,7 +32,7 @@
             <% else %>
             <li>
               <div class="form-group search-section">
-                  <%= bootstrap_form_for(root_path, method: 'get', id: 'search-form', html: {class: 'form-search'}) do %>
+                  <%=form_for(root_path, method: 'get', id: 'search-form', html: {class: 'form-search'}) do %>
                     <div class="input-append">
                       <%= search_field :search, params[:search], class: "search-query span4", placeholder: 'Search users, posts, etc',hmtl: {class: ""} %>
                       <%= submit_tag 'Search', class: "btn btn-default", name: nil %>
