@@ -1,6 +1,13 @@
 source 'https://rubygems.org'
 
-
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'capybara'
+  gem 'pry-rails'
+end
+gem 'devise'
+gem 'bootstrap_form'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
