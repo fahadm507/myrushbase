@@ -32,7 +32,6 @@ feature 'User signs up and sign in', %q{
 
     end
 
-
    scenario "user gets errors if the input is invalid" do
 
    visit new_user_registration_path
@@ -40,9 +39,6 @@ feature 'User signs up and sign in', %q{
     within('.sign-up-link') do
       click_on "Sign up"
     end
-
-    # count = page.body.scan("can't be blank").count
-    # expect(count).to eql(4)
     expect(page).to have_content "First name can't be blank"
     expect(page).to have_content "Last name can't be blank"
     expect(page).to have_content "Email can't be blank"
@@ -73,7 +69,7 @@ feature 'User signs up and sign in', %q{
     fill_in "Password", with: user.password
 
     within ('.sign-in-link') do
-      click_on "Login"
+      click_on "Sign in"
     end
 
     expect(page).to have_content "Logout"
@@ -89,7 +85,7 @@ feature 'User signs up and sign in', %q{
     fill_in "Password", with: "pass"
 
     within ('.sign-in-link') do
-      click_on "Login"
+      click_on "Sign in"
     end
 
     expect(page).to have_content "Invalid email or password."

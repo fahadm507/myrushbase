@@ -5,11 +5,11 @@ html, body {
 }
 body {
 z-index: 0;
-background-position: top center;
-background-repeat: no-repeat;
+background-position:top center;
+background-repeat:no-repeat;
 background:#eff0f2;
-font-family: "Open Sans",helvetica,arial,sans-serif;
-font-weight: 400;
+font-family:"Open Sans",helvetica,arial,sans-serif;
+font-weight:400;
 font-size: 10.5pt;
 }
 div {
@@ -18,7 +18,7 @@ div {
 
 /************************************** HOME PAGE STYLES ***************/
 .jumbotron {
-    background: url(launch.jpg) no-repeat center center;
+    background:url(launch.jpg) no-repeat center center;
     background-size:cover;
     height:100%;
     width:100%;
@@ -68,8 +68,6 @@ div {
 .navbar-inverse .navbar-nav > ul> li:first-child {
   margin-top:15px;
 }
-
-
 .form-search {
   display:block;
   float:left;
@@ -108,7 +106,6 @@ aside .user-navlist {
   float:left;
   width:280px;
   padding-top:40px;
-  background:;
   margin:none;
 }
 .profile-wrap {
@@ -126,13 +123,12 @@ aside .user-navlist {
 }
 .dashboard .user-section {
   background: #fff;
-  box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+  /* box-shadow: 0px 1px 2px rgba(0,0,0,0.15);*/
   border-radius: 5px;
   padding: 30px;
   overflow: auto;
   margin-bottom: 20px;
   border:10px solid #E3E8E6;
-
 }
 .user-avatar a{
   margin-left:15px;
@@ -151,7 +147,6 @@ aside .user-navlist {
 }
 .stats {
   position:relative;
-  float:;
   height:70px;
   width:100%;
   margin-left:-10px;
@@ -187,7 +182,7 @@ aside .user-navlist {
   background-color:#C3DED5;
   padding:40px;
 }
-.form-wrap .
+
 .form-wrap .edit-page {
   width:800px;
 }
@@ -197,11 +192,9 @@ aside .user-navlist {
   background-color:#C3DED5;
   padding:40px;
 }
-
 /**** Posts Section Styling  ****/
-
 .dashboard .posts-section{
-  background: #fff;
+  background:#fff;
   box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
   border-radius: 5px;
   padding: 30px;
