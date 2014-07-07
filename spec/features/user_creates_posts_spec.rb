@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Registered user creates posts', %q{
-    As a user I want to create or share posts so that I can share with
+    As a user I want to create posts so that I can share with
     my followers.
   } do
 
@@ -35,7 +35,6 @@ feature 'Registered user creates posts', %q{
 
     expect(page).to have_content "Bodycan't be blank"
   end
-
 
 end
 

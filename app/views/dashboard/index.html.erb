@@ -7,15 +7,37 @@
         <%= f.submit "Post" %>
     <% end %>
     </div>
-    <hr>
+
   </div>
 </div>
 
-<div class="posts-area">
-  <div class="post-details">
-    <% current_user.posts.each do |post| %>
-     <a> <%= current_user.first_name %> <%= current_user.last_name %></a><br\>
-      <%= post.body %>
-    <%end%>
+<div class="row">
+  <div class="posts-area">
+    <div class="post-details">
+      <% current_user.posts.each do |post| %>
+       <div class="user-name"><a> <%= current_user.first_name %> <%= current_user.last_name %></a></div><br>
+        <div class="post-body"><%= post.body %>
+
+          <div class="comments-form">
+            <%= bootstrap_form_for [post, @comment] do |f| %>
+              <div class="comment-area">
+                <%= f.text_area :description, :size => "20x2" %>
+              </div>
+              <%= f.submit "Comment" %><br>
+            <% end %>
+
+            <div class="all-comments">
+              <%= post.comments.each do |comment| %>
+                <div class="comment-details">
+                  <ul class="list-group">
+                    <li><%= comment.description %></li>
+                  </ul>
+                </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
   </div>
 </div>
