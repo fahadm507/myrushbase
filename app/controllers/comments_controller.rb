@@ -6,9 +6,10 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      redirect_to '/dashboard'
+      redirect_to dashboard_index_path
     else
-      render  :'/dashboard'
+      @post.comments.delete(@comment)
+      render '/dashboard/index'
     end
   end
 

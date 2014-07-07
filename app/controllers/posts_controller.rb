@@ -5,6 +5,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to dashboard_index_path
     else
+      current_user.posts.delete(@post)
+      @comment = Comment.new
       render '/dashboard/index'
     end
   end

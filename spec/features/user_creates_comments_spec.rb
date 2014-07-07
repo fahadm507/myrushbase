@@ -6,7 +6,6 @@ feature 'Registered user makes comments on posts', %q{
 
   scenario 'registered user succefully puts a comment on posts' do
 
-    # user = FactoryGirl.create(:user)
     post = FactoryGirl.create(:post )
     comments = FactoryGirl.create_list(:comment, 5)
 
@@ -24,6 +23,23 @@ feature 'Registered user makes comments on posts', %q{
     post.comments.each do |comment|
       expect(page).to have_content comment.description
     end
+  end
+
+  scenario 'registered user succefully puts a comment on posts' do
+
+    post = FactoryGirl.create(:post )
+    comments = FactoryGirl.create_list(:comment, 5)
+
+    visit new_user_session_path
+
+    sign_in_as(post.user)
+    visit dashboard_index_path
+
+    within(".comments-form") do
+      click_on'Comment'
+    end
+
+    expect(page).to have_content "Descriptioncan't be blank"
   end
 
 end

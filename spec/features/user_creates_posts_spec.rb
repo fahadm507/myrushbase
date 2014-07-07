@@ -23,12 +23,10 @@ feature 'Registered user creates posts', %q{
 
   scenario 'user signs in and visits their dashboard, user attempts to submit and empty form' do
 
-    user = FactoryGirl.create(:user)
-
+    post = FactoryGirl.create(:post)
     visit new_user_session_path
 
-    sign_in_as(user)
-
+    sign_in_as(post.user)
     within('.post-form') do
       click_on'Post'
     end

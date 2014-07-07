@@ -3,11 +3,10 @@
   <div class="lg-md-12 text-box">
     <div class="post-form">
       <%= bootstrap_form_for @post do |f| %>
-        <%= f.text_area :body, :size => "50x5", required: true %>
+        <%= f.text_area :body, size:  "50x5", required: true %>
         <%= f.submit "Post" %>
     <% end %>
     </div>
-
   </div>
 </div>
 
@@ -21,20 +20,17 @@
           <div class="comments-form">
             <%= bootstrap_form_for [post, @comment] do |f| %>
               <div class="comment-area">
-                <%= f.text_area :description, :size => "20x2" %>
+                <%= f.text_area :description, size: "20x2",required: true %>
               </div>
               <%= f.submit "Comment" %><br>
+
+
+                  <%= post.comments.each do |comment| %>
+                    <li><%=comment.description %></li>
+                  <%end%>
+
             <% end %>
 
-            <div class="all-comments">
-              <%= post.comments.each do |comment| %>
-                <div class="comment-details">
-                  <ul class="list-group">
-                    <li><%= comment.description %></li>
-                  </ul>
-                </div>
-              <%end%>
-            </div>
           </div>
         </div>
       <%end%>
