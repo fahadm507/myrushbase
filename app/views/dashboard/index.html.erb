@@ -1,0 +1,21 @@
+
+<div class="row text-center">
+  <div class="lg-md-12 text-box">
+    <div class="post-form">
+      <%= bootstrap_form_for @post do |f| %>
+        <%= f.text_area :body, :size => "50x5", required: true %>
+        <%= f.submit "Post" %>
+    <% end %>
+    </div>
+    <hr>
+  </div>
+</div>
+
+<div class="posts-area">
+  <div class="post-details">
+    <% current_user.posts.each do |post| %>
+     <a> <%= current_user.first_name %> <%= current_user.last_name %></a><br\>
+      <%= post.body %>
+    <%end%>
+  </div>
+</div>
