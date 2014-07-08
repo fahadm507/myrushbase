@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :dashboard
+  resources :dashboard, only: :index
   resources :posts, only: [:create, :new, :destroy] do
     resources :comments
     resources :likes, only: [:new, :create, :destroy]
