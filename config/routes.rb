@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :dashboard
   resources :posts, only: [:create, :new, :destroy] do
     resources :comments
+    resources :likes, only: [:new, :create, :destroy]
   end
   # You can have the root of your site routed with "root"
   root 'home#index'

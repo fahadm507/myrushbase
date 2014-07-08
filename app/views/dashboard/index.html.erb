@@ -19,18 +19,30 @@
 
           <div class="comments-form">
             <%= bootstrap_form_for [post, @comment] do |f| %>
-              <div class="comment-area">
-                <%= f.text_area :description, size: "20x2",required: true %>
+              <%= f.text_area :description, size: "20x2",required: true %>
+              <div class="comment-like-btns">
+                <div class="pull-left comment"><%= f.submit "Comment" %></div>
+            <%end%>
+                <% if Like.has_liked?(current_user.id, post.id) %>
+
+                  <div class="pull-left unlike"><%= button_to [post, @like] do %>
+                    unlike
+                  </div><%end%>
+
+                <% else %>
+                  <div class="pull-left like"><%= button_to [post, @like] do %>
+                    Like
+                  </div><%end%>
+
+                <% end %>
+
+                <%= post.likes.count if post.likes.count != 0 %>
               </div>
-              <%= f.submit "Comment" %><br>
-
-
-                  <%= post.comments.each do |comment| %>
-                    <li><%=comment.description %></li>
-                  <%end%>
-
-            <% end %>
-
+          </div><br><br>
+          <div class="comments-details">
+            <% post.comments.each do |comment| %>
+              <li><%=comment.description %></li>
+            <%end%>
           </div>
         </div>
       <%end%>

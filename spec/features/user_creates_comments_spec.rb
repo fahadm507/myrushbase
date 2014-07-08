@@ -29,7 +29,6 @@ feature 'Registered user makes comments on posts', %q{
 
     post = FactoryGirl.create(:post )
     comments = FactoryGirl.create_list(:comment, 5)
-
     visit new_user_session_path
 
     sign_in_as(post.user)
