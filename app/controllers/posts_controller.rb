@@ -3,11 +3,11 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to dashboard_index_path
+      redirect_to users_path
     else
       current_user.posts.delete(@post)
       @comment = Comment.new
-      render '/dashboard/index'
+      render '/users/index'
     end
   end
 

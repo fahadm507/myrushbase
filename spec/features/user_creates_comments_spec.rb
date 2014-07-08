@@ -12,7 +12,7 @@ feature 'Registered user makes comments on posts', %q{
     visit new_user_session_path
 
     sign_in_as(post.user)
-    visit dashboard_index_path
+    visit users_path
 
 
     within(".comments-form") do
@@ -32,7 +32,7 @@ feature 'Registered user makes comments on posts', %q{
     visit new_user_session_path
 
     sign_in_as(post.user)
-    visit dashboard_index_path
+    visit users_path
 
     within(".comments-form") do
       click_on'Comment'

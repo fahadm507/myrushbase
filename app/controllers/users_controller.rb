@@ -1,6 +1,5 @@
-class DashboardController < ApplicationController
+class UsersController < ApplicationController
   def index
-
     @post = Post.new
     @comment= Comment.new
     @like = Like.new
