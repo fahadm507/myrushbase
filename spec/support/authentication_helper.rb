@@ -12,4 +12,5 @@ module AuthenticationHelper
     visit root_path
     click_on "Logout"
   end
+
 end
