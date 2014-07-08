@@ -19,7 +19,7 @@ feature 'Registered user makes likes posts', %q{
       click_on 'Like'
     end
     expect(page).to have_content post.likes.count
-    expect(page).to have_content 'unlike'
+    expect(page).to have_content 'liked'
   end
 
   scenario 'registered succeffully unlikes the post' do
@@ -37,7 +37,7 @@ feature 'Registered user makes likes posts', %q{
     end
 
     within(".comment-like-btns") do
-      click_on 'unlike'
+      click_on 'liked'
     end
     expect(page).to have_content 'Like'
   end

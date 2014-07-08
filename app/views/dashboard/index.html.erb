@@ -26,8 +26,8 @@
                 <div class="comments-count pull right"><%= post.comments.count if post.comments.count != 0 %></div>
                 <% if Like.has_liked?(current_user.id, post.id) %>
 
-                  <div class="pull-left unlike"><%= button_to [post, @like] do %>
-                    unlike
+                  <div class="pull-left liked"><%= button_to [post, @like] do %>
+                    liked
                   </div><%end%>
 
                 <% else %>
