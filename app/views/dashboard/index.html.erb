@@ -23,6 +23,7 @@
               <div class="comment-like-btns">
                 <div class="pull-left comment"><%= f.submit "Comment" %></div>
             <%end%>
+                <div class="comments-count pull right"><%= post.comments.count if post.comments.count != 0 %></div>
                 <% if Like.has_liked?(current_user.id, post.id) %>
 
                   <div class="pull-left unlike"><%= button_to [post, @like] do %>
