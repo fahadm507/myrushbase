@@ -20,7 +20,8 @@
           <%= f.text_field :last_name, autofocus: true %></div>
 
           <div>
-              <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name") %>
+            <%= f.label :category_id %>
+            <%= f.collection_select(:category_id, Category.all, :id, :name) %>
           </div>
 
           <div><%= f.label :email %><br />
