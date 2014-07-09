@@ -8,17 +8,20 @@ feature 'Registered user makes likes posts', %q{
   scenario 'registered user succefully likes a post' do
 
     user = FactoryGirl.create(:user)
-    point = FactoryGirl.create(:point, user: user)
 
     visit new_user_session_path
-    sign_in_as(point.user)
+    sign_in_as(user)
+
+    within(".give-point") do
+      expect(page).to have_content 'Credit'
+    end
 
     within(".give-point") do
       click_on 'Credit'
     end
 
     within(".give-point") do
-      expect(page).to_not have_content 'Credited'
+      expect(page).to_not have_content 'Credit'
     end
   end
 

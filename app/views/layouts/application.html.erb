@@ -27,6 +27,7 @@
             </li>
             <li><%= link_to "Home", users_path %></li>
             <li><p class="navbar-text"><a class="user-avatar"><%= current_user.first_name %></a></li>
+            <li><p class="navbar-text"><a class="user-avatar"><%= image_tag current_user.avatar.url(:tiny), class: "img-circle"%></a></li>
             <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
             <% else %>

@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: myrushbase_production
-  username: myrushbase
   password: <%= ENV['MYRUSHBASE_DATABASE_PASSWORD'] %>

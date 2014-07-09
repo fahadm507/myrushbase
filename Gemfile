@@ -6,13 +6,14 @@ group :development, :test do
   gem 'pry-rails'
   gem 'launchy'
 end
-
+gem 'aws-sdk'
 gem "factory_girl_rails", "~> 4.0"
 gem 'devise'
 gem 'bootstrap_form'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

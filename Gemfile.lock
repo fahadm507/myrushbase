@@ -8,6 +8,16 @@ GIT
       rails (>= 3.1)
       railties (>= 3.1)
 
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: dca87ec5d8038b2d436a75ad6119c8eb67b73e70
+  specs:
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,6 +49,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    aws-sdk (1.46.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.7)
     bootstrap_form (2.1.1)
     builder (3.2.2)
@@ -48,6 +61,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -178,6 +195,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   bootstrap_form
   capybara
   coffee-rails (~> 4.0.0)
@@ -186,9 +204,9 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  paperclip!
   pg
   pry-rails
-  rails (= 4.1.1)
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
