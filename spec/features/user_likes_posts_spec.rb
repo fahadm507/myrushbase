@@ -42,7 +42,7 @@ feature 'Registered user makes likes posts', %q{
       click_on 'liked'
     end
 
-    expect(page).to have_content 'Like'
+
   end
 
 

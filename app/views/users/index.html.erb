@@ -1,4 +1,24 @@
 
+<div class="row">
+  <div class="user-dashboard">
+    <div class="user-names"><%= current_user.first_name %> <%= current_user.last_name %></div>
+    <div class="give-point">
+
+      <% if Point.has_credited?(current_user.id) %>
+        <div class="credited"><%= button_to 'Credited', user_point_path(current_user, Point.where(user: current_user.id).first), method: :delete %></div>
+      <% else %>
+        <div class="credit"><%= button_to [current_user, @point] do %>
+          Credit
+        </div><%end%>
+
+      <% end %>
+
+      <%= current_user.points.count if current_user.points.count != 0 %>
+    </div>
+
+    </div>
+  </div>
+</div>
 <div class="row text-center">
   <div class="lg-md-12 text-box">
     <div class="post-form">

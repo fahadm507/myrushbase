@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @post = Post.new
     @comment= Comment.new
     @like = Like.new
-
+    @point = Point.new
 
     # 5 most recent of current_user's posts
     # 10 most recent posts of followers

@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :users
+  resources :users, only: [:index, :show] do
+    resources :points, only: [:create, :destroy]
+  end
+
   resources :posts, only: [:create, :new, :destroy] do
     resources :comments
     resources :likes, only: [:new, :create, :destroy]
