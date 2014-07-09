@@ -16,7 +16,7 @@ feature 'Registered user makes likes posts', %q{
     within(".give-point") do
       click_on 'Credit'
     end
-
+    save_and_open_page
     within(".give-point") do
       expect(page).to_not have_content 'Credited'
     end
