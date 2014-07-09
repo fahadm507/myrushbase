@@ -1,9 +1,79 @@
 
+
 <div class="row">
-  <div class="all-posts">
-    <%= @member.first_name %> <%= @member.last_name %>
-    <% @member.posts.each do |post| %>
-    <li><%= post.body %></li>
-    <%end%>
+  <div class="user-dashboard">
+    <div class="user-names"><%= @user.first_name %> <%=@user.last_name %></div>
+    <div class="give-point">
+      <% if current_user %>
+        <% if Point.has_credited?(current_user.id) %>
+          <div class="credited"><%= button_to 'Credited', user_point_path(current_user, Point.where(user: current_user.id).first), method: :delete %></div>
+        <% else %>
+          <div class="credit"><%= button_to [current_user, @point] do %>
+            Credit
+          </div><% end %>
+        <% end %>
+      <%end%>
+
+      <%= @user.points.count if @user.points.count != 0 %>
+    </div>
+
+    </div>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="lg-md-12 text-box">
+    <div class="post-form">
+      <% if current_user%>
+      <%= bootstrap_form_for @post do |f| %>
+        <%= f.text_area :body, size:  "50x5", required: true %>
+        <%= f.submit "Post" %>
+      <% end %>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="posts-area">
+    <div class="post-details">
+      <% @user.posts.each do |post| %>
+       <div class="user-name"><a> <%= @user.first_name %> <%= @user.last_name %></a></div><br>
+        <div class="post-body"><%= post.body %>
+
+          <div class="comments-form">
+            <%if current_user%>
+              <%= bootstrap_form_for [post, @comment] do |f| %>
+                <%= f.text_area :description, size: "20x2",required: true %>
+                <div class="comment-like-btns">
+                  <div class="pull-left comment"><%= f.submit "Comment" %></div>
+              <%end%>
+            <%end%>
+                <div class="comments-count pull right"><%= post.comments.count if post.comments.count != 0 %></div>
+                <%if current_user%>
+                  <% if Like.has_liked?(current_user.id, post.id) %>
+
+                    <div class="pull-left liked">
+                      <%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %>
+                    </div>
+                  <% else %>
+                    <div class="pull-left like">
+                      <%= button_to "Like", [post, @like] do %>
+                    </div>
+                  <%end%>
+
+                  <% end %>
+                <%end%>
+
+                <%= post.likes.count if post.likes.count != 0 %>
+              </div>
+          </div><br><br>
+          <div class="comments-details">
+            <% post.comments.each do |comment| %>
+              <li><%=comment.description %></li>
+            <%end%>
+          </div>
+        </div>
+      <%end%>
+    </div>
   </div>
 </div>
