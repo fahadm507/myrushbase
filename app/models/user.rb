@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  belongs_to :category
   has_many :posts
   has_many :comments
   has_many :likes

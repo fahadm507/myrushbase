@@ -133,7 +133,6 @@ Veterinary
 Wireless
 Writing and Editing
 Website Development"
-binding.pry
 array_of_categories = string_of_categories.split("\n")
 
 array_of_categories.each do |cat|
