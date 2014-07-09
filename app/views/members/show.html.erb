@@ -1,0 +1,9 @@
+
+<div class="row">
+  <div class="all-posts">
+    <%= @member.first_name %> <%= @member.last_name %>
+    <% @member.posts.each do |post| %>
+    <li><%= post.body %></li>
+    <%end%>
+  </div>
+</div>
