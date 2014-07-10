@@ -1,107 +1,106 @@
 
-  <div class="wrapper">
-
-      <div class="row text-center">
-        <div class="dashboard">
-          <div id="user-info">
-            <div class="row text-center stats">
-              <div class="stats-left span4">
-                <div class="myfollowers">
-                  <div class="following-box stat pull-right">
-                    <div class="text-center">0</div>
-                    <div class="text-center small uppercase">Following</div>
-                  </div>
-                  <div class="following-box stat pull-right">
-                    <div class="text-center">0</div>
-                    <div class="text-left small uppercase">Followers</div>
-                  </div>
-                </div>
+<div class="wrapper">
+  <div class="row text-center">
+    <div class="dashboard">
+      <div id="user-info">
+        <div class="row text-center stats">
+          <div class="stats-left span4">
+            <div class="myfollowers">
+              <div class="following-box stat pull-right">
+                <div class="text-center">0</div>
+                <div class="text-center small uppercase">Following</div>
               </div>
-              <div class="user-av span2">
-                <div class="useravatar"><%= image_tag current_user.avatar.url(:thumb), :class => "img-circle"%></div>
-                <ul>
-                  <li><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
-                  <li id="industry"><%= current_user.category.name %></i></li>
-                </ul>
-              </div>
-
-              <div class="stats-right span4 pull-left">
-
-                <div class="following-box stat pull-right">
-                  <div class="text-center"> <%= current_user.posts.count || current_user.posts.count = 0 %></div>
-                  <div class="text-center small uppercase">Contributions</div>
-                </div>
-                <div class="following-box stat pull-right">
-                  <div class="text-center"> <%= current_user.points.count || current_user.points.count = 0 %></div>
-                  <div class="text-center small uppercase">Points</div>
-                </div>
-                <div class="following-box stat pull-right">
-                  <div class="text-center">0</div>
-                  <div class="text-center small uppercase">Favorites</div>
-                </div>
-
+              <div class="followers-box stat pull-right">
+                <div class="text-center">0</div>
+                <div class="text-left small uppercase">Followers</div>
               </div>
             </div>
+          </div>
+          <div class="user-av span2">
+            <div class="useravatar"><%= image_tag current_user.avatar.url(:thumb), :class => "img-circle"%></div>
+            <ul>
+              <li><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
+              <li id="industry"><%= current_user.category.name %></i></li>
+            </ul>
+          </div>
 
-            <div class="row action-buttons text-center">
-              <ul>
-                <li class="btn">Follow</li>
-                <li class="btn">Credit</li>
-                <li class="btn">Porfolio</li>
-              </ul>
+          <div class="stats-right span4 pull-left">
+            <div class="contributions-box stat pull-right">
+              <div class="text-center"> <%= current_user.posts.count || current_user.posts.count = 0 %></div>
+              <div class="text-center small uppercase">Contributions</div>
             </div>
-          </div><!--end of user information div -->
-
-        </div>
-      </div>
-      <!-- user form to make post -->
-      <div class="row text-center">
-        <div class="col-md-8 col-md-offset-2 text-box">
-          <div class="post-form">
-            <%= bootstrap_form_for @post, html: {class: ""} do |f| %>
-              <%= f.text_area :body, size: "20x2", required: true, placeholder: "paste a link, create a post, post a update, etc" %>
-              <%= f.submit "Post" %>
-            <% end %>
+            <div class="Points-box stat pull-right">
+              <div class="text-center"> <%= current_user.points.count || current_user.points.count = 0 %></div>
+              <div class="text-center small uppercase">Points</div>
+            </div>
+            <div class="favorites-box stat pull-right">
+              <div class="text-center">0</div>
+              <div class="text-center small uppercase">Favorites</div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- posts area-->
-      <div class="row">
-        <div class="posts-area">
-          <div class="post-details">
-            <% current_user.posts.each do |post| %>
-             <div class="user-name"><a> <%= current_user.first_name %> <%= current_user.last_name %></a></div><br>
-              <div class="post-body"><%= post.body %>
 
-                <div class="comments-form">
-                  <%= bootstrap_form_for [post, @comment] do |f| %>
-                    <%= f.text_area :description, size: "20x2",required: true %>
-                    <div class="comment-like-btns">
-                      <div class="pull-left comment"><%= f.submit "Comment" %></div>
-                  <%end%>
-                      <div class="comments-count pull right"><%= post.comments.count if post.comments.count != 0 %></div>
-                      <% if Like.has_liked?(current_user.id, post.id) %>
-
-                        <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
-                      <% else %>
-                        <div class="pull-left like"><%= button_to [post, @like] do %>
-                          Like
-                        </div><%end%>
-
-                      <% end %>
-
-                      <%= post.likes.count if post.likes.count != 0 %>
-                    </div>
-                </div><br><br>
-                <div class="comments-details">
-                  <% post.comments.each do |comment| %>
-                    <li><%=comment.description %></li>
-                  <%end%>
-                </div>
-              </div>
-            <%end%>
-          </div>
+        <div class="row action-buttons text-center">
+          <ul>
+            <li class="btn">Follow</li>
+            <li class="btn">Credit</li>
+            <li class="btn">Porfolio</li>
+          </ul>
         </div>
-      </div>
+      </div><!--end of user information div -->
+    </div>
   </div>
+
+  <!-- user form to make post -->
+  <div class="row text-center">
+    <div class="col-md-8 col-md-offset-2 text-box">
+      <div class="post-form">
+        <%= bootstrap_form_for @post, html: {class: ""} do |f| %>
+          <%= f.text_area :body, size: "20x2", required: true, placeholder: "paste a link, create a post, post a update, etc" %>
+          <%= f.submit "Post" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- posts area-->
+  <div class="row">
+    <div class="posts-area">
+      <div class="post-details">
+        <% current_user.posts.each do |post| %>
+         <div class="user-name"><a> <%= current_user.first_name %> <%= current_user.last_name %></a></div>
+         <p>posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %>
+          <div class="post-body"><%= post.body %>
+
+            <div class="comments-form">
+              <%= bootstrap_form_for [post, @comment] do |f| %>
+                <%= f.text_area :description, size: "20x2",required: true %>
+                <div class="comment-like-btns">
+                  <div class="pull-left comment"><%= f.submit "Comment" %></div>
+              <%end%>
+                  <div class="comments-count pull right"><%= post.comments.count if post.comments.count != 0 %></div>
+                  <% if Like.has_liked?(current_user.id, post.id) %>
+
+                    <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
+                  <% else %>
+                    <div class="pull-left like"><%= button_to [post, @like] do %>
+                      Like
+                    </div><%end%>
+
+                  <% end %>
+
+                  <%= post.likes.count if post.likes.count != 0 %>
+                </div>
+            </div><br><br>
+            <div class="comments-details">
+              <% post.comments.each do |comment| %>
+                <li><%=comment.description %></li>
+              <%end%>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
 
