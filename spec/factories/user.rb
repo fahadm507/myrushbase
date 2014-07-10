@@ -5,5 +5,6 @@ FactoryGirl.define do
     sequence(:last_name) { |n| "#{n}Mukunzi" }
     password "testing2020"
     password_confirmation "testing2020"
+    category_id 1
   end
 end

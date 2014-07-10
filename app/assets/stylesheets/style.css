@@ -15,10 +15,13 @@ font-size: 10.5pt;
 div {
   display:block;
 }
+ul li {
+  list-style-type: none;
+}
 
 /************************************** HOME PAGE STYLES ***************/
 .jumbotron {
-    background:url(launch.jpg) no-repeat center center;
+    background:url(highfive.jpg) no-repeat center center;
     background-size:cover;
     height:100%;
     width:100%;
@@ -46,98 +49,84 @@ div {
   background-color:#008f45;
   border-color:#008f45;
   margin-bottom:40px;
+
 }
 .navbar-inverse .navbar-brand {
   color:white;
   size:20px;
-  margin-top:15px;
+
 }
 .navbar-inverse .navbar-nav > li > a {
   color: white;
-  margin-top:15px;
+  margin-top:5pxpx;
 }
-.navbar-inverse .navbar-nav > li > a {
+.navbar-inverse .navbar-nav > li  {
   color: white;
   margin-top:15px;
 }
 .navbar-inverse .navbar-text {
   color: white;
 }
+.registration-btns li {
+  padding:0 10 0 10;
+  margin-right:10px;
+  border-radius:10px;
+}
 
 /** Search Bar **/
 .navbar-inverse .navbar-nav > ul> li:first-child {
-  margin-top:15px;
+
 }
 .form-search {
   display:block;
   float:left;
   text-align: center;
   display: fixed;
-  margin-right:200px;
-  margin-top:25px;
+  margin-right:150px;
+  margin-top:5px;
   border-radius: 0px;
 }
 /************************************ User profile styles  ************************************/
-.container .profile-container{
-  width:100%;
-  position: relative;
-  min-height: 100%;
-  min-width: 960px;
-  border:1px solid black;
-}
 
 .wrapper {
   position:relative;
-  margin:0 auto;
+  margin:0;
   clear: both;
-  width: 100%;
+  padding:50px;
   margin-bottom: 100px !important;
  // border:2px solid green;
   margin-top:85px;
   height:100%;
 }
-aside{
-  height:100%;
-  width:300px;
-  float:right;
-  border:1px solid black;
-}
-aside .user-navlist {
-  float:left;
-  width:280px;
-  padding-top:40px;
-  margin:none;
-}
-.profile-wrap {
-  display:block;
-  position:relative;
-  width:100%;
-  margin:10px;
-}
-.profile-wrap .content{
-  padding-top:30px;
-  margin-left:0px !important;
-  width:800px;
-  float:left;
-  border:1px solid green;
-}
-.dashboard .user-section {
+
+.dashboard {
   background: #fff;
-  /* box-shadow: 0px 1px 2px rgba(0,0,0,0.15);*/
   border-radius: 5px;
-  padding: 30px;
-  overflow: auto;
   margin-bottom: 20px;
   border:10px solid #E3E8E6;
 }
-.user-avatar a{
-  margin-left:15px;
-  font-size:18pt;
-  color:#008f45;
-  list-style-type:none;
-  text-decoration: none;
-  padding-top: 5px;
+
+.useravatar > img{
+  margin-top:;
 }
+.stats {
+  border-bottom:1px solid #eff0f2;
+}
+.myfollowers .stat  {
+  padding-left:20px;
+}
+.action-buttons {
+
+}
+.action-buttons ul li {
+  display: inline-block;
+  padding:10px 60px 5px 20px;
+  border:1px solid #eff0f2 ;
+  border-collapse: collapse;
+  margin-top:5px;
+  text-transform: uppercase;
+}
+
 .user-basic-info li {
   list-style-type: none;
   font-size:12pt;
@@ -145,24 +134,21 @@ aside .user-navlist {
   line-height: 1.2em;
   margin-top:5px;
 }
-.stats {
-  position:relative;
-  height:70px;
-  width:100%;
-  margin-left:-10px;
+.user-name {
+  font-size: 16pt;
+  color:#008f45;
 }
+.small {
+  text-transform: uppercase;
+}
+
+
 .stats .stat {
   padding:10px;
   width:100px;
-  text-transform: uppercase;
 }
-.stats .stat:first-child {
-  margin-right: 10px;
-}
-.stats .optional-info {
-  padding:20px;
 
-}
+
 .optional-info .small {
   text-transform: uppercase;
 }
@@ -230,8 +216,6 @@ aside .user-navlist {
 .all-members {
   margin-top: 150px;
 }
-
-
 
 
 
