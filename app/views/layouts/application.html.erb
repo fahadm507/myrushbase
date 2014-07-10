@@ -15,6 +15,7 @@
           <% if user_signed_in? %>
             <div class="brand pull-left"><%= link_to "RushBase", root_path, :class => "navbar-brand pull-left" %></div>
             <ul class="nav navbar-nav pull-right">
+
               <li>
                 <div class="form-group search-section">
                     <%= bootstrap_form_for(root_path, method: 'get', id: 'search-form', html: {class: 'form-search'}) do %>
