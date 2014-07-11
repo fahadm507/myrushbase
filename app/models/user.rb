@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+  has_many :followers, foreign_key: :following_user_id
+
+  has_many :reverse_followers, foreign_key: :followed_user_id, class_name: "Follower"
+
+  has_many :followed_users, through: :followers, foreign_key: :followed_user_id
+
+  has_many :following_users, through: :reverse_followers, foreign_key: :following_user_id
+
   belongs_to :category
   has_many :posts
   has_many :comments
