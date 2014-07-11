@@ -225,6 +225,9 @@ ul li {
   display: inline-block;
   padding:10px;
 }
+.comments_details li {
+  background:red;
+}
 
 
 

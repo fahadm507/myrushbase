@@ -1,0 +1,16 @@
+<div class="mypost model">
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header text-center">
+      <h4 class="modal-title" id="myModalLabel">Post Form</h4>
+    </div>
+      <div class="post-form">
+        <%= bootstrap_form_for @post, html: {class: ""} do |f| %>
+          <%= f.text_area :body, size: "20x10", hide_label: true, required: true, placeholder: "paste a link, create a post, post a update, etc" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit "Post" %>
+      <% end %>
+    </div>
+  </div>
+</div>

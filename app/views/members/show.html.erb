@@ -56,13 +56,12 @@
                     </div>
                   <% else %>
                     <div class="pull-left like">
-                      <%= button_to "Like", [post, @like] do %>
+                      <%= button_to [post, @like] do %>like
                     </div>
                   <%end%>
 
                   <% end %>
                 <%end%>
-
                 <%= post.likes.count if post.likes.count != 0 %>
               </div>
           </div><br><br>
