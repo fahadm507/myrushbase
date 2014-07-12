@@ -4,14 +4,6 @@
     <div class="user-names"><%= @user.first_name %> <%=@user.last_name %></div>
     <div class="give-point">
       <% if current_user %>
-        <% if Point.has_credited?(current_user.id) %>
-          <div class="credited"><%= button_to 'Credited', user_point_path(current_user, Point.where(user: current_user.id).first), method: :delete %></div>
-        <% else %>
-          <div class="credit"><%= button_to [current_user, @point] do %>
-            Credit
-          </div><% end %>
-        <% end %>
-      <%end%>
 
       <%= @user.points.count if @user.points.count != 0 %>
     </div>

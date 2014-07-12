@@ -1,0 +1,13 @@
+<header class="row header-section">
+  <div class="col-lg-12">
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container-fluid">
+            <div class="brand pull-left"><%= link_to "RushBase", root_path, :class => "navbar-brand pull-left" %></div>
+            <ul class="nav navbar-nav pull-right registration-btns">
+              <li class="sign-up"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-text btn-success'  %></li>
+              <li class="login-link"><%= link_to "Login", new_user_session_path, :class => 'navbar-text btn-success'  %></li>
+            </ul>
+      </div>
+    </nav>
+  </div>
+</header><!-- This is the end of the header section -->

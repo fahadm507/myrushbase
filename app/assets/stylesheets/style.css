@@ -43,31 +43,16 @@ ul li {
 .home-content p {
   color:white;
 }
+.navbar ul {
+
+  margin-left:60px;
+}
+.navbar formd {
+  width:500px;
+}
+
 /************************************* NAVIGATION-BAR STYLING  ***************************/
-/**
-.navbar-inverse{
-  background-color:#008f45;
-  border-color:#008f45;
-  margin-bottom:40px;
 
-}
-.navbar-inverse .navbar-brand {
-  color:white;
-  size:20px;
-
-}
-.navbar-inverse .navbar-nav > li > a {
-  color: white;
-  margin-top:5pxpx;
-}
-.navbar-inverse .navbar-nav > li  {
-  color: white;
-  margin-top:15px;
-}
-.navbar-inverse .navbar-text {
-  color: white;
-}
-*/
 .registration-btns li {
   padding:0 10 0 10;
   margin-right:10px;
@@ -95,23 +80,32 @@ ul li {
   clear: both;
   padding:50px;
   margin-bottom: 100px !important;
- // border:2px solid green;
-  margin-top:85px;
   height:100%;
+  border:10px solid #fff;
 }
 
 .dashboard {
   background: #fff;
   border-radius: 5px;
   margin-bottom: 20px;
-  border:10px solid #E3E8E6;
+  border:5px solid #E3E8E6;
+  width:800px;
+}
+.aside {
+  display:block;
+  text-align:left;
+  padding:10px;
+  padding-left:px;
+}
+.aside li {
+  text-align: left;
 }
 
 .useravatar > img{
   margin-top:;
 }
 .stats {
-  border-bottom:1px solid #eff0f2;
+
 }
 .myfollowers .stat  {
   padding-left:20px;
@@ -209,6 +203,7 @@ ul li {
   margin-bottom: 20px;
   border:10px solid #E3E8E6;
   height:auto;
+
 }
 .post-body {
   padding:20px;
@@ -226,41 +221,12 @@ ul li {
   display: inline-block;
   padding:10px;
 }
-.comments_details li {
-  background-color: grey;
+.nav-tabs  li {
+  padding-right:40px;
+  padding-left:40px;
 }
 
 
-.panel textarea, .well textarea, textarea.form-control
-{
-   resize: none;
-}
-
-.badge{
-   color:#3B5999;
-   background-color:#fff;
-}
-.badge:hover, .badge-inverse{
-   background-color:#3B5999;
-   color:#fff;
-}
-
-.jumbotron {
-  background-color:transparent;
-}
-.label-default {
-  background-color:#dddddd;
-}
-.page-header {
-  margin-top: 55px;
-  padding-top: 9px;
-  border-top:1px solid #eeeeee;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-
-.panel-default .panel-heading {
 
 
 

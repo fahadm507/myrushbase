@@ -8,41 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="row header-section">
-    <nav class="navbar navbar-fixed-top navbar-inverse">
-        <div class="container-fluid">
-          <% if user_signed_in? %>
-            <div class="brand pull-left"><%= link_to "RushBase", root_path, :class => "navbar-brand pull-left" %></div>
-            <ul class="nav navbar-nav pull-right">
-
-              <li>
-                <div class="form-group search-section">
-                    <%= bootstrap_form_for(root_path, method: 'get', id: 'search-form', html: {class: 'form-search'}) do %>
-                      <div class="input-append">
-                        <%= search_field :search, params[:search], class: "search-query span4", placeholder: 'Search users, posts, etc',hmtl: {class: ""} %>
-                        <%= submit_tag 'Search', class: "btn btn-default", name: nil %>
-                      </div>
-                    <% end %>
-                </div>
-              </li>
-              <li><%= link_to "Home", users_path %></li>
-              <li class="navbar-text"><a class="user-avatar"><%= current_user.first_name %></a></li>
-              <li><%= link_to "view members", members_path %></li>
-              <li class="navbar-text"><a class="user-avatar"><%= image_tag current_user.avatar.url(:tiny), class: "img-circle"%></a></li>
-              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-            </ul>
-            <% else %>
-            <div class="brand pull-left"><%= link_to "RushBase", root_path, :class => "navbar-brand pull-left" %></div>
-            <ul class="nav navbar-nav pull-right registration-btns">
-              <li class="sign-up"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-text btn-success'  %></li>
-              <li class="login-link"><%= link_to "Login", new_user_session_path, :class => 'navbar-text btn-success'  %></li>
-            </ul>
-            <% end %>
-      </div>
-    </nav>
-  </header><!-- This is the end of the header section -->
-
+   <% if user_signed_in? %>
+     <%= render 'layouts/logged_in_nav' %>
+    <% else %>
+      <%= render 'layouts/home_nav'%>
+    <% end%>
   <!--Errors deplay underneath the header -->
   <div class="container">
     <% if notice %>

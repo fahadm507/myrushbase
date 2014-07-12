@@ -1,29 +1,32 @@
 
 <div class="wrapper">
-  <div class="row text-center">
+  <div class="row">
+    <aside class="aside pull-right">
+      <ul>
+        <li><a class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal">  Make New Post</a>
+          <%= render 'users/post_form' %>
+        </li>
+      </ul>
+      </aside>
     <div class="dashboard">
-    <details>
-      <summary> see profile</summary>
-        <div id="user-info">
+        <div class="user-info">
           <div class="row text-center stats">
-            <div class="stats-left span4">
-              <div class="myfollowers">
-                <div class="following-box stat pull-right">
-                  <div class="text-center"><%= current_user.followed_users.count || 0 %></div>
-                  <div class="text-center small uppercase">Following</div>
-                </div>
-                <div class="followers-box stat pull-right">
-                  <div class="text-center"><%= current_user.following_users.count || 0 %></div>
-                  <div class="text-left small uppercase">Followers</div>
-                </div>
-              </div>
-            </div>
-            <div class="user-av span2">
+            <div class="user-av span2 pull-left">
               <div class="useravatar"><%= image_tag current_user.avatar.url(:thumb), :class => "img-circle"%></div>
               <ul>
                 <li><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
-                <li id=""><%= current_user.category.name %></i></li>
+                <li class=""> </i></li>
               </ul>
+            </div>
+
+            <div class="followers-box stat pull-left">
+              <div class="text-center"><%= current_user.following_users.count || 0 %></div>
+              <div class="text-left small uppercase">Followers</div>
+            </div>
+
+            <div class="following-box stat pull-left">
+              <div class="text-center"><%= current_user.followed_users.count || 0 %></div>
+              <div class="text-center small uppercase">Following</div>
             </div>
 
             <div class="stats-right span4 pull-left">
@@ -46,81 +49,33 @@
             <ul>
               <li class="btn">Follow</li>
               <li class="btn">Credit</li>
-              <li class="btn">Porfolio</li>
+              <li class="btn">Contriubtions</li>
             </ul>
           </div>
         </div><!--end of user information div -->
-      </details>
     </div>
   </div>
 
-  <!-- user form to make post -->
-  <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> Make New Post</button>
-<!-- Modal -->
-  <%= render 'users/post_form' %><ul class="nav nav-tabs" role="tablist" id="myTab">
   <ul class="nav nav-tabs" role="tablist" id="myTab">
-  <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-  <li><a href="#members" role="tab" data-toggle="tab">Members</a></li>
-  <li><a href="" role="tab" data-toggle="tab"></a></li>
-  <li><a href="#members" role="tab" data-toggle="tab">Settings</a></li>
-</ul>
+    <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+    <li><a href="#members" role="tab" data-toggle="tab">Members</a></li>
+    <li><a href="" role="tab" data-toggle="tab"></a></li>
+    <li><a href="#" role="tab" data-toggle="tab">Favorites</a></li>
+  </ul>
 
-<div class="tab-content">
+  <div class="tab-content">
   <div class="tab-pane active" id="home">
-  <div class="row">
-    <div class="posts-area">
-      <div class="post-details">
-        <% current_user.posts.order(created_at: :desc).each do |post| %>
-        <div class="poster">
-          <div class="image-for-poster pull-left"><%= image_tag current_user.avatar.url(:thumbnail), class: "img-circle post-avatar"%></div>
-          <div class="post-image-n-time">
-            <div class="user-name"><a> <%= current_user.first_name %> <%= current_user.last_name %></a></div>
-            <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
-          </div>
-        </div>
-          <div class="post-body"><%= post.body %>
-            <ul class="count-comments-n-likes">
-              <li><%= (post.comments.count) || post.likes.count = 0 %> Comments</li>
-              <li><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
-            </ul>
-            <div class="comments-form">
-              <%= bootstrap_form_for [post, @comment], html: {class: 'comment-form'} do |f| %>
-                <%= f.text_area :description, hide_label: true, size: "20x2",required: true %>
-                <div class="comment-like-btns">
-                  <div class="pull-left comment"><%= f.submit "Comment" %></div>
-              <%end%>
-                  <% if Like.has_liked?(current_user.id, post.id) %>
-                    <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
-                  <% else %>
-                    <div class="pull-left like"><%= button_to [post, @like], html:{class: "btn btn-lg"} do %>
-                    Like
-                    </div><%end%>
-                  <% end %>
-                </div>
-            </div><br><br>
-            <div class="comments-details">
-              <% post.comments.each do |comment| %>
-              <ul>
-                <li><%=comment.description%></li>
-              </ul>
-              <%end%>
-            </div>
-          </div>
-        <%end%>
-      </div>
-    </div>
-  </div>
-
-
-
+    <%= render 'users/user_home' %>
   </div>
   <div class="tab-pane" id="profile"></div>
   <div class="tab-pane" id="messages"></div>
-  <div class="tab-pane" id="members"><div class="all-members">
-    <% @members.each do |member| %>
-    <li><%= link_to "#{member.first_name} #{member.last_name}", member_path(member)%></li>
-    <%end%>
-  </div></div>
+  <div class="tab-pane" id="members">
+    <div class="all-members">
+      <% @members.each do |member| %>
+      <li><%= link_to "#{member.first_name} #{member.last_name}", member_path(member)%></li>
+      <%end%>
+    </div>
+  </div>
 </div>
 
 <script>
