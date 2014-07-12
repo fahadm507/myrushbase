@@ -20,7 +20,7 @@
   </div>
 </div>
 <div class="row text-center">
-  <div class="lg-md-12 text-box">
+  <div class="col-md-12 text-box">
     <div class="post-form">
       <% if current_user%>
       <%= bootstrap_form_for @post do |f| %>
@@ -33,6 +33,7 @@
 </div>
 
 <div class="row">
+
   <div class="posts-area">
     <div class="post-details">
       <% @user.posts.each do |post| %>

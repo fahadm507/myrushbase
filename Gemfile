@@ -10,8 +10,7 @@ gem 'aws-sdk'
 gem "factory_girl_rails", "~> 4.0"
 gem 'devise'
 gem 'bootstrap_form'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-
+gem "twitter-bootstrap-rails"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 # Use postgresql as the database for Active Record

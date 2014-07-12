@@ -1,18 +1,26 @@
-<div class="row mypost model">
-  <div class="col-lg-8 ">
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header text-center">
-        <h4 class="modal-title" id="myModalLabel">Post Form</h4>
+<li>
+  <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a>
+</li>
+<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      Update Status
       </div>
-        <div class="post-form">
-          <%= bootstrap_form_for @post, html: {class: "form-horizontal"} do |f| %>
-            <%= f.text_area :body, size: "20x10", hide_label: true, required: true, placeholder: "paste a link, create a post, post a update, etc" %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.submit "Post" %>
-        <% end %>
+      <div class="modal-body">
+          <form class="form center-block">
+            <div class="form-group">
+              <textarea class="form-control input-md" autofocus="" placeholder="What do you want to share?"></textarea>
+            </div>
+          </form>
       </div>
-    </div>
+      <div class="modal-footer">
+          <div>
+          <button class="btn btn-success btn-sm" data-dismiss="modal" aria-hidden="true">Post</button>
+            <ul class="pull-left list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+      </div>
+      </div>
+  </div>
   </div>
 </div>

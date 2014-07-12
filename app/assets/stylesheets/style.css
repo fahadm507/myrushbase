@@ -44,7 +44,7 @@ ul li {
   color:white;
 }
 /************************************* NAVIGATION-BAR STYLING  ***************************/
-
+/**
 .navbar-inverse{
   background-color:#008f45;
   border-color:#008f45;
@@ -67,6 +67,7 @@ ul li {
 .navbar-inverse .navbar-text {
   color: white;
 }
+*/
 .registration-btns li {
   padding:0 10 0 10;
   margin-right:10px;
@@ -228,12 +229,38 @@ ul li {
 .comments_details li {
   background-color: grey;
 }
-.mypostmodel {
-  width:100%;
-  height:60px;
+
+
+.panel textarea, .well textarea, textarea.form-control
+{
+   resize: none;
 }
 
+.badge{
+   color:#3B5999;
+   background-color:#fff;
+}
+.badge:hover, .badge-inverse{
+   background-color:#3B5999;
+   color:#fff;
+}
 
+.jumbotron {
+  background-color:transparent;
+}
+.label-default {
+  background-color:#dddddd;
+}
+.page-header {
+  margin-top: 55px;
+  padding-top: 9px;
+  border-top:1px solid #eeeeee;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.panel-default .panel-heading {
 
 
 

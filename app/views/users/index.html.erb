@@ -2,65 +2,71 @@
 <div class="wrapper">
   <div class="row text-center">
     <div class="dashboard">
-      <div id="user-info">
-        <div class="row text-center stats">
-          <div class="stats-left span4">
-            <div class="myfollowers">
-              <div class="following-box stat pull-right">
-                <div class="text-center">0</div>
-                <div class="text-center small uppercase">Following</div>
+    <details>
+      <summary> see profile</summary>
+        <div id="user-info">
+          <div class="row text-center stats">
+            <div class="stats-left span4">
+              <div class="myfollowers">
+                <div class="following-box stat pull-right">
+                  <div class="text-center"><%= current_user.followed_users.count || 0 %></div>
+                  <div class="text-center small uppercase">Following</div>
+                </div>
+                <div class="followers-box stat pull-right">
+                  <div class="text-center"><%= current_user.following_users.count || 0 %></div>
+                  <div class="text-left small uppercase">Followers</div>
+                </div>
               </div>
-              <div class="followers-box stat pull-right">
+            </div>
+            <div class="user-av span2">
+              <div class="useravatar"><%= image_tag current_user.avatar.url(:thumb), :class => "img-circle"%></div>
+              <ul>
+                <li><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
+                <li id=""><%= current_user.category.name %></i></li>
+              </ul>
+            </div>
+
+            <div class="stats-right span4 pull-left">
+              <div class="contributions-box stat pull-right">
+                <div class="text-center"><%= current_user.posts.count || current_user.posts.count = 0 %></div>
+                <div class="text-center small uppercase">Contributions</div>
+              </div>
+              <div class="Points-box stat pull-right">
+                <div class="text-center"> <%= current_user.points.count || current_user.points.count = 0 %></div>
+                <div class="text-center small uppercase">Points</div>
+              </div>
+              <div class="favorites-box stat pull-right">
                 <div class="text-center">0</div>
-                <div class="text-left small uppercase">Followers</div>
+                <div class="text-center small uppercase">Favorites</div>
               </div>
             </div>
           </div>
-          <div class="user-av span2">
-            <div class="useravatar"><%= image_tag current_user.avatar.url(:thumb), :class => "img-circle"%></div>
+
+          <div class="row action-buttons text-center">
             <ul>
-              <li><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
-              <li id="industry"><%= current_user.category.name %></i></li>
+              <li class="btn">Follow</li>
+              <li class="btn">Credit</li>
+              <li class="btn">Porfolio</li>
             </ul>
           </div>
-
-          <div class="stats-right span4 pull-left">
-            <div class="contributions-box stat pull-right">
-              <div class="text-center"><%= current_user.posts.count || current_user.posts.count = 0 %></div>
-              <div class="text-center small uppercase">Contributions</div>
-            </div>
-            <div class="Points-box stat pull-right">
-              <div class="text-center"> <%= current_user.points.count || current_user.points.count = 0 %></div>
-              <div class="text-center small uppercase">Points</div>
-            </div>
-            <div class="favorites-box stat pull-right">
-              <div class="text-center">0</div>
-              <div class="text-center small uppercase">Favorites</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row action-buttons text-center">
-          <ul>
-            <li class="btn">Follow</li>
-            <li class="btn">Credit</li>
-            <li class="btn">Porfolio</li>
-          </ul>
-        </div>
-      </div><!--end of user information div -->
+        </div><!--end of user information div -->
+      </details>
     </div>
   </div>
 
   <!-- user form to make post -->
-
-  <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">  Make New Post</button>
-
-
+  <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> Make New Post</button>
 <!-- Modal -->
-<%= render 'users/post_form' %>
+  <%= render 'users/post_form' %><ul class="nav nav-tabs" role="tablist" id="myTab">
+  <ul class="nav nav-tabs" role="tablist" id="myTab">
+  <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+  <li><a href="#members" role="tab" data-toggle="tab">Members</a></li>
+  <li><a href="" role="tab" data-toggle="tab"></a></li>
+  <li><a href="#members" role="tab" data-toggle="tab">Settings</a></li>
+</ul>
 
-
-  <!-- posts area-->
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
   <div class="row">
     <div class="posts-area">
       <div class="post-details">
@@ -104,5 +110,27 @@
       </div>
     </div>
   </div>
+
+
+
+  </div>
+  <div class="tab-pane" id="profile"></div>
+  <div class="tab-pane" id="messages"></div>
+  <div class="tab-pane" id="members"><div class="all-members">
+    <% @members.each do |member| %>
+    <li><%= link_to "#{member.first_name} #{member.last_name}", member_path(member)%></li>
+    <%end%>
+  </div></div>
+</div>
+
+<script>
+  $(function () {
+    $('#myTab a:last').tab('show')
+  })
+</script>
+
+
+  <!-- posts area-->
+
 </div>
 
