@@ -120,8 +120,8 @@ ul li {
 .myfollowers .stat  {
   padding-left:20px;
 }
-.action-buttons {
-
+.action-buttons .btn{
+  border:0px;
 }
 .action-buttons ul li {
   display: inline-block;

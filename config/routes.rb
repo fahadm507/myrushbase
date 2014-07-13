@@ -5,10 +5,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show] do
     resources :points, only: [:create, :destroy]
+    member do
+      get :following, :followers
+    end
   end
+  resources :followers, only: [:create, :destroy]
   resources :members, only: [:index, :show]
   resources :posts, only: [:create, :new, :destroy] do
-    resources :comments
+    resources :comments, only:[:create, :new, :destroy]
     resources :likes, only: [:new, :create, :destroy]
   end
   # You can have the root of your site routed with "root"

@@ -21,12 +21,12 @@
 
             <div class="followers-box stat pull-left">
               <div class="text-center"><%= current_user.following_users.count || 0 %></div>
-              <div class="text-left small uppercase">Followers</div>
+              <div class="text-left small uppercase"><a href="<%= followers_user_path(current_user) %>">Followers</a></div>
             </div>
 
             <div class="following-box stat pull-left">
               <div class="text-center"><%= current_user.followed_users.count || 0 %></div>
-              <div class="text-center small uppercase">Following</div>
+              <div class="text-center small uppercase"><a href="<%= following_user_path(current_user) %>">Following</a></div>
             </div>
 
             <div class="stats-right span4 pull-left">
@@ -49,7 +49,7 @@
             <ul>
               <li class="btn">Follow</li>
               <li class="btn">Credit</li>
-              <li class="btn">Contriubtions></li>
+              <li class="btn">Full Profile</li>
             </ul>
           </div>
         </div><!--end of user information div -->
@@ -124,6 +124,5 @@
 
 
   <!-- posts area-->
-
 </div>
 

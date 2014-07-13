@@ -1,0 +1,2 @@
+<%= form_for(current_user.following_users.find_by_followed_user_id(@user), html: { method: :delete }) do |f| %>
+<%= f.submit "Following", class: "btn-success btn-large" %><% end %>
