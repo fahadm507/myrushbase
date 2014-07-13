@@ -7,10 +7,10 @@ body {
 z-index: 0;
 background-position:top center;
 background-repeat:no-repeat;
-background:#eff0f2;
+background:#e7e7e7;
 font-family:"Open Sans",helvetica,arial,sans-serif;
 font-weight:400;
-font-size: 10.5pt;
+font-size: 12.5pt;
 }
 div {
   display:block;
@@ -47,7 +47,7 @@ ul li {
 
   margin-left:60px;
 }
-.navbar formd {
+.navbar form {
   width:500px;
 }
 
@@ -60,9 +60,7 @@ ul li {
 }
 
 /** Search Bar **/
-.navbar-inverse .navbar-nav > ul> li:first-child {
 
-}
 .form-search {
   display:block;
   float:left;
@@ -81,12 +79,14 @@ ul li {
   padding:50px;
   margin-bottom: 100px !important;
   height:100%;
-  border:10px solid #fff;
+  border:5px solid #fff;
+  border-radius:10px;
+  background-color: #e7e7e7;
 }
 
 .dashboard {
   background: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 20px;
   border:5px solid #E3E8E6;
   width:800px;
@@ -170,7 +170,7 @@ ul li {
 .post-content {
   padding:20px;
   margin:20px;
-  border:5px solid #E3E8E6;
+  border:5px solid #fff;
 }
 .form-control {
   width:700px
@@ -201,7 +201,8 @@ ul li {
   padding: 30px;
   overflow: auto;
   margin-bottom: 20px;
-  border:10px solid #E3E8E6;
+  border:5px solid #fff;
+  border-radius: 10px;
   height:auto;
 
 }
