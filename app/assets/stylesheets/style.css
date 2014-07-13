@@ -110,14 +110,11 @@ ul li {
 .aside li {
   text-align: left;
 }
-
 .useravatar > img{
   margin-top:;
 }
-.stats {
 
-}
-.myfollowers .stat  {
+.myfollowers .stat {
   padding-left:20px;
 }
 .action-buttons .btn{

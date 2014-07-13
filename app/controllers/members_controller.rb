@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
   def index
-    @members = User.order(created_at: :desc).limit(10)
+    @users = User.order(created_at: :desc).limit(10)
   end
 
   def show
@@ -12,3 +12,5 @@ class MembersController < ApplicationController
     @point = Point.new
   end
 end
+
+

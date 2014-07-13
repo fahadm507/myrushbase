@@ -1,8 +1,16 @@
 <div class="row">
-  <div class="all-members">
-    <% @members.each do |member| %>
-    <li><%= link_to "#{member.first_name} #{member.last_name}", member_path(member)%></li>
+  <% if current_user %>
+    <div class="all-members">
+      <% @users.each do |user| %>
+      <div class="span4 pull-left">
+        <div class="useravatar"><%=image_tag user.avatar.url(:thumb), :class => "img-circle"%></div>
+      </div>
+      <div class="span4">
+        <li><%= link_to "#{user.first_name} #{user.last_name}", user_path(user)%></li>
+      </div>
+      <hr>
     <%end%>
-  </div>
+  <%end%>
 </div>
+
 <!--post modal -->

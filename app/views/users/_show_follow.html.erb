@@ -1,0 +1,14 @@
+<% provide(:title, @title) %>
+  <div class="row">
+    <aside class="span8">
+      <section>
+      <% if @users.any? %>
+        <% @users.each do |user| %>
+          <div class="user-avatar"><%= image_tag user.avatar.url(:thumb), :class => "img-circle"%></div> %>
+          <%= render 'members/unfollow' %>
+        <%end%>
+      <%end%>
+      </section>
+  </aside>
+
+</div>

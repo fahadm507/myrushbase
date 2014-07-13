@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     end
   end
   resources :followers, only: [:create, :destroy]
-  resources :members, only: [:index, :show]
   resources :posts, only: [:create, :new, :destroy] do
     resources :comments, only:[:create, :new, :destroy]
     resources :likes, only: [:new, :create, :destroy]
