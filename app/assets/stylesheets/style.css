@@ -52,6 +52,16 @@ ul li {
 }
 
 /************************************* NAVIGATION-BAR STYLING  ***************************/
+.navbar {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.navbar-nav li {
+  color:#fff;
+}
+.navbar-brand a {
+  color:#fff;
+}
 
 .registration-btns li {
   padding:0 10 0 10;

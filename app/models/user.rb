@@ -20,4 +20,16 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :thumbnail => "50x50>", :tiny =>"20x20>" }, :default_url => "/assets/images/user-default.jpeg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  def following?(other_user)
+    followers.find_by_followed_user_id(other_user.id)
+  end
+
+  def follow!(other_user)
+    followers.create!(followed_user_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    followers.find_by_followed_user_id(other_user.id).destroy
+  end
 end
