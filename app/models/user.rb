@@ -26,8 +26,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :thumbnail => "50x50>", :tiny =>"20x20>" }, :default_url => "/assets/images/user-default.jpeg"
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :avatar, styles: { medium: "300x300>",
+    thumb: "100x100>", thumbnail: "50x50>", tiny: "20x20>" },
+    default_url: "user-default.jpeg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id)

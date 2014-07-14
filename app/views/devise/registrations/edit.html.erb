@@ -7,7 +7,6 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= devise_error_messages! %>
 
-          <%= image_tag current_user.avatar.url(:thumb)%>
           <div class"text-center"><%= f.label "Change Avatar" %>
             <div class="file"><%= f.file_field :avatar %>
             </div>
