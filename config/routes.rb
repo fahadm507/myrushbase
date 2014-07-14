@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :followers, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   resources :posts, only: [:create, :new, :destroy] do
     resources :comments, only:[:create, :new, :destroy]
     resources :likes, only: [:new, :create, :destroy]

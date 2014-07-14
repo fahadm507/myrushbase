@@ -20,7 +20,7 @@
             </div>
 
             <div class="followers-box stat pull-left">
-              <div class="text-center"><%= current_user.following_users.count || 0 %></div>
+              <div class="text-center"><%= current_user.followers.count || 0 %></div>
               <div class="text-left small uppercase"><a href="<%= followers_user_path(current_user) %>">Followers</a></div>
             </div>
 

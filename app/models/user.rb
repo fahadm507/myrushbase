@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
 
+  has_many :reverse_relationships, foreign_key: "followed_id",
+            class_name: 'Relationship', dependent: :destroy
+  has_many : followers, through: :reverse_relationships, source: :follower
+
+
   belongs_to :category
   has_many :posts
   has_many :comments
@@ -24,15 +29,16 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>", :thumbnail => "50x50>", :tiny =>"20x20>" }, :default_url => "/assets/images/user-default.jpeg"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-  def self.is_following?(other_user, current_user)
-    current_user.followed_users.where(followed_user_id: other_user.id).exists?
+  def following?(other_user)
+    relationships.find_by(followed_id: other_user.id)
   end
 
-  def follow!(other_user, current_user)
-    current_user.followers.build(followed_user_id: other_user.id)
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
   end
 
   def unfollow!(other_user)
-    Follower.find_by(other_user.id).destroy
+    relationships.find_by(followed_id: other_user.id).destroy
   end
+
 end
