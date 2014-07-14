@@ -5,6 +5,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry-rails'
   gem 'launchy'
+  gem 'dotenv-rails'
 end
 gem 'aws-sdk'
 gem "factory_girl_rails", "~> 4.0"

@@ -19,7 +19,7 @@ def make_users
   99.times do |m|
     first_name  = Faker::Name.first_name
     last_name = Faker::Name.first_name
-    email = "example-#{m+1}@fahadm.org"
+    email = "example-#{m+1}@fahadm5.org"
     password  = "password"
     User.create!(first_name: first_name,
                  last_name: last_name,
