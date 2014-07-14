@@ -1,3 +1,0 @@
-<%= form_for(Followers.current_user.where(following_user_id: @user.id), html: { method: :delete }) do |f| %>
-<%= f.submit "Following", class: "btn-success btn-large" %><% end %>
-

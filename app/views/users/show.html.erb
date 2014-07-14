@@ -11,30 +11,31 @@
         <div class="user-info">
           <div class="row text-center stats">
             <div class="user-av span2 pull-left">
-              <div class="useravatar"><%= image_tag current_user.avatar.url(:thumb), :class => "img-circle"%></div>
+              <div class="useravatar"><%= image_tag @user.avatar.url(:thumb), :class => "img-circle"%></div>
               <ul>
-                <li><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
+                <li><a class="user-name" href="/users"><%= @user.first_name %> <%=@user.last_name %></a></li>
                 <li class=""> </i></li>
               </ul>
             </div>
 
             <div class="followers-box stat pull-left">
-              <div class="text-center"><%= current_user.following_users.count || 0 %></div>
+              <div class="text-center"><%=
+              @user.following_users.count || 0 %></div>
               <div class="text-left small uppercase"><a href="<%= followers_user_path(current_user) %>">Followers</a></div>
             </div>
 
             <div class="following-box stat pull-left">
-              <div class="text-center"><%= current_user.followed_users.count || 0 %></div>
+              <div class="text-center"><%=@user.followed_users.count ||= 0 %></div>
               <div class="text-center small uppercase"><a href="<%= following_user_path(current_user) %>">Following</a></div>
             </div>
 
             <div class="stats-right span4 pull-left">
               <div class="contributions-box stat pull-right">
-                <div class="text-center"><%= current_user.posts.count || current_user.posts.count = 0 %></div>
+                <div class="text-center"><%= @user.posts.count ||= 0 %></div>
                 <div class="text-center small uppercase">Contributions</div>
               </div>
               <div class="Points-box stat pull-right">
-                <div class="text-center"> <%= current_user.points.count || current_user.points.count = 0 %></div>
+                <div class="text-center"> <%= @user.points.count ||= 0 %></div>
                 <div class="text-center small uppercase">Points</div>
               </div>
               <div class="favorites-box stat pull-right">
@@ -56,7 +57,7 @@
   </div>
 
   <ul class="nav nav-tabs" role="tablist" id="myTab">
-    <li><a href="#home" role="tab" data-toggle="tab">Trends</a></li>
+    <li><a href="#home" role="tab" data-toggle="tab">Posts</a></li>
     <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
     <li><a href="#members" role="tab" data-toggle="tab">Members</a></li>
     <li><a href="#home" role="tab" data-toggle="tab">Favorites</a></li>
@@ -67,11 +68,11 @@
       <div class="row">
         <div class="posts-area">
           <div class="post-details">
-            <% current_user.posts.order(created_at: :desc).each do |post| %>
+            <% @user.posts.order(created_at: :desc).each do |post| %>
             <div class="poster">
-              <div class="image-for-poster pull-left"><%= image_tag current_user.avatar.url(:thumbnail), class: "img-circle post-avatar"%></div>
+              <div class="image-for-poster pull-left"><%= image_tag @user.avatar.url(:thumbnail), class: "img-circle post-avatar"%></div>
               <div class="post-image-n-time">
-                <div class="user-name"><a> <%= current_user.first_name %> <%= current_user.last_name %></a></div>
+                <div class="user-name"><a> <%= @user.first_name %> <%= @user.last_name %></a></div>
                 <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
               </div>
             </div>
@@ -110,14 +111,8 @@
     </div>
 
     <div class="tab-pane" id="home"></div>
-    <div class="tab-pane" id="members"></div>
-    <div class="tab-pane" id="members">
-      <div class="all-members">
-        <% @users.each do |user| %>
-        <li><%= link_to "#{user.first_name} #{user.last_name}", user_path(user)%></li>
-        <%end%>
-      </div>
-    </div>
+
+
   </div>
 
 

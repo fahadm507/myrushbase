@@ -1,8 +1,8 @@
 
-class FollowersController < ApplicationController
+class RelationshipsController < ApplicationController
+  before_action :sign_in_user
   def create
-
-    @user = User.find(current_user.id)
+    @user = User.find(params[:relationship][:followed_id])
     current_user.follow!(@user)
     redirect_to @user
   end
