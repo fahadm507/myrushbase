@@ -1,10 +1,12 @@
 class User < ActiveRecord::Base
-  has_many :followers, foreign_key: :following_user_id
-  has_many :reverse_followers, foreign_key: :followed_user_id, class_name: "Follower",
-            dependent: :destroy
+  # has_many :followers, foreign_key: :following_user_id
+  # has_many :reverse_followers, foreign_key: :followed_user_id, class_name: "Follower",
+  #           dependent: :destroy
 
-  has_many :followed_users, through: :followers, foreign_key: :followed_user_id
-  has_many :following_users, through: :reverse_followers, foreign_key: :following_user_id
+  # has_many :followed_users, through: :followers, foreign_key: :followed_user_id
+  # has_many :following_users, through: :reverse_followers, foreign_key: :following_user_id
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
 
   belongs_to :category
   has_many :posts
