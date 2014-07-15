@@ -2,12 +2,12 @@
 <div class="row">
     <div class="posts-area">
       <div class="post-details">
-        <% feed_posts.order(created_at: :desc).each do |post| %>
+        <% @feed_posts.order(created_at: :desc).each do |post| %>
         <div class="poster">
-          <div class="image-for-poster pull-left"><%= image_tag current_user.avatar.url(:thumbnail), class: "img-circle post-avatar"%>
+          <div class="image-for-poster pull-left"><%= image_tag post.user.avatar.url(:thumbnail), class: "img-circle post-avatar", size: "40x40"%>
           </div>
           <div class="post-image-n-time">
-            <div class="user-name"><a> <%= @user.first_name %> <%= @user.last_name %></a></div>
+            <div class="user-name"><a> <%= post.user.first_name %> <%= post.user.last_name %></a></div>
             <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
           </div>
         </div>

@@ -14,7 +14,8 @@
               <div class="useravatar"><%= image_tag @user.avatar.url(:thumb), :class => "img-circle"%></div>
               <ul>
                 <li><a class="user-name" href="/users"><%= @user.first_name %> <%=@user.last_name %></a></li>
-                <li class=""> </i></li>
+                <li class=""> </li>
+                <li><%=@user.category.name%></li>
               </ul>
             </div>
             <div class="stats_here">

@@ -1,24 +1,27 @@
 <div class="wrapper">
-  <div class="row">
-    <aside class="aside pull-right">
-      <ul>
-        <li><a class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> + Make New Post</a>
-          <%= render 'users/post_form' %>
-        </li>
-      </ul>
+  <div class="content">
+    <div class="row">
+      <aside class="aside pull-right">
+        <ul>
+          <li><a class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> + Make New Post</a>
+            <%= render 'users/post_form' %>
+          </li>
+        </ul>
       </aside>
-    <div class="dashboard">
+      <div class="dashboard">
         <div class="user-info">
           <div class="row text-center stats">
             <div class="user-av span2 pull-left">
               <div class="useravatar"><%= image_tag current_user.avatar.url(:tiny), :class => "img-circle"%></div>
               <ul>
                 <li><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
-                <li class=""> </i></li>
+                <li class=""></li>
+                <li><%=current_user.category.name%></li>
               </ul>
             </div>
-            <%=render 'users/stats'%>
 
+            <div class="">
+              <%=render 'users/stats'%>
             </div>
           </div>
 
@@ -30,76 +33,68 @@
             </ul>
           </div>
         </div><!--end of user information div -->
+      </div><!-- dashboard-->
     </div>
-  </div>
 
-  <ul class="nav nav-tabs" role="tablist" id="myTab">
-    <li><a href="#trends" role="tab" data-toggle="tab">Trends</a></li>
-    <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
-    <li><a href="#members" role="tab" data-toggle="tab">Members</a></li>
-    <li><a href="#home" role="tab" data-toggle="tab">Favorites</a></li>
-  </ul>
+    <ul class="nav nav-tabs" role="tablist" id="myTab">
+      <li><a href="#trends" role="tab" data-toggle="tab">Trends</a></li>
+      <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+      <li><a href="#members" role="tab" data-toggle="tab">Members</a></li>
+      <li><a href="#favorites" role="tab" data-toggle="tab">Favorites</a></li>
+    </ul>
 
-  <div class="tab-content">
-    <div class="tab-pane active" id="home">
-      <div class="row">
-        <div class="posts-area">
-          <div class="post-details">
-            <% current_user.posts.order(created_at: :desc).each do |post| %>
-            <div class="poster">
-              <div class="image-for-poster pull-left"><%= image_tag current_user.avatar.url(:thumbnail), class: "img-circle post-avatar"%></div>
-              <div class="post-image-n-time">
-                <div class="user-name"><a> <%= current_user.first_name %> <%= current_user.last_name %></a></div>
-                <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
-              </div>
-            </div>
-              <div class="post-body"><%= post.body %>
-                <ul class="count-comments-n-likes">
-                  <li><%= (post.comments.count) || post.likes.count = 0 %> Comments</li>
-                  <li><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
-                </ul>
-                <div class="comments-form">
-                  <%= bootstrap_form_for [post, @comment], html: {class: 'comment-form'} do |f| %>
-                    <%= f.text_area :description, hide_label: true, size: "20x2",required: true %>
-                    <div class="comment-like-btns">
-                      <div class="pull-left comment"><%= f.submit "Comment" %></div>
-                  <%end%>
-                      <% if Like.has_liked?(current_user.id, post.id) %>
-                        <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
-                      <% else %>
-                        <div class="pull-left like"><%= button_to [post, @like], html:{class: "btn btn-lg"} do %>
-                        Like
-                        </div><%end%>
-                      <% end %>
-                    </div>
-                </div><br><br>
-                <div class="comments-details">
-                  <% post.comments.each do |comment| %>
-                  <ul>
-                    <li><%=comment.description%></li>
-                  </ul>
-                  <%end%>
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+        <div class="row">
+          <div class="posts-area">
+            <div class="post-details">
+              <% current_user.posts.order(created_at: :desc).each do |post| %>
+              <div class="poster">
+                <div class="image-for-poster pull-left"><%= image_tag current_user.avatar.url(:thumbnail), class: "img-circle post-avatar"%></div>
+                <div class="post-image-n-time">
+                  <div class="user-name"><a> <%= current_user.first_name %> <%= current_user.last_name %></a></div>
+                  <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
                 </div>
               </div>
-            <%end%>
+                <div class="post-body"><%= post.body %>
+                  <ul class="count-comments-n-likes">
+                    <li><%= (post.comments.count) || post.likes.count = 0 %> Comments</li>
+                    <li><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
+                  </ul>
+                  <div class="comments-form">
+                    <%= bootstrap_form_for [post, @comment], html: {class: 'comment-form'} do |f| %>
+                      <%= f.text_area :description, hide_label: true, size: "20x2",required: true %>
+                      <div class="comment-like-btns">
+                        <div class="pull-left comment"><%= f.submit "Comment" %></div>
+                    <%end%>
+                        <% if Like.has_liked?(current_user.id, post.id) %>
+                          <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
+                        <% else %>
+                          <div class="pull-left like"><%= button_to [post, @like], html:{class: "btn btn-lg"} do %>
+                          Like
+                          </div><%end%>
+                        <% end %>
+                      </div>
+                  </div><br><br>
+                  <div class="comments-details">
+                    <% post.comments.each do |comment| %>
+                    <ul>
+                      <li><%=comment.description%></li>
+                    </ul>
+                    <%end%>
+                  </div>
+                </div>
+              <%end%>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="tab-pane" id="trends">
-    <%= render 'users/trends'%>
-    </ul>
-    </div>
-    <div class="tab-pane" id="members">
-      <div class="all-members">
-        <% @users.each do |user| %>
-        <li><%= link_to "#{user.first_name} #{user.last_name}", user_path(user)%></li>
-        <%end%>
+
+      <div class="tab-pane" id="trends">
+        <%= render 'users/trends'%>
       </div>
-    </div>
+
+
+    </div><!-- end of tab content-->
   </div>
-
-
-
-  <!-- posts area-->
 </div>
