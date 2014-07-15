@@ -43,13 +43,6 @@ ul li {
 .home-content p {
   color:white;
 }
-.navbar ul {
-
-  margin-left:60px;
-}
-.navbar form {
-  width:500px;
-}
 
 /************************************* NAVIGATION-BAR STYLING  ***************************/
 .navbar {
@@ -63,8 +56,14 @@ ul li {
   color:#fff;
 }
 .nav-image {
-  :30x30;
+  size:30;
   margin-top:5px;
+}
+.navbar ul {
+  margin-left:60px;
+}
+.navbar form {
+  width:500px;
 }
 
 .registration-btns li {
@@ -72,7 +71,6 @@ ul li {
   margin-right:10px;
   border-radius:10px;
 }
-
 /** Search Bar **/
 
 .form-search {
@@ -113,9 +111,6 @@ ul li {
 }
 .aside li {
   text-align: left;
-}
-.useravatar > img{
-  margin-top:;
 }
 
 .myfollowers .stat {
@@ -237,7 +232,9 @@ ul li {
   padding-right:50px;
   padding-left:50px;
 }
-
+.modal-content {
+  width:800px;
+}
 
 
 

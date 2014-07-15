@@ -11,11 +11,11 @@
         <div class="user-info">
           <div class="row text-center stats">
             <div class="user-av span2 pull-left">
-              <div class="useravatar"><%= image_tag @user.avatar.url(:thumb), :class => "img-circle"%></div>
+              <div class="useravatar"><%= image_tag @user.avatar.url(:thumbnail),class: "img-circle" %></div>
               <ul>
                 <li><a class="user-name" href="/users"><%= @user.first_name %> <%=@user.last_name %></a></li>
-                <li class=""> </li>
-                <li><%=@user.category.name%></li>
+                <li class=""><%= @user.category.name%> </li>
+                <li><%= %></li>
               </ul>
             </div>
             <div class="stats_here">
@@ -36,7 +36,7 @@
 
   <ul class="nav nav-tabs" role="tablist" id="myTab">
     <li class="active"><a href="#home" role="tab" data-toggle="tab">Posts</a></li>
-    <li><a href="#members" role="tab" data-toggle="tab">Members</a></li>
+    <li><a href="#members" role="tab" data-toggle="tab"></a></li>
   </ul>
 
   <div class="tab-content">

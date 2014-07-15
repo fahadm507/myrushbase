@@ -1,0 +1,31 @@
+
+<div class="row text-center">
+
+    <h3>Like minded people</h3>
+    <% if @users.any? %>
+
+      <% @users.each do |user| %>
+        <div class="col-md-5">
+         <%= user.first_name%><%= user.last_name%>
+        </div>
+        <div class="col-md-5">
+
+          <% if current_user.following?(user) %>
+            <%= form_for(current_user.relationships.find_by(followed_id: user.id),
+             html: { method: :delete }, remote: true) do |f| %>
+            <%= f.submit "Following", class: "btn-success btn-large" %><br/>
+            <% end %><br/>
+          <% else %>
+            <div class="followers">
+              <%= form_for(current_user.relationships.build(followed_id:user.id), remote: true) do |f| %>
+                <div><%= f.hidden_field :followed_id %></div>
+                <%= f.submit "Follow", class: "btn btn-large btn-primary" %>
+              <% end %>
+            </div><br/>
+          <% end %>
+        </div>
+       <% end %>
+    <%end%>
+    </div>
+  </div>
+</div>

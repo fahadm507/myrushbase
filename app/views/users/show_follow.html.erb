@@ -3,16 +3,16 @@
 <div class="row">
     <h3><%= @title %></h3>
     <% if @users.any? %>
-      <ul class="users">
+
       <% @users.each do |user| %>
-        <div class="span6">
-          <li><%= user.first_name%> <%= user.last_name%></li>
+        <div class="col-md-5">
+         <%= user.first_name%><%= user.last_name%>
         </div>
-        <div class="span4">
-          <%= render 'users/follow_form' %>
+        <div class="col-md-4">
+          <%= render 'users/follow_form' %><br/>
         </div>
        <% end %>
-      </ul>
+
     <%end%>
     </div>
   </div>
