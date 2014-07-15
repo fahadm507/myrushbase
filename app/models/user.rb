@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
             class_name: 'Relationship', dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   belongs_to :category
+  has_many :questions
+  has_many :answers
   has_many :posts
   has_many :comments
   has_many :likes
