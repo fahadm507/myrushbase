@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713201722) do
+ActiveRecord::Schema.define(version: 20140715200628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 20140713201722) do
   add_index "likes", ["post_id"], name: "index_likes_on_post_id", using: :btree
   add_index "likes", ["user_id", "post_id"], name: "index_likes_on_user_id_and_post_id", unique: true, using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
+
+  create_table "locations", force: true do |t|
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "points", force: true do |t|
     t.integer  "user_id",    null: false
@@ -94,6 +102,7 @@ ActiveRecord::Schema.define(version: 20140713201722) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "category_id"
+    t.string   "location"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
