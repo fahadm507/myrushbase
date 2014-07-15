@@ -5,8 +5,7 @@ class CreateLikes < ActiveRecord::Migration
       t.integer :user_id, null: false
       t.integer :post_id, null: false
 
-      t.times
-      tamps
+      t.timestamps
     end
   end
 end
