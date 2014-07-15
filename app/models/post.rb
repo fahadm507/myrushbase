@@ -10,4 +10,8 @@ class Post < ActiveRecord::Base
     followed_user_ids = user.followed_user_ids
     where("user_id IN (?) OR user_id = ? ", followed_user_ids, user)
   end
+
+  def self.posts_category(category)
+    user_ids = category.users_ids
+    where("user_id IN (?) ", user_ids )
 end
