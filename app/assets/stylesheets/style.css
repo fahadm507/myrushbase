@@ -62,9 +62,9 @@ ul li {
 .navbar-brand a {
   color:#fff;
 }
-.nav-photo {
-  size:30x30;
-  padding-top:10px;
+.nav-image {
+  :30x30;
+  margin-top:5px;
 }
 
 .registration-btns li {

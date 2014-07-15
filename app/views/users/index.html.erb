@@ -1,4 +1,3 @@
-
 <div class="wrapper">
   <div class="row">
     <aside class="aside pull-right">
@@ -18,30 +17,8 @@
                 <li class=""> </i></li>
               </ul>
             </div>
+            <%=render 'users/stats'%>
 
-            <div class="followers-box stat pull-left">
-              <div class="text-center"><%= current_user.followers.count || 0 %></div>
-              <div class="text-left small uppercase"><a href="<%= followers_user_path(current_user) %>">Followers</a></div>
-            </div>
-
-            <div class="following-box stat pull-left">
-              <div class="text-center"><%= current_user.followed_users.count || 0 %></div>
-              <div class="text-center small uppercase"><a href="<%= following_user_path(current_user) %>">Following</a></div>
-            </div>
-
-            <div class="stats-right span4 pull-left">
-              <div class="contributions-box stat pull-right">
-                <div class="text-center"><%= current_user.posts.count || current_user.posts.count = 0 %></div>
-                <div class="text-center small uppercase">Contributions</div>
-              </div>
-              <div class="Points-box stat pull-right">
-                <div class="text-center"> <%= current_user.points.count || current_user.points.count = 0 %></div>
-                <div class="text-center small uppercase">Points</div>
-              </div>
-              <div class="favorites-box stat pull-right">
-                <div class="text-center">0</div>
-                <div class="text-center small uppercase">Favorites</div>
-              </div>
             </div>
           </div>
 
@@ -57,7 +34,7 @@
   </div>
 
   <ul class="nav nav-tabs" role="tablist" id="myTab">
-    <li><a href="#home" role="tab" data-toggle="tab">Trends</a></li>
+    <li><a href="#trends" role="tab" data-toggle="tab">Trends</a></li>
     <li class="active"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
     <li><a href="#members" role="tab" data-toggle="tab">Members</a></li>
     <li><a href="#home" role="tab" data-toggle="tab">Favorites</a></li>
@@ -109,9 +86,10 @@
         </div>
       </div>
     </div>
-
-    <div class="tab-pane" id="home"></div>
-    <div class="tab-pane" id="members"></div>
+    <div class="tab-pane" id="trends">
+    <%= render 'users/trends'%>
+    </ul>
+    </div>
     <div class="tab-pane" id="members">
       <div class="all-members">
         <% @users.each do |user| %>
@@ -125,4 +103,3 @@
 
   <!-- posts area-->
 </div>
-

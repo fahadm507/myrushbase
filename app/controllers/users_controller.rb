@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @like = Like.new
     @point = Point.new
     @users = User.order(created_at: :desc).limit(10)
+    @feed_posts = Post.posts_from_users(current_user)
   end
 
   def show
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
     @comment= Comment.new
     @like = Like.new
     @point = Point.new
+
   end
 
   def following
