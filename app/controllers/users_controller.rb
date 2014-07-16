@@ -6,8 +6,17 @@ class UsersController < ApplicationController
     @comment= Comment.new
     @like = Like.new
     @point = Point.new
+
     @suggested_users = User.suggested_users(current_user.category)
     @feed_posts = Post.posts_from_users(current_user).limit(10)
+  end
+
+  def search
+    if params[:search]
+      @search_results = User.search_users(params[:search], current_user, params[:category][:id])
+    end
+    # search for users
+    # will render search.html.erb
   end
 
   def show

@@ -36,6 +36,12 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  def self.search_users(query,user,category_id)
+    location= user.location
+    # category = user.category
+    where("first_name like ? OR last_name like ? AND category_id = ?", "%#{query}%", "%#{query}%", category_id)
+  end
+
   def self.suggested_users(category)
     user_ids = category.user_ids
     where("id IN (?)", user_ids)
