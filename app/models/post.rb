@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
   default_scope -> {order('created_at DESC')}
 
-def self.posts_from_users(user)
+  def self.posts_from_users(user)
     followed_user_ids = user.followed_user_ids
     where("user_id IN (?) OR user_id = ? ", followed_user_ids, user)
   end
