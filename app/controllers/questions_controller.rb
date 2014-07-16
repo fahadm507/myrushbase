@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
-
+  def index
+    @questions = Question.questions_category(current_user.category)
+  end
   def edit
     @question = Question.find(params[:id])
   end

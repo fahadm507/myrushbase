@@ -21,7 +21,7 @@ ul li {
 
 /************************************** HOME PAGE STYLES ***************/
 .jumbotron {
-    background:url(highfive.jpg) no-repeat center center;
+    background:url("https://s3-us-west-2.amazonaws.com/rushbase-development/highfive.jpg") no-repeat center center;
     background-size:cover;
     height:100%;
     width:100%;

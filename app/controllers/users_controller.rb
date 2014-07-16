@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   def index
+    @questions = Question.find_questions_and_answers(current_user.category)
+    @question = Question.new
     @post = Post.new
     @comment= Comment.new
     @like = Like.new
     @point = Point.new
-    @users = User.order(created_at: :desc).limit(10)
+    @suggested_users = User.suggested_users(current_user.category)
     @feed_posts = Post.posts_from_users(current_user).limit(10)
   end
 
@@ -14,7 +16,6 @@ class UsersController < ApplicationController
     @comment= Comment.new
     @like = Like.new
     @point = Point.new
-
   end
 
   def following

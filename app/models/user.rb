@@ -36,6 +36,11 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  def self.suggested_users(category)
+    user_ids = category.user_ids
+    where("id IN (?)", user_ids)
+  end
+
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id)
   end

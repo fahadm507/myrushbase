@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
   has_many :answers
 
   def self.find_questions_and_answers(category)
-    user_ids = category.users_ids
+    user_ids = category.user_ids
     where("user_id IN (?) ", user_ids )
   end
 end
