@@ -1,0 +1,31 @@
+
+<div class="search">
+
+  <div class="row">
+    <div class="cat">
+
+    <%= form_tag('/search', method: "get", id: "search-form", class: "navbar-form navbar-bar form-inline", role: "search") do %>
+      <%= collection_select :category, :id, Category.all, :id, :name , class: "input-group-addon selection"%>
+        <%= text_field_tag :search, params[:search], placeholder: "search users", class: " form-control serch-query  inputsearch"%>
+        <%= submit_tag "search", class: "btn btn-default", name: nil %>
+      </div>
+    <%end%>
+  </div>
+</div>
+
+<hr>
+
+<div class="search results">
+  <div class="row">
+    <div class="">
+    <%if @search_results != [] %>
+      <% @search_results.each do |user| %>
+      <%= user.first_name %> <%= user.last_name%>
+      <%= user.category.name%>
+      <%end%>
+    <%end%>
+    </div>
+  </div>
+</div>
+
+

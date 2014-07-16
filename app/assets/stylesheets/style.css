@@ -62,9 +62,6 @@ ul li {
 .navbar ul {
   margin-left:60px;
 }
-.navbar form {
-  width:500px;
-}
 
 .registration-btns li {
   padding:0 10 0 10;
@@ -96,6 +93,10 @@ ul li {
   background-color: #e7e7e7;
 }
 
+
+.inputsearch{
+  width:400px;
+}
 .dashboard {
   background: #fff;
   border-radius: 10px;
@@ -178,9 +179,7 @@ ul li {
   margin:20px;
   border:5px solid #fff;
 }
-.form-control {
-  width:700px
-}
+
 .pull-left {
   float:left;
 }
