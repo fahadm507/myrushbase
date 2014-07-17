@@ -24,7 +24,7 @@ ul li {
 
 /************************************** HOME PAGE STYLES ***************/
 .jumbotron {
-    background:url(Class_photo2.JPG) no-repeat center center;
+    background:url("https://s3-us-west-2.amazonaws.com/rushbase-development/classphot.jpg") no-repeat center center;
     background-size:cover;
     height:100%;
     width:100%;
@@ -317,7 +317,7 @@ ul li {
   margin-top:120px;
 }
 .page-section#how {
-  background: url(class-photo5.JPG) bottom center no-repeat;
+  background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/class-photo5.JPG") bottom center no-repeat;
   background-size: cover;
   background-position: top right;
   position: relative;
@@ -325,11 +325,10 @@ ul li {
   left: 0;
 }
 .page-section#members {
-  background: url(highfive.jpg) top center no-repeat;
+  background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/highfive.jpg") top center no-repeat;
   background-color:white;
 }
 .page-section#about {
-  background: url(highfive.jpg) top center no-repeat;
   background-color:white;
 
 }
