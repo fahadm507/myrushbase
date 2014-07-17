@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-    @questions = Question.find_questions_and_answers(current_user.category)
     @question = Question.new
     @post = Post.new
     @comment= Comment.new
@@ -11,9 +10,10 @@ class UsersController < ApplicationController
   end
 
   def search
+
     if params[:category]
-      @search_results = User.users_by_category(params[:search], current_user, params[:category][:id])
-      render 'search'
+       @search_results = User.users_by_category(params[:search], current_user, params[:category][:id])
+       render 'search'
     else
       @search_results = User.search_users(params[:search], current_user)
       render 'search'

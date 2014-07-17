@@ -44,7 +44,6 @@ class User < ActiveRecord::Base
     where("first_name like ? OR last_name like ?", "%#{query}%", "%#{query}%")
   end
 
-
   def self.suggested_users(category)
     user_ids = category.user_ids
     where("id IN (?)", user_ids)

@@ -1,7 +1,10 @@
 /*** global ***/
 html, body {
   height:100%;
-  color:#42484d;;
+  color:#42484d;
+  margin:0px;
+  padding:0px;
+
 }
 body {
 z-index: 0;
@@ -21,17 +24,21 @@ ul li {
 
 /************************************** HOME PAGE STYLES ***************/
 .jumbotron {
-    background:url("https://s3-us-west-2.amazonaws.com/rushbase-development/highfive.jpg") no-repeat center center;
+    background:url(Class_photo2.JPG) no-repeat center center;
     background-size:cover;
     height:100%;
     width:100%;
     margin:auto 0;
     position:fixed;
-    top:0;
-    left:0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: -99;
     background-color:transparent;
-    background-color:rgba(255, 255, 255, 0.9);
+    opacity: .5;
+
+
   }
 .home-content h1 {
   padding-top:150px;
@@ -44,12 +51,12 @@ ul li {
   color:white;
 }
 
-/************************************* NAVIGATION-BAR STYLING  ***************************/
+/************************************* NAVIGATION-BAR STYLING  *************************/
 .navbar {
   background-color: #5cb85c;
-  border-color: #4cae4c;
+
 }
-.navbar-nav li {
+.navbar-nav li a{
   color:#fff;
 }
 .navbar-brand a {
@@ -235,6 +242,97 @@ ul li {
   width:800px;
 }
 
+
+/* TESTING LANDING PAGE*/
+
+
+.header {
+  position: fixed;
+  width:100%;
+  background:#5cb85c;
+  z-index: 10;
+  right: 0;
+  left: 0;
+}
+.container {
+  width:100%;
+}
+.header .navbar-brand {
+  font-weight: 900;
+}
+.header .navbar {
+  margin: 0;
+  border: none;
+
+}
+.page-section {
+  width: 100%;
+  min-height: 800px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+}
+.page-section h1 {
+  font-size: 4em;
+  margin: 50px 0;
+}
+.page-section h1 span {
+  font-weight: 200;
+}
+.page-section h2 {
+  font-size: 3em;
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 30px;
+  text-shadow: 2px 2px 2px #000;
+}
+.page-section p {
+  font-size: 1.2em;
+  font-weight: 200;
+  margin: 0 25% 20px 0;
+}
+.page-section p.lead {
+  font-size: 1.8em;
+}
+.page-section p.caption {
+  color: #fff;
+  padding: 20px;
+  background: url();
+  text-shadow: 1px 1px 1px #000;
+}
+.page-section#home {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#homepage h2 {
+  color: #fff;
+  text-align: center;
+}
+#homepage .btn {
+  font-size:20pt;
+  width:200px;
+  height:60px;
+  color:#fff;
+  margin-top:120px;
+}
+.page-section#how {
+  background: url(class-photo5.JPG) bottom center no-repeat;
+  background-size: cover;
+  background-position: top right;
+  position: relative;
+  right: 0;
+  left: 0;
+}
+.page-section#members {
+  background: url(highfive.jpg) top center no-repeat;
+  background-color:white;
+}
+.page-section#about {
+  background: url(highfive.jpg) top center no-repeat;
+  background-color:white;
+
+}
 
 
 
