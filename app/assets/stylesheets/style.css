@@ -8,12 +8,11 @@ html, body {
 }
 body {
 z-index: 0;
-background-position:top center;
 background-repeat:no-repeat;
-background:#e7e7e7;
+
 font-family:"Open Sans",helvetica,arial,sans-serif;
 font-weight:400;
-font-size: 12.5pt;
+font-size:12.5pt;
 }
 div {
   display:block;
