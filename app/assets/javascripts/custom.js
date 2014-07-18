@@ -24,6 +24,34 @@ $(document).ready(function() {
     event.preventDefault();
     $('#main-nav').toggleClass("open");
   });
+  // $('.comment-form').on('ajax:success', function(e, data, textStatus, jqXHR){
+  //   $(this).closest(".comments-details").toggleClass("text-center")
+  //   console.log(data.description);
+  // });
+
+  $('.post').on('submit', '.comment-form', function(event) {
+    event.preventDefault();
+
+    var $post = $(event.delegateTarget);
+
+    var action = $(this).attr('action');
+    var data = $(this).serialize();
+
+    $.ajax({
+      url: action,
+      method: 'POST',
+      data: data,
+      success: function(data) {
+        $post.find('#comment-for-post').append('<li>' + data.description + '</li>');
+        $post.find('#comment_description').val('');
+        currentLikesCount = parseInt($post.find('.likes-count').text(), 10);
+        $post.find('.likes-count').text(currentLikesCount + 1);
+      },
+      error: function(errors) {
+
+      }
+    });
+  });
 });
 // scroll function
 function scrollToID(id, speed){
@@ -41,3 +69,15 @@ if (typeof console === "undefined") {
         log: function() { }
     };
 }
+
+
+
+
+
+
+
+
+
+
+
+

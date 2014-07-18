@@ -2,8 +2,11 @@
   <div class="row">
     <aside class="aside pull-right">
       <ul>
+      <%if current_user == @user %>
         <li><a class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> View Full Profile</a>
-
+      <%else%>
+        <li><a class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> View Full Profile</a>
+      <%end%>
         </li>
       </ul>
       </aside>
@@ -15,7 +18,7 @@
               <ul>
                 <li><a class="user-name" href="/users"><%= @user.first_name %> <%=@user.last_name %></a></li>
                 <li class=""><%= @user.category.name%> </li>
-                <li><%= %></li>
+                <li><%= @user.location %></li>
               </ul>
             </div>
             <div class="stats_here">
@@ -25,20 +28,24 @@
 
           <div class="row action-buttons text-center">
             <ul>
+            <%if current_user != @user %>
               <li class="btn"><%= render 'users/follow_form'%></li>
-              <li class="btn">Credit</li>
+              <li class="btn"><%= render 'users/credit'%></li>
+            <%else%>
               <li class="btn">Full Profile</li>
+            <%end%>
             </ul>
           </div>
         </div><!--end of user information div -->
     </div>
   </div>
-
-  <ul class="nav nav-tabs" role="tablist" id="myTab">
-    <li class="active"><a href="#home" role="tab" data-toggle="tab">Posts</a></li>
-    <li><a href="#members" role="tab" data-toggle="tab"></a></li>
-  </ul>
-
+  <%if current_user == @user%>
+    <%= render 'users/user_nav'%>
+  <%else%>
+    <ul class="nav nav-tabs" role="tablist" id="myTab">
+      <li class="active"><a href="#home" role="tab" data-toggle="tab">Posts</a></li>
+    </ul>
+  <%end%>
   <div class="tab-content">
     <div class="tab-pane active" id="home">
       <div class="row">
@@ -58,11 +65,9 @@
                   <li><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
                 </ul>
                 <div class="comments-form">
-                  <%= bootstrap_form_for [post, @comment], html: {class: 'comment-form'} do |f| %>
-                    <%= f.text_area :description, hide_label: true, size: "20x2",required: true %>
-                    <div class="comment-like-btns">
-                      <div class="pull-left comment"><%= f.submit "Comment" %></div>
-                  <%end%>
+
+                      <%= render partial: 'users/comments_form', locals: {post: post} %>
+
                       <% if Like.has_liked?(current_user.id, post.id) %>
                         <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
                       <% else %>
@@ -73,20 +78,17 @@
                     </div>
                 </div><br><br>
                 <div class="comments-details">
-                  <% post.comments.each do |comment| %>
-                  <ul>
-                    <li><%=comment.description%></li>
+                  <ul id="comment-for-post">
+                    <% post.comments.each do |comment| %>
+                      <li><%=comment.description%></li>
+                    <%end%>
                   </ul>
-                  <%end%>
                 </div>
               </div>
             <%end%>
           </div>
         </div>
       </div>
-    </div>
-    <div class="tab-pane" id="members">
-
     </div>
   </div>
 

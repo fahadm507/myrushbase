@@ -5,16 +5,14 @@
         <h2>Sign up</h2>
           <!-- Button trigger modal -->
         <%=bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-        <%= f.text_field :first_name, autofocus: true %>
-        <%= f.text_field :last_name, autofocus: true %>
-        <%= f.email_field :email, autofocus: true %>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, class: "pull-right") %>
-        <%= f.text_field :location,placeholder: "Add city", autofocus: true %>
-
-        <%= f.password_field :password, autocomplete: "off" %>
-
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= devise_error_messages! %>
+          <%= f.text_field :first_name, autofocus: true %>
+          <%= f.text_field :last_name, autofocus: true %>
+          <%= f.email_field :email, autofocus: true %>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, class: "pull-right") %>
+          <%= f.text_field :location,placeholder: "Add city", autofocus: true %>
+          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
         <div class="sign-up-link"><%= f.submit "Sign up", :class => "btn btn-lg btn-success" %></div>
         <% end %>
 

@@ -1,0 +1,18 @@
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+  <li class="active"><a href="#trends" role="tab" data-toggle="tab">Feed</a></li>
+  <li class="home"><a href="#home" role="tab" data-toggle="tab">Home</a></li>
+  <li class="membes"><a href="#members" role="tab" data-toggle="tab">Like minded People</a></li>
+  <li class="questions"><a href="#questions" role="tab" data-toggle="tab"> Trending </a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="trends">
+    <%= render 'users/trends'%>
+  </div>
+  <div class="tab-pane fade" id="home">
+    <%= render 'users/user_posts'  %>
+  </div>
+   <div class="tab-pane fade" id="members">
+    <%= render 'users/members'  %>
+  </div>
+</div>

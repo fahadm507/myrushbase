@@ -5,12 +5,12 @@ class LikesController < ApplicationController
     @like = @post.likes.build(user_id: current_user.id, post_id: @post.id)
     if @like.save
       respond_to do |format|
-        format.html { redirect_to current_user }
+        format.html { redirect_to user_path(current_user) }
         format.js
       end
     else
       flash[:notice] = "un able to save this like"
-      redirect_to users_path
+      redirect_to user_path(@user)
     end
   end
 

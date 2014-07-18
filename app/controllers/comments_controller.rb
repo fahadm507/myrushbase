@@ -5,11 +5,15 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
 
-    if @comment.save
-      redirect_to users_path
-    else
-      @post.comments.delete(@comment)
-      render '/users/index'
+    respond_to do |format|
+      if @comment.save
+        format.html {redirect_to user_path(@post)}
+        format.js {}
+        format.json { render json: @comment, status: 200 }
+      else
+        format.html {render user_path(@post.user_id)}
+        format.json { render json: { errors: @comment.errors }, status: :unprocessable_entity }
+      end
     end
   end
 

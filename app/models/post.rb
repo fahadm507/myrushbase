@@ -15,4 +15,5 @@ class Post < ActiveRecord::Base
     user_ids = category.users_ids
     where("user_id IN (?) ", user_ids )
   end
+
 end
