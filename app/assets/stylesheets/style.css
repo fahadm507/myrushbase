@@ -318,12 +318,11 @@ ul li {
   background-size: cover;
   background-position: top right;
   position: relative;
-  right: 0;
-  left: 0;
+  right:0;
+  left:0;
 }
 .page-section#members {
   background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/highfive.jpg") top center no-repeat;
-  background-color:;
   background-color:#C3DED5;
 }
 .page-section#about {
