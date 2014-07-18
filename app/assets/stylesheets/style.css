@@ -35,7 +35,7 @@ ul li {
     left: 0;
     z-index: -99;
     background-color:transparent;
-    opacity: .4;
+    opacity: .6;
 
   }
 .home-content h1 {
@@ -184,7 +184,14 @@ ul li {
   margin:20px;
   border:5px solid #fff;
 }
-
+.registration-page{
+  background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/class-photo5.JPG") bottom center no-repeat;
+  background-size: cover;
+  background-position: top right;
+  position: relative;
+  right:0;
+  left:0;;
+}
 .pull-left {
   float:left;
 }
@@ -303,7 +310,6 @@ ul li {
   padding-bottom: 100px;
 }
 #homepage h2 {
-  color: #fff;
   text-align: center;
 }
 #homepage .btn {
@@ -326,8 +332,10 @@ ul li {
   background-color:#C3DED5;
 }
 .page-section#about {
-   color:black;
+
    background-color: #fff ;
+   font-family: "Gotham Rounded A", "Gotham Rounded B" !important;
+   color:#384047
 }
 .most-recent {
   margin-top:120px;
