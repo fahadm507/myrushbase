@@ -35,8 +35,7 @@ ul li {
     left: 0;
     z-index: -99;
     background-color:transparent;
-    opacity: .5;
-
+    opacity: .4;
 
   }
 .home-content h1 {
@@ -325,12 +324,36 @@ ul li {
 }
 .page-section#members {
   background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/highfive.jpg") top center no-repeat;
-  background-color:white;
+  background-color:;
+  background-color:#C3DED5;
 }
 .page-section#about {
-  background-color:white;
+   color:black;
+   background-color: #fff ;
+}
+.most-recent {
+  margin-top:120px;
+}
+
+.most-recent .user-slider {
+
+  color: #8c989e;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1;
+  padding:30px;
+  background-color: #fff;
+  border:1px solid #8c989e;
+  width:260px;
+  height:290px;
+  border-radius:10px;
 
 }
+.user-slider ul li {
+  padding:5px;
+  text-align: center;
+}
+
 
 
 

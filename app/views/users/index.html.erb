@@ -13,11 +13,10 @@
           <div class="row text-center stats">
             <div class="user-av span2 pull-left">
               <div class="useravatar"><%= image_tag current_user.avatar.url(:thumb), :class => "img-circle"%></div>
-              <ul>
-                <li><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
-                <li class=""></li>
-                <li><%=current_user.category.name%></li>
-                <li><%= current_user.location%>
+              <ul class="text-center">
+                <li text-center><a class="user-name" href="/users"><%= current_user.first_name %> <%=current_user.last_name %></a></li>
+                <li class="text-center"><%=current_user.category.name%></li>
+                <li class="text-center"><%= current_user.location%></li>
               </ul>
             </div>
 

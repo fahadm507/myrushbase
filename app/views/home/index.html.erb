@@ -16,22 +16,37 @@
 
 <div id="how" class="page-section">
   <div class="container">
-    <h2 class="text-center">how it works</h2>
-    <p class="caption"></p>
+    <h2 class="text-center">How it works</h2>
   </div>
 </div>
 
 <div id="members" class="page-section">
   <div class="container">
     <h2 class="text-center">Most recent members</h2>
-    <p class="caption"> coming soon..</p>
+    <div class="most-recent row">
+      <% @recent_memebers.each do |user| %>
+      <div class="col-md-2 col-xs-3">
+        <div class="pull-left user-slider">
+          <div class="useravatar text-center"><%= image_tag user.avatar.url(:thumb), :class => "img-circle"%></div>
+          <ul>
+            <li><a class="user-name" href="/users"><%= user.first_name %> <%=user.last_name %></a></li>
+            <li><%=user.category.name%></li>
+            <li><%= user.location%>
+            <li>
+              <a class="btn btn-success btn-large" href="/users/sign_up">Follow</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <%end%>
+    </div>
   </div>
 </div>
 
 <div id="about" class="page-section">
-  <div class="container">
-    <h2>About Rushbase</h2>
-    <p class="caption">Coming soon..</p>
+  <div class="container text-center">
+    <h1>We are passionate learners</h2>
+    <h1 class="text-center">We share learning resources and information with like minded people to be more effective and productive</h1>
   </div>
 </div>
 
