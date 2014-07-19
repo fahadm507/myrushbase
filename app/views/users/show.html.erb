@@ -3,7 +3,11 @@
     <aside class="aside pull-right">
       <ul>
       <%if current_user == @user %>
-        <li><a class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> View Full Profile</a>
+        <ul>
+          <li><a class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> + Make New Post</a>
+            <%= render 'users/post_form' %>
+          </li>
+        </ul>
       <%else%>
         <li><a class="btn btn-success btn-lg" data-toggle="modal" data-target="#postModal"> View Full Profile</a>
       <%end%>
