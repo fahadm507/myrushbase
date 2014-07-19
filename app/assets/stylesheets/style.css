@@ -97,8 +97,6 @@ ul li {
   border-radius:10px;
   background-color: #e7e7e7;
 }
-
-
 .inputsearch{
   width:400px;
 }
@@ -341,19 +339,18 @@ ul li {
 }
 
 .most-recent .user-slider {
-
   color: #8c989e;
   font-size: 16px;
   font-style: normal;
   line-height: 1;
-  padding:30px;
   background-color: #fff;
   border:1px solid #8c989e;
-  width:260px;
-  height:290px;
+  width:200px;
+  height:260px;
   border-radius:10px;
-
+  margin-left:10px;
 }
+
 .user-slider ul li {
   padding:5px;
   text-align: center;

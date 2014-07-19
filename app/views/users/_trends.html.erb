@@ -19,7 +19,7 @@
             </ul>
             <div class="comments-form">
               <div class="comments-form">
-              <%= render partial: 'users/comments_form', locals: {post: post} %>
+                <%= render partial: 'users/comments_form', locals: {post: post} %>
                   <% if Like.has_liked?(current_user.id, post.id) %>
                     <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
                   <% else %>
