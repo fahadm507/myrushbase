@@ -46,53 +46,6 @@
       <li class="active"><a href="#home" role="tab" data-toggle="tab">Posts</a></li>
     </ul>
   <%end%>
-  <div class="tab-content">
-    <div class="tab-pane active" id="home">
-      <div class="row">
-        <div class="posts-area">
-          <div class="post-details">
-            <% @user.posts.order(created_at: :desc).each do |post| %>
-            <div class="poster">
-              <div class="image-for-poster pull-left"><%= image_tag @user.avatar.url(:thumbnail), class: "img-circle post-avatar"%></div>
-              <div class="post-image-n-time">
-                <div class="user-name"><a> <%= @user.first_name %> <%= @user.last_name %></a></div>
-                <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
-              </div>
-            </div>
-              <div class="post-body"><%= post.body %>
-                <ul class="count-comments-n-likes">
-                  <li><%= (post.comments.count) || post.likes.count = 0 %> Comments</li>
-                  <li><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
-                </ul>
-                <div class="comments-form">
-
-                      <%= render partial: 'users/comments_form', locals: {post: post} %>
-
-                      <% if Like.has_liked?(current_user.id, post.id) %>
-                        <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
-                      <% else %>
-                        <div class="pull-left like"><%= button_to [post, @like], html:{class: "btn btn-lg"} do %>
-                        Like
-                        </div><%end%>
-                      <% end %>
-                    </div>
-                </div><br><br>
-                <div class="comments-details">
-                  <ul id="comment-for-post">
-                    <% post.comments.each do |comment| %>
-                      <li><%=comment.description%></li>
-                    <%end%>
-                  </ul>
-                </div>
-              </div>
-            <%end%>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
 
   <!-- posts area-->
 </div>

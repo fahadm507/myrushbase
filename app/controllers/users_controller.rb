@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def search
-
     if params[:category]
        @search_results = User.users_by_category(params[:search], current_user, params[:category][:id])
        render 'search'
