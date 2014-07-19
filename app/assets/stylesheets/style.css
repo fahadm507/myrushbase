@@ -162,9 +162,17 @@ ul li {
 
 .form-wrap{
   text-align: center;
-  width:800px;
+  width:500px;
   background-color:#C3DED5;
   padding:40px;
+  border-radius:5px;
+  text-align: center;
+
+
+}
+
+.user-log .form-control {
+  width:100%;
 }
 
 .form-wrap .edit-page {
@@ -175,6 +183,14 @@ ul li {
   width:800px;
   background-color:#C3DED5;
   padding:40px;
+}
+.user-login {
+  background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/class-photo6.JPG") bottom center no-repeat;
+  background-size: cover;
+  background-position: top right;
+  position: relative;
+  right:0;
+  left:0;
 }
 /**** Posts Section Styling  ****/
 .post-content {
@@ -243,6 +259,7 @@ ul li {
 }
 .modal-content {
   width:800px;
+  text-align:center;
 }
 
 
@@ -355,6 +372,7 @@ ul li {
   padding:5px;
   text-align: center;
 }
+
 
 
 

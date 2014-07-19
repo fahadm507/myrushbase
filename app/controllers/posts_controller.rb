@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to users_path(@post.user_id)
+      redirect_to user_path(@post.user)
     else
       current_user.posts.delete(@post)
       @comment = Comment.new
