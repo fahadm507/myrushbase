@@ -11,9 +11,9 @@
       <% @feed_posts.order(created_at: :desc).each do |post| %>
         <div class="post">
           <div class="poster">
-            <div class="image-for-poster pull-left"><%=link_to (image_tag @user.avatar.url(:thumb), class: "img-circle ", size:'50x50'), user_path(current_user) %></div>
+            <div class="image-for-poster pull-left"><%=link_to (image_tag post.user.avatar.url(:thumb), class: "img-circle ", size:'50x50'), user_path(current_user) %></div>
             <div class="post-image-n-time">
-              <div class="user-name"><%= link_to "#{post.user.last_name} #{post.user.last_name}", user_path(@user) %></div>
+              <div class="user-name"><%= link_to "#{post.user.first_name} #{post.user.last_name}", user_path(@user) %></div>
               <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
             </div>
           </div>
@@ -30,14 +30,22 @@
             <div class="comments-form">
               <%= render partial: 'users/comments_form', locals: {post: post} %>
             </div><br><!-- Comments form ends here -->
-            <div class="comments-details row">
-
-              <ul id="comment-for-post">
-                <% post.comments.each do |comment| %>
-                  <li><%=comment.description%></li>
-                <%end%>
-              </ul>
-            </div>
+            <%if post.comments.any?%>
+              <div class="comments-details row">
+                <ul id="comment-for-post">
+                  <% post.comments.each do |comment| %>
+                    <li>
+                      <aside class="commenter-image pull-left">
+                        <%=link_to (image_tag post.user.avatar.url(:thumb), class: "img-circle ", size:'40x40'), user_path(current_user) %>
+                      </aside>
+                        <%=link_to "#{comment.user.first_name} #{comment.user.last_name}", user_path(@user) %>
+                        <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
+                        <div class="description"><%=comment.description%></div>
+                    </li>
+                  <%end%>
+                </ul>
+              </div>
+            <%end%>
           </div><!-- Post body ends here-->
         </div><!-- post -->
         <%end%>
