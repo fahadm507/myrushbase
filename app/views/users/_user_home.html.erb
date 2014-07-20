@@ -10,32 +10,34 @@
         </div>
       </div>
         <div class="post-body"><%= post.body %>
-          <ul class="count-comments-n-likes">
-            <li><%= (post.comments.count) || post.likes.count = 0 %> Comments</li>
-            <li><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
-          </ul>
-          <div class="comments-form">
-            <%= bootstrap_form_for [post, @comment], html: {class: 'comment-form'} do |f| %>
-              <%= f.text_area :description, hide_label: true, size: "20x2",required: true %>
-              <div class="comment-like-btns">
-                <div class="pull-left comment"><%= f.submit "Comment" %></div>
-            <%end%>
-                <% if Like.has_liked?(current_user.id, post.id) %>
-                  <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
-                <% else %>
-                  <div class="pull-left like"><%= button_to [post, @like], html:{class: "btn btn-lg"} do %>
-                  Like
-                  </div><%end%>
-                <% end %>
-              </div>
-          </div><br><br>
-          <div class="comments-details">
-            <% post.comments.each do |comment| %>
-            <ul>
-              <li><%=comment.description%></li>
+            <ul class="count-comments-n-likes">
+            <li><%= render partial: 'users/like_form', locals: {post: post}%></li>
+             <li class="likes">
+                <span class='likes-count'><%= (post.comments.count) || post.comments.count = 0 %></span> Comments
+              </li>
+              <li class="comments"><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
             </ul>
+
+            <div class="comments-form">
+              <%= render partial: 'users/comments_form', locals: {post: post} %>
+            </div><br><!-- Comments form ends here -->
+            <%if post.comments.any?%>
+              <div class="comments-details row">
+                <ul id="comment-for-post">
+                  <% post.comments.each do |comment| %>
+                    <li>
+                      <aside class="commenter-image pull-left">
+                        <%=link_to (image_tag post.user.avatar.url(:thumb), class: "img-circle ", size:'40x40'), user_path(current_user) %>
+                      </aside>
+                        <%=link_to "#{comment.user.first_name} #{comment.user.last_name}", user_path(@user) %>
+                        <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
+                        <div class="description"><%=comment.description%></div>
+                    </li>
+                  <%end%>
+                </ul>
+              </div>
             <%end%>
-          </div>
+          </div><!-- Post body ends here-->
         </div>
       <%end%>
     </div>
