@@ -1,17 +1,15 @@
 <div class="wrapper">
-  <aside class="aside pull-right">
+    <aside class="aside pull-right">
       <ul>
       <%if current_user == @user %>
-        <h3>Learning</h3>
+        <h3><%= link_to '+', new_user_subject_path(current_user)%>Learning</h3>
         <ul>
-          <li>Java</li>
-          <li>Javacript</li>
-          <li>English</li>
-          <li>Math</li>
+          <%current_user.subjects.each do |subject|%>
+          <li><%=subject.name%></li>
+          <%end%>
         </ul>
-      <%else%>
       <%end%>
-      </aside>
+    </aside>
   <div class="row">
     <div class="dashboard">
         <div class="user-info">

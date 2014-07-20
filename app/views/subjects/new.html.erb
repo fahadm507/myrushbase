@@ -1,0 +1,18 @@
+<div class="subject-form">
+  <%=bootstrap_form_for [current_user, @subject] do |f| %>
+    <%= f.text_field :name, required: true %>
+    <%= f.submit "Add", class: "btn btn-default" %>
+  <% end %>
+</div>
+
+<div class="row subjects">
+
+  <ul>
+    <% current_user.subjects.each do |subject| %>
+      <li><%= subject.name %>
+        <%= link_to ' Remove',[current_user, subject], method: :delete, data: { confirm: 'Are you sure?' } %>
+      </li>
+    <%end%>
+  </ul>
+</div>
+

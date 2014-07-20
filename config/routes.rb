@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :users, only: [:index, :show] do
+    resources :subjects
     resources :questions do
       resources :answers
     end
