@@ -105,13 +105,13 @@ ul li {
   border-radius: 10px;
   margin-bottom: 20px;
   border:5px solid #E3E8E6;
-  width:700px;
+  width:710px;
   border:1px solid green;
+  padding:10px;
 }
 .aside {
   display:block;
   text-align:left;
-  border:1px solid green;
   width:300px;
   background-color: #fff;
   border:5px solid #E3E8E6;
@@ -125,12 +125,9 @@ ul li {
   padding-left:20px;
 }
 
-.action-buttons{
-  border:1px solid black;
-}
 .action-buttons ul li {
   display: inline-block;
-  padding-left:20px;
+  padding-left:10px;
   text-align: left;
   margin-top:5px;
   text-transform: uppercase;
@@ -150,9 +147,14 @@ ul li {
 .small {
   text-transform: uppercase;
 }
-.stats .stat {
-  padding:10px;
+
+.stats-bar .stat {
+  padding:5px;
   width:100px;
+
+}
+.stat a {
+  color:#777;
 }
 /*****  Registrations Forms *****/
 

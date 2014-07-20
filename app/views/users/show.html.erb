@@ -1,29 +1,32 @@
 <div class="wrapper">
-    <aside class="aside pull-right">
+  <aside class="aside pull-right">
+    <ul>
+    <%if current_user == @user %>
+      <h3><%= link_to '+', new_user_subject_path(current_user)%>Learning</h3>
       <ul>
-      <%if current_user == @user %>
-        <h3><%= link_to '+', new_user_subject_path(current_user)%>Learning</h3>
-        <ul>
-          <%current_user.subjects.each do |subject|%>
-          <li><%=subject.name%></li>
-          <%end%>
-        </ul>
-      <%end%>
-    </aside>
+        <%current_user.subjects.each do |subject|%>
+        <li><%=subject.name%></li>
+        <%end%>
+      </ul>
+    <%end%>
+  </aside>
   <div class="row">
-    <div class="dashboard">
+    <div class="dashboard pull-left">
         <div class="user-info">
           <div class="row text-center stats">
-            <div class="user-av span2 pull-left">
+            <div class="user-av col-md-3 pull-left">
               <div class="useravatar"><%= image_tag @user.avatar.url(:thumbnail),class: "img-circle" %></div>
               <ul>
                 <li><a class="user-name" href="/users"><%= @user.first_name %> <%=@user.last_name %></a></li>
                 <li class=""><%= @user.category.name%> </li>
-                <li><%= @user.location %></li>
+                <li><%= @user.location %>Boston, MA</li>
               </ul>
             </div>
-            <div class="stats_here">
+            <div class="col-md-9 col-sm-6 col-xs-5 stats-bar">
               <%= render "users/stats"%>
+            </div>
+            <div class="blurb">
+              <i class="text-center">I'm currently learning jQuery, I would like to connect with people that are learning the same I'm currently learning jQuery, I would like to connect with people that are learning the same</i>
             </div>
           </div>
 
@@ -33,7 +36,7 @@
               <li class="btn"><%= render 'users/follow_form'%></li>
               <li class="btn"><%= render 'users/credit'%></li>
             <%else%>
-              <li><a class="btn btn-success">View Profile</a></li>
+              <li><a class="btn btn-success">Update Profile</a></li>
               <li><a class="btn btn-success " data-toggle="modal" data-target="#postModal"> +New Post</a>
                 <%= render 'users/post_form' %>
               </li>
@@ -42,7 +45,8 @@
           </div>
         </div><!--end of user information div -->
     </div>
-  </div>
+  </div><!-- row ends here-->
+
   <%if current_user == @user%>
     <%= render 'users/user_nav'%>
   <%else%>

@@ -27,7 +27,6 @@ class SubjectsController < ApplicationController
     end
   end
 
-
   def subject_params
     params.require(:subject).permit(:name)
   end

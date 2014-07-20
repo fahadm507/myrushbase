@@ -1,4 +1,9 @@
+
+
 <div class="row">
+  <h4>Add subjects that you are currently learning</h4>
+  <i>This helps you to easily find other students that are learning similar subjects</i>
+
   <div class="subject-form">
     <%=bootstrap_form_for [current_user, @subject] do |f| %>
       <%= f.text_field :name, required: true %>
