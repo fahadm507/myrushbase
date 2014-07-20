@@ -39,7 +39,7 @@
                         <%=link_to (image_tag post.user.avatar.url(:thumb), class: "img-circle ", size:'40x40'), user_path(current_user) %>
                       </aside>
                         <%=link_to "#{comment.user.first_name} #{comment.user.last_name}", user_path(@user) %>
-                        <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
+                        <div class="time">posted on <%=comment.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
                         <div class="description"><%=comment.description%></div>
                     </li>
                   <%end%>

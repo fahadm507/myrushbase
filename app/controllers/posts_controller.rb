@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     else
       current_user.posts.delete(@post)
       @comment = Comment.new
-      render '/users/index'
+      render 'users/post_form'
     end
   end
 
