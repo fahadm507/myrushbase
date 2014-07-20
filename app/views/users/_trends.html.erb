@@ -30,8 +30,8 @@
             <div class="comments-form">
               <%= render partial: 'users/comments_form', locals: {post: post} %>
             </div><br><!-- Comments form ends here -->
+            <div class="comments-details row">
 
-            <div class="comments-details">
               <ul id="comment-for-post">
                 <% post.comments.each do |comment| %>
                   <li><%=comment.description%></li>
@@ -39,7 +39,7 @@
               </ul>
             </div>
           </div><!-- Post body ends here-->
-        </div>
+        </div><!-- post -->
         <%end%>
     </div>
   </div>
