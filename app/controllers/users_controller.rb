@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @like = Like.new
     @point = Point.new
     @suggested_users = User.suggested_users(current_user.category)
+    @suggested_users.delete(current_user)
     @feed_posts = Post.posts_from_users(current_user).limit(10)
   end
 

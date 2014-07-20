@@ -118,6 +118,13 @@ ul li {
 .aside li {
   text-align: left;
 }
+.aside h3 {
+  background: #f8f8f9;
+  margin:0px;
+  margin-left:-40px;
+  padding:10px;
+  text-align: center;
+}
 
 .myfollowers .stat {
   padding-left:20px;

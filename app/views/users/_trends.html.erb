@@ -2,7 +2,7 @@
   <aside class="aside pull-right suggested-users">
     <ul>
     <%if current_user == @user %>
-      <h3><%= link_to '+', new_user_subject_path(current_user)%>Like minded</h3>
+      <h3><%= link_to 'Like Minded', new_user_subject_path(current_user)%></h3>
       <%= render 'users/suggested_users'%>
     <%end%>
   </aside>
