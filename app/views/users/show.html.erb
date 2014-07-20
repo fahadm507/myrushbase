@@ -8,7 +8,15 @@
         <li><%=subject.name%></li>
         <%end%>
       </ul>
+    <%else%>
+      <h3><%= link_to "Learning", new_user_subject_path(@user)%></h3>
+      <ul>
+        <%@user.subjects.each do |subject|%>
+        <li><%=subject.name%></li>
+        <%end%>
+      </ul>
     <%end%>
+
   </aside>
   <div class="row">
     <div class="dashboard pull-left">
@@ -55,6 +63,11 @@
     <ul class="nav nav-tabs" role="tablist" id="myTab">
       <li class="active"><a href="#home" role="tab" data-toggle="tab">Posts</a></li>
     </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade in active" id="home">
+        <%= render 'users/user_posts'  %>
+      </div>
+    </div>
   <%end%>
 
   <!-- posts area-->

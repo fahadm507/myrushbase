@@ -32,7 +32,7 @@
           </ul>
         </div>
           <ul class="nav navbar-nav navbar-right">
-            <li class="nav-image"><%= image_tag current_user.avatar.url(:thumb), class: "img-circle nav-image", size:'30x30'%></li>
+            <li class="nav-image"><%=link_to (image_tag current_user.avatar.url(:thumb), class: "img-circle nav-image", size:'30x30'), user_path(current_user) %></li>
             <li class="account">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=current_user.first_name.capitalize%><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
