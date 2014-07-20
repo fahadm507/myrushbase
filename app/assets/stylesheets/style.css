@@ -173,6 +173,14 @@ ul li {
 /*****  Registrations Forms *****/
 
 /* Log in Form*/
+.registration-page{
+  background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/class-photo5.JPG") bottom center no-repeat;
+  background-size: cover;
+  background-position: top right;
+  position: relative;
+  right:0;
+  left:0;;
+}
 .user-log {
   margin-top:120px;
 }
@@ -212,19 +220,8 @@ ul li {
   left:0;
 }
 /**** Posts Section Styling  ****/
-.post-content {
-  padding:20px;
-  margin:20px;
-  border:5px solid #fff;
-}
-.registration-page{
-  background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/class-photo5.JPG") bottom center no-repeat;
-  background-size: cover;
-  background-position: top right;
-  position: relative;
-  right:0;
-  left:0;;
-}
+
+
 .pull-left {
   float:left;
 }
@@ -262,12 +259,14 @@ ul li {
   margin:20px;
   border:3px solid #E3E8E6;
   border-radius:10px;
+
 }
 .poster {
   padding-left:20px;
 }
 .image-for-poster {
   padding-right:10px;
+  margin-bottom: 30px;
 }
 .count-comments-n-likes li {
   display: inline-block;
