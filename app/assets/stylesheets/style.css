@@ -184,7 +184,6 @@ ul li {
   border-radius:5px;
   text-align: center;
 
-
 }
 
 .user-log .form-control {
@@ -251,6 +250,7 @@ ul li {
   border:5px solid #fff;
   border-radius: 10px;
   height:auto;
+  width:760px;
 
 }
 .post-body {

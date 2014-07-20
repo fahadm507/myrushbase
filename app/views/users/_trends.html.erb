@@ -1,4 +1,11 @@
 <div class="row">
+  <aside class="aside pull-right suggested-users">
+    <ul>
+    <%if current_user == @user %>
+      <h3><%= link_to '+', new_user_subject_path(current_user)%>Like minded</h3>
+      <%= render 'users/suggested_users'%>
+    <%end%>
+  </aside>
   <div class="posts-area">
     <div class="post-details">
       <% @feed_posts.order(created_at: :desc).each do |post| %>
@@ -13,7 +20,7 @@
           <div class="post-body"><%= post.body %>
             <ul class="count-comments-n-likes">
              <li class="likes">
-                <span class='likes-count'><%= (post.comments.count) || post.likes.count = 0 %></span> Comments
+                <span class='likes-count'><%= (post.comments.count) || post.comments.count = 0 %></span> Comments
               </li>
               <li class="comments"><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
             </ul>
