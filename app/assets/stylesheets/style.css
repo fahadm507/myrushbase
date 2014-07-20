@@ -52,7 +52,6 @@ ul li {
 /************************************* NAVIGATION-BAR STYLING  *************************/
 .navbar {
   background-color: #5cb85c;
-
 }
 .navbar-nav li a{
   color:#fff;
@@ -105,14 +104,13 @@ ul li {
   border-radius: 10px;
   margin-bottom: 20px;
   border:5px solid #E3E8E6;
-  width:710px;
-  border:1px solid green;
-  padding:10px;
+  width:760px;
+  padding-right:20px;
 }
 .aside {
   display:block;
   text-align:left;
-  width:300px;
+  width:250px;
   background-color: #fff;
   border:5px solid #E3E8E6;
   border-radius: 10px;
@@ -124,10 +122,15 @@ ul li {
 .myfollowers .stat {
   padding-left:20px;
 }
+.action-buttons {
+  background: #f8f8f9;
+  margin-right:-20px;
+  margin-left:0;
+}
 
 .action-buttons ul li {
   display: inline-block;
-  padding-left:10px;
+  padding:0px 30px 0 30px;
   text-align: left;
   margin-top:5px;
   text-transform: uppercase;
@@ -149,12 +152,19 @@ ul li {
 }
 
 .stats-bar .stat {
-  padding:5px;
-  width:100px;
+  padding-left:10px;
+  width:90px;
+  margin-right:0;
 
+}
+.stats-bar {
+  margin:50px 0 50px 0;
 }
 .stat a {
   color:#777;
+}
+.blurb p {
+  margin-top:20px;
 }
 /*****  Registrations Forms *****/
 

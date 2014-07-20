@@ -14,7 +14,7 @@
     <div class="dashboard pull-left">
         <div class="user-info">
           <div class="row text-center stats">
-            <div class="user-av col-md-3 pull-left">
+            <div class="user-av col-md-4 pull-left">
               <div class="useravatar"><%= image_tag @user.avatar.url(:thumbnail),class: "img-circle" %></div>
               <ul>
                 <li><a class="user-name" href="/users"><%= @user.first_name %> <%=@user.last_name %></a></li>
@@ -22,26 +22,30 @@
                 <li><%= @user.location %>Boston, MA</li>
               </ul>
             </div>
-            <div class="col-md-9 col-sm-6 col-xs-5 stats-bar">
+            <div class="col-md-8 col-sm-6 col-xs-5 stats-bar">
               <%= render "users/stats"%>
             </div>
-            <div class="blurb">
-              <i class="text-center">I'm currently learning jQuery, I would like to connect with people that are learning the same I'm currently learning jQuery, I would like to connect with people that are learning the same</i>
+             <div class="user-blurb">
+              <i><p class="text-center blurb"></p></i>
             </div>
+
+
           </div>
 
           <div class="row action-buttons text-center">
             <ul class="col-md-12 col-sm-12 col-xs-12">
-            <%if current_user != @user %>
-              <li class="btn"><%= render 'users/follow_form'%></li>
-              <li class="btn"><%= render 'users/credit'%></li>
-            <%else%>
-              <li><a class="btn btn-success">Update Profile</a></li>
-              <li><a class="btn btn-success " data-toggle="modal" data-target="#postModal"> +New Post</a>
-                <%= render 'users/post_form' %>
-              </li>
-            <%end%>
+              <%if current_user != @user %>
+                  <li class="btn"><%= render 'users/follow_form'%></li>
+                  <li class="btn"><%= render 'users/credit'%></li>
+              <%else%>
+                 <li><%= link_to 'Update Profile',edit_user_registration_path, class: "btn btn-success" %></li>
+                 <li><a class="btn btn-success " data-toggle="modal" data-target="#postModal"> +New Post</a>
+                  <%= render 'users/post_form' %>
+                </li>
+                <li><%=link_to 'Find People', search_path, class: "btn btn-success"%></li>
+              <%end%>
             </ul>
+
           </div>
         </div><!--end of user information div -->
     </div>
