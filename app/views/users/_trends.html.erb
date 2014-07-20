@@ -20,23 +20,17 @@
 
           <div class="post-body"><%= post.body %>
             <ul class="count-comments-n-likes">
+            <li><%= render partial: 'users/like_form', locals: {post: post}%></li>
              <li class="likes">
                 <span class='likes-count'><%= (post.comments.count) || post.comments.count = 0 %></span> Comments
               </li>
               <li class="comments"><%= (post.likes.count) || post.likes.count = 0 %> likes</li>
             </ul>
+
             <div class="comments-form">
-              <div class="comments-form">
-                <%= render partial: 'users/comments_form', locals: {post: post} %>
-                  <% if Like.has_liked?(current_user.id, post.id) %>
-                    <div class="pull-left liked"><%= button_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
-                  <% else %>
-                    <div class="pull-left like"><%= button_to [post, @like], html:{class: "btn btn-lg"} do %>
-                    Like
-                    </div><%end%>
-                  <% end %>
-                </div>
-            </div><br><br>
+              <%= render partial: 'users/comments_form', locals: {post: post} %>
+            </div><br><!-- Comments form ends here -->
+
             <div class="comments-details">
               <ul id="comment-for-post">
                 <% post.comments.each do |comment| %>

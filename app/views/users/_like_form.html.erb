@@ -1,0 +1,8 @@
+<div class="like-button">
+  <% if Like.has_liked?(current_user.id, post.id) %>
+    <div class="liked"><%= link_to 'liked', post_like_path(post, Like.where(user: current_user, post_id: post.id).first), method: :delete %></div>
+  <% else %>
+    <div class="like"><%= button_to 'like', [post, @like], class: 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>

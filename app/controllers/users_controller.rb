@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @question = Question.new
+    @user = User.find(params[:user_id])
     @post = Post.new
     @comment= Comment.new
     @like = Like.new

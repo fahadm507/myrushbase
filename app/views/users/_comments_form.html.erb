@@ -1,6 +1,12 @@
-<div class="comments">
+<div class="comments row">
   <%= bootstrap_form_for [post, @comment], format: :json, html: {class: 'comment-form'} do |f| %>
-    <%= f.text_area :description, hide_label: true, size: "20x2",required: true %>
-    <%= f.submit "Comment", class: "comment_button" %>
+  <div class="commenting">
+    <div class="input-append pull-left col-md-8">
+      <%= f.text_area :description, hide_label: true, size: "",required: true, placeholder: "Add a comment here" %>
+    </div>
+    <div class="button pull-left">
+      <%= f.submit "Comment", class: "comment_button btn btn-default btn-large", size: '10x10' %>
+    </div>
+  </div>
   <%end%>
 </div>
