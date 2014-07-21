@@ -1,9 +1,9 @@
 <% if Point.has_credited?(current_user.id) %>
-    <li class="credited"><%= link_to 'Credited', user_point_path(current_user, Point.where(user: current_user.id).first), class: 'btn', method: :delete %>
+    <a class="btn btn-success">Credit Given</a>
     <% else %>
-    <li class="credit"><%= button_to [current_user, @point] do %>
-      Credited
-    </li>
+    <a class="credit"><%= button_to [current_user, @point] do %>
+      Give Credit
+    </a>
     <% end %>
 <% end %>
 
