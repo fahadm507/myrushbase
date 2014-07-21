@@ -32,6 +32,11 @@
             <li><%= user.location%>
             <li>
                 <% if current_user.following?(user) %>
+                  <div class= "following">
+                    <a class="btn btn-success btn-large" >Following</a>
+                  </div>
+
+                <% else %>
                   <div class="followers">
                     <%= form_for(current_user.relationships.build(followed_id: user.id)) do |f| %>
                     <%= f.hidden_field :followed_id %>
@@ -39,10 +44,7 @@
                   </div>
                   <%end%>
 
-                <% else %>
-                   <div class= "following">
-                    <a class="btn btn-success btn-large" >Following</a>
-                  </div>
+
               <%end%>
             </li>
           </ul>

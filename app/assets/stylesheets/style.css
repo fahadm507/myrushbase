@@ -63,7 +63,13 @@ ul li {
 .navbar ul {
   margin-left:60px;
 }
+.dropdown-menu {
+  background-color:#5cb85c;
+}
 
+.dropdwon-menu li {
+  background-color: #5cb85c;
+}
 .registration-btns li {
   padding:0 10 0 10;
   margin-right:10px;
@@ -79,6 +85,13 @@ ul li {
   margin-right:150px;
   margin-top:5px;
   border-radius: 0px;
+}
+.subj  {
+  padding-top:20px;
+
+}
+.navbar-form .form-control {
+  width:350px;
 }
 /************************************ User profile styles  ************************************/
 
@@ -305,7 +318,7 @@ ul li {
 }
 
 
-/* TESTING LANDING PAGE*/
+/* LANDING PAGE*/
 
 
 .header {

@@ -15,7 +15,6 @@
   <%if current_user == @user %>
     <h4>Add subjects that you are currently learning</h4>
     <i>This helps you to easily find other students that are learning similar subjects</i>
-
     <div class="subject-form">
       <%=bootstrap_form_for [current_user, @subject] do |f| %>
         <div class="text-area">
@@ -25,8 +24,8 @@
       <% end %>
     </div>
 
-    <div class="row">
-      <div class="subjects col-lg-12 col-md-8 col-sm-6 col-xs-5">
+    <div class="row subj">
+      <div class="subjects col-lg-4 col-md-4 col-sm-4 col-xs-5">
         <ul>
           <table>
           <% current_user.subjects.each do |subject| %>
