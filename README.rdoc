@@ -1,28 +1,28 @@
-== README
+RUSHBASE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+RushBase is a web application that connects like-minded learners in their specific major/industry to share knowledge and information.
 
-Things you may want to cover:
+website: http://rushbase.herokuapp.com/
 
-* Ruby version
+Built using  Ruby 2.0, Rails 4.1.1,Javascript, jQuery, AJAX, CSS, HTML5.
+Used gems: Devise, paperclip, twitter-bootstrap-rails, jQuery-rails
+Testing: RSpec, Capybara
 
-* System dependencies
+Getting Started:
 
-* Configuration
+* Sign up and choose a major/industry that you belong to, You will be suggested with other users in your category and start connecting with like minded people.
 
-* Database creation
+* After you login you can add what you are currently learning. You will be suggested users that are learning the same subject
+and follow them to see what they are sharing.
 
-* Database initialization
+* search for other learners to follow, you can search by category to find the most relevant results.
 
-* How to run the test suite
+Current Features:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Users can follow and unfollow other users.
+* Activity feed that pulls the most recent posts by users followed by a current user.
+* Users are able to search by key word or category.
+* Ability to add lessons that you are currently learning.
+* A user suggestion system based on subjects that a user is learning and their major/industry.
+* Ability to like create posts, comments, likes, etc
+* Ability to give credit to a user based on the information that they share
