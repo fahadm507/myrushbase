@@ -17,7 +17,7 @@ class PointsController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:notice]= "like could not be deleted"
-      redirect_to user_path(@user)
+      redirect_to user_path(@user.point)
     end
   end
 end
