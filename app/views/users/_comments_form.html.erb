@@ -1,5 +1,5 @@
 <div class="comments row">
-  <%= bootstrap_form_for [post, @comment], format: :json, html: {class: 'comment-form'} do |f| %>
+  <%= bootstrap_form_for [post, @comment], html: {class: 'comment-form'} do |f| %>
   <div class="commenting">
     <div class="input-append pull-left col-md-8">
       <%= f.text_area :description, hide_label: true, size: "",required: true, placeholder: "Add a comment here" %>
