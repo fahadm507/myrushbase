@@ -15,15 +15,41 @@
 
 <hr>
 
-<div class="search results">
-  <div class="row">
-    <div class="">
-    <%if @search_results != [] %>
+<div id="search-results" class="search-results">
+  <div class="container">
+    <h2 class="text-center"><%= @search_results.count %> results found</h2>
+    <div class="most-recent row">
       <% @search_results.each do |user| %>
-      <%= user.first_name %> <%= user.last_name%>
-      <%= user.category.name%>
-      <%end%>
-    <%end%>
+
+      <div class="col-md-3 col-sm-3">
+        <div class="pull-left user-info">
+          <div class="useravatar text-center"><%=link_to (image_tag user.avatar.url(:thumb), class: "img-circle ", size:'40x40'), user_path(user) %></div>
+          <ul>
+            <li class="user-name"><%=link_to "#{current_user.first_name} #{current_user.last_name}", user_path(user) %></li>
+            <%if params[:category ] %>
+              <%= user.category.name %>
+            <%end%>
+            <li><%= user.location%>
+            <li>
+                <% if current_user.following?(user) %>
+                  <div class="followers">
+                    <%= form_for(current_user.relationships.build(followed_id: user.id)) do |f| %>
+                    <%= f.hidden_field :followed_id %>
+                    <%= f.submit "Follow", class: "btn btn-large btn-primary" %>
+                  </div>
+                  <%end%>
+
+                <% else %>
+                   <div class= "following">
+                    <a class="btn btn-success btn-large" >Following</a>
+                  </div>
+              <%end%>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+       <%end%>
     </div>
   </div>
 </div>
