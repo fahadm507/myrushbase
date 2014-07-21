@@ -33,7 +33,6 @@
             <li>
                 <% if current_user.following?(user) %>
                   <div class= "following">
-                    <a class="btn btn-success btn-large" >Following</a>
                     <%= link_to 'Following', user_path(user), class: 'btn btn-success'%>
                   </div>
 
