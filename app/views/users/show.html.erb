@@ -23,9 +23,9 @@
         <div class="user-info">
           <div class="row text-center stats">
             <div class="user-av col-md-4 pull-left">
-              <div class="useravatar"><%= image_tag @user.avatar.url(:thumbnail),class: "img-circle" %></div>
+              <div class="useravatar"><%=link_to (image_tag @user.avatar.url(:thumbnail),class: "img-circle"), user_path(current_user) %></div>
               <ul>
-                <li><a class="user-name" href="/users"><%= @user.first_name %> <%=@user.last_name %></a></li>
+                <li class="user-name"><%=link_to "#{current_user.first_name} #{current_user.last_name}", user_path(current_user) %></li>
                 <li class=""><%= @user.category.name%> </li>
                 <li><%= @user.location %>Boston, MA</li>
               </ul>
