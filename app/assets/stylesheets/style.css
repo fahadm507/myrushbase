@@ -201,6 +201,9 @@ ul li {
 .user-log .form-control {
   width:100%;
 }
+.text-area .form-control {
+  width:300px;
+}
 
 .form-wrap .edit-page {
   width:800px;
