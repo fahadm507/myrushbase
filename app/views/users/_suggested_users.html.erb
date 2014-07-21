@@ -2,6 +2,8 @@
   <div class= "row">
     <%@suggested_users.order(created_at: :desc).limit(10).each do |user| %>
 
+      <%if !current_user.following?(user)%>
+
         <div class="basic_info span4">
           <ul class="">
             <div class="text">
@@ -11,26 +13,17 @@
             <li class=""></li>
             <li><%=user.category.name%></li>
             <li><%= user.location%></li>
-            <% if current_user.following?(user) %>
 
-              <div class= "following">
-                <%=form_for(current_user.relationships.find_by(followed_id: user.id),
-                   html: { method: :delete }) do |f| %>
-                <%=f.submit "Following", class: "btn-success btn-large" %>
-              </div>
-
-            <% end %>
-
-           <%else%>
               <div class="followers">
                 <%= form_for(current_user.relationships.build(followed_id: user.id)) do |f| %>
                 <%= f.hidden_field :followed_id %>
                 <%= f.submit "Follow", class: "btn btn-large btn-primary" %>
                 <%end%>
               </div>
-            <%end%>
+
           </ul>
         </div>
+      <%end%>
     <%end%>
   </div>
 

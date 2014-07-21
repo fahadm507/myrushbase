@@ -39,21 +39,8 @@
       </div>
     </div>
   <% else %>
-    <div class="row">
-      <div class="subjects col-lg-12 col-md-8 col-sm-6 col-xs-5">
-        <ul>
-          <table>
-          <%if @user.subjects.empty? %>
-          <p><%= @user.first_name %> hasn't added any subjects</p>
-          <%end%>
-            <% @user.subjects.each do |subject| %>
-              <tr>
-                <td><%= subject.name %></td>
-              </tr>
-            <%end%>
-          </table>
-        </ul>
-      </div>
-    </div>
+
+  <p><%= @user.first_name %> hasn't added any subjects</p>
+
   <%end%>
 </div>
