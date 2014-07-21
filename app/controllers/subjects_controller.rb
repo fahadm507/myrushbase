@@ -15,9 +15,18 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subjects = Subject.all
+    @subjects = get_subjects
     @subject = Subject.new
     @user = User.find(params[:user_id])
+  end
+
+  def get_subjects
+    subject_names = []
+    subjects = Subject.all
+    subjects.each do |subject|
+      subject_names << subject.name
+    end
+    subject_names.uniq
   end
 
   def destroy
