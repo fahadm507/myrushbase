@@ -17,6 +17,13 @@
 <div id="how" class="page-section">
   <div class="container">
     <h2 class="text-center">How it works</h2>
+    <ul class="text-center">
+      <li>Sign up and choose a major/Industry that you are pursuing</li>
+      <li>Enter what you are currently learning or your interests</li>
+      <li>You will be suggested like minded people to connect with base on what your category</li>
+      <li>Start sharing relevant information you find useful online with your followers </li>
+      <li>Search and follow more people in your major and keep learning</li>
+    </ul>
   </div>
 </div>
 
@@ -25,7 +32,7 @@
     <h2 class="text-center">Most recent members</h2>
     <div class="most-recent row">
       <% @recent_memebers.each do |user| %>
-      <div class="col-md-2 col-xs-3">
+      <div class="col-md-3 col-sm-3">
         <div class="pull-left user-slider">
           <div class="useravatar text-center"><%= image_tag user.avatar.url(:thumb), :class => "img-circle"%></div>
           <ul>

@@ -354,12 +354,12 @@ ul li {
 }
 .page-section p.caption {
   color: #fff;
-  padding: 20 px;
+  padding: 20px;
   text-shadow: 1px 1px 1px #000;
 }
 .page-section#home {
   position: relative;
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 100px;
 }
 #homepage h2 {
@@ -379,10 +379,25 @@ ul li {
   position: relative;
   right:0;
   left:0;
+  top:0;
+
+}
+#how li {
+  color:#F8F1F1;
+  font-size: 25pt;
+  padding-left:10px;
+  font-family: 'Tangerine', serif;
+
 }
 .page-section#members {
   background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/highfive.jpg") top center no-repeat;
   background-color:#C3DED5;
+  background-size: cover;
+  background-position: center;
+  right:0;
+  left:0;
+  padding-top:20px;
+
 }
 .page-section#about {
    background-color: #fff ;
@@ -390,20 +405,19 @@ ul li {
    color:#384047
 }
 .most-recent {
-  margin-top:120px;
+  margin-top:80px;
 }
 
-.most-recent .user-slider {
+.user-slider {
   color: #8c989e;
   font-size: 16px;
   font-style: normal;
-  line-height: 1;
   background-color: #fff;
   border:1px solid #8c989e;
   width:200px;
   height:260px;
   border-radius:10px;
-  margin-left:10px;
+  margin:10px;
 }
 
 .user-slider ul li {

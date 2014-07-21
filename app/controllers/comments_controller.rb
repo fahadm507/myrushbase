@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html {redirect_to user_path(@post)}
+        format.html {redirect_to user_path(@post.user)}
         format.js {}
-        format.json { render json: @comment, status: 200 }
+        format.json { render json: @comment, current_user, status: 200 }
       else
         format.html {render user_path(@post.user_id)}
         format.json { render json: { errors: @comment.errors }, status: :unprocessable_entity }
