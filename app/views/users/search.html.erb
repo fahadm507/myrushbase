@@ -17,15 +17,14 @@
 
 <div id="search-results" class="search-results">
   <div class="container">
-    <h2 class="text-center"><%= @search_results.count %> results found</h2>
+    <h2 class="text-center"><%= @search_results.count %> results found: </h2>
     <div class="most-recent row">
       <% @search_results.each do |user| %>
-
       <div class="col-md-3 col-sm-3">
         <div class="pull-left user-info">
           <div class="useravatar text-center"><%=link_to (image_tag user.avatar.url(:thumb), class: "img-circle ", size:'40x40'), user_path(user) %></div>
           <ul>
-            <li class="user-name"><%=link_to "#{current_user.first_name} #{current_user.last_name}", user_path(user) %></li>
+            <li class="user-name"><%=link_to "#{user.first_name} #{user.last_name}", user_path(user) %></li>
             <%if params[:category ] %>
               <%= user.category.name %>
             <%end%>
@@ -43,7 +42,6 @@
                     <%= f.submit "Follow", class: "btn btn-large btn-primary" %>
                   </div>
                   <%end%>
-
               <%end%>
             </li>
           </ul>

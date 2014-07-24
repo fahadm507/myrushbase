@@ -1,8 +1,8 @@
 <% if Point.has_credited?(current_user.id) %>
     <a class="btn btn-success">Credit Given</a>
     <% else %>
-    <a class="credit"><%= button_to [current_user, @point] do %>
-      Give Credit
+    <a class="credit"><%= bootstrap_form_for [current_user, @point] do %>
+     <% f.submit 'Give Credit', class: 'btn btn-primary'%>
     </a>
     <% end %>
 <% end %>
