@@ -33,7 +33,7 @@
             <%if post.comments.any?%>
               <div class="comments-details row">
                 <ul id="comment-for-post">
-                  <% post.comments.each do |comment| %>
+                  <% post.comments.order(created_at: :desc) do |comment| %>
                     <li>
                       <aside class="commenter-image pull-left">
                         <%=link_to (image_tag post.user.avatar.url(:thumb), class: "img-circle ", size:'40x40'), user_path(current_user) %>

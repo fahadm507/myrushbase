@@ -7,9 +7,14 @@
   <div class="container text-center">
     <h2 class="caption">Connect with like minded learners and share knowlege</h2>
     <ul class="text-center">
-      <li><a class="btn btn-success btn-large" href="/users/sign_up">Sign up</a>&nbsp;&nbsp;&nbsp;
+    <% if current_user %>
+ <%= link_to "sign out", signout_path, id: "sign_out", class: 'login-link' %>
+ <% else %>
+ <%= link_to "sign in", "/auth/facebook", id: "sign_in", class: 'login-link' %>
+ <% end %>
+      <!-- <li><a class="btn btn-success btn-large" href="/users/sign_up">Sign up</a>&nbsp;&nbsp;&nbsp;
         <a class="btn btn-success btn-large" href="/users/sign_in">Sign in</a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div>
@@ -37,7 +42,7 @@
           <div class="useravatar text-center"><%= image_tag user.avatar.url(:thumb), :class => "img-circle"%></div>
           <ul>
             <li><a class="user-name" href="/users"><%= user.first_name %> <%=user.last_name %></a></li>
-            <li><%=user.category.name%></li>
+
             <li><%= user.location%>
             <li>
               <a class="btn btn-success btn-large" href="/users/sign_up">Follow</a>

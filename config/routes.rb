@@ -8,11 +8,19 @@ Rails.application.routes.draw do
     resources :questions do
       resources :answers
     end
+
     resources :points, only: [:create, :destroy]
     member do
       get :following, :followers
     end
   end
+
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
+  # root to: 'users#show'
+
   resources :relationships, only: [:create, :destroy]
   resources :posts, only: [:create, :new, :destroy] do
     resources :comments, only:[:create, :new, :destroy]

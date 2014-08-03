@@ -21,7 +21,10 @@ class User < ActiveRecord::Base
   has_many :points
   validates :first_name ,presence: true
   validates :last_name, presence: true
-  validates :category_id, presence: true
+
+
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -36,6 +39,22 @@ class User < ActiveRecord::Base
     s3_credentials: "config/secrets.yml"
 
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+       user.provider = auth.provider
+       user.uid = auth.uid
+       user.name = auth.info.name
+       user.first_name= auth.info.first_name
+       user.last_name= auth.info.last_name
+       user.image = auth.info.image
+       user.email = auth.info.email
+       user.location = auth.info.location
+       user.oauth_token = auth.credentials.token
+       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+       user.save!
+    end
+  end
 
   def self.users_by_category(query,user,category_id)
     where("category_id = ? AND (first_name LIKE ? OR last_name LIKE ?)", category_id, "%#{query}%", "%#{query}%")
@@ -60,6 +79,12 @@ class User < ActiveRecord::Base
 
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  protected
+
+  def password_required?
+    false
   end
 
 end

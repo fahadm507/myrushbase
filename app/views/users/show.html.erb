@@ -26,7 +26,7 @@
               <div class="useravatar"><%=link_to (image_tag @user.avatar.url(:thumbnail),class: "img-circle"), user_path(current_user) %></div>
               <ul>
                 <li class="user-name"><%=link_to "#{current_user.first_name} #{current_user.last_name}", user_path(current_user) %></li>
-                <li class=""><%= @user.category.name%> </li>
+
                 <li><%= @user.location %></li>
               </ul>
             </div>
