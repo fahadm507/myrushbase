@@ -23,9 +23,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @suggested_users = User.suggested_users(current_user.category)
+
     @feed_posts = Post.posts_from_users(current_user).limit(10)
-    @user = User.find(params[:id])
+    if current_user
+       @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
+    @subject = Subject.new
     @post = Post.new
     @comment= Comment.new
     @like = Like.new
