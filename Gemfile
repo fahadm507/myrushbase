@@ -8,6 +8,7 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+gem 'slick_rails'
 gem 'aws-sdk'
 gem 'omniauth-facebook'
 gem "factory_girl_rails", "~> 4.0"
