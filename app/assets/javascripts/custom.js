@@ -3,6 +3,8 @@ $( document ).ready(function() {
    $(function () {
     $('#myTab a:first').tab('show');
   })
+
+
 });
 
 // home page
@@ -23,7 +25,16 @@ $(document).ready(function() {
   $('#nav-toggle').on('click', function (event) {
     event.preventDefault();
     $('#main-nav').toggleClass("open");
+
   });
+
+
+  $(document).ready(function(){
+    $('.carousel').carousel();
+  });
+
+
+
     // $('.comment-form').on('ajax:success', function(e, data, textStatus, jqXHR){
     //   $(this).closest(".comments-details").toggleClass("text-center")
     //   console.log(data.description);

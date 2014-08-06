@@ -1,22 +1,27 @@
 
-<div class="jumbotron ">
-<!-- Main background cover-->
-</div>
 
-<div id="homepage" class="page-section">
-  <div class="container text-center">
-    <h2 class="caption">Connect with like minded learners and share knowlege</h2>
-    <ul class="text-center">
-    <% if current_user %>
- <%= link_to "sign out", signout_path, id: "sign_out", class: 'login-link' %>
- <% else %>
- <%= link_to "sign in", "/auth/facebook", id: "sign_in", class: 'login-link' %>
- <% end %>
-      <!-- <li><a class="btn btn-success btn-large" href="/users/sign_up">Sign up</a>&nbsp;&nbsp;&nbsp;
-        <a class="btn btn-success btn-large" href="/users/sign_in">Sign in</a>
-      </li> -->
-    </ul>
-  </div>
+
+<div id="landing-page" class="carousel slide"><!-- class of slide for animation -->
+
+  <div class="carousel-inner">
+    <div class="item active"><!-- class of active since it's the first item -->
+      <img src="https://s3-us-west-2.amazonaws.com/rushbase-development/classphot.jpg" alt="" />
+    </div>
+
+    <div class="item">
+      <img src="https://s3-us-west-2.amazonaws.com/rushbase-development/class-photo5.JPG" alt="" />
+    </div>
+
+    <div class="item">
+      <img src="https://s3-us-west-2.amazonaws.com/rushbase-development/highfive.jpg" alt="" />
+    </div>
+
+  </div><!-- /.carousel-inner -->
+
+</div><!-- /.carousel -->
+
+<div class="carousel-caption">
+  <p> checking if this prints on</p>
 </div>
 
 <div id="how" class="page-section">
@@ -28,6 +33,11 @@
       <li>You will be suggested like minded people to connect with based on your major or what you are currently learning</li>
       <li>Start sharing relevant information you find useful online with your followers </li>
       <li>Search and follow more people in your major and keep learning</li>
+        <% if current_user %>
+        <%= link_to "sign out", signout_path, id: "sign_out", class: 'login-link' %>
+       <% else %>
+       <%= link_to "sign in", "/auth/facebook", id: "sign_in", class: 'login-link' %>
+       <% end %>
     </ul>
   </div>
 </div>

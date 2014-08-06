@@ -7,7 +7,8 @@ group :development, :test do
   gem 'launchy'
   gem 'dotenv-rails'
 end
-
+gem 'slick_rails'
+gem 'jquery-ui-rails'
 gem 'aws-sdk'
 gem 'omniauth-facebook'
 gem "factory_girl_rails", "~> 4.0"

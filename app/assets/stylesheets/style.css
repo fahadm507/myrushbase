@@ -22,7 +22,7 @@ ul li {
 }
 
 /************************************** HOME PAGE STYLES ***************/
-.jumbotron {
+/*.jumbotron {
     background:url("https://s3-us-west-2.amazonaws.com/rushbase-development/classphot.jpg") no-repeat center center;
     background-size:cover;
     height:100%;
@@ -37,7 +37,42 @@ ul li {
     background-color:transparent;
     opacity: .6;
 
-  }
+  }*/
+
+#landing-page{
+  width:100%;
+  height:500px;
+  margin:auto 0;
+  z-index: -99;
+  background-size:cover;
+
+}
+
+#landing-page img {
+  width:100%;
+  height:100%
+  top: 0;
+  left: 0;
+  margin-left:0px;
+  margin-right:0px;
+  padding-top: 0px;
+  padding-right:-20px;
+  background-repeat: no-repeat center center
+  background-color: #fff;
+  background: rgba(39,62,84,0.82);
+   background-size:cover;
+  z-index: 10;
+
+}
+.carousel-caption{
+  top:30%;
+
+}
+.new-class{
+  height:120;
+  width:400px;
+  background-color:red;
+}
 .home-content h1 {
   padding-top:150px;
   color:#fff;

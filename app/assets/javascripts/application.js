@@ -13,4 +13,8 @@
 //= require twitter/bootstrap/bootstrap-modal
 //= require twitter/bootstrap/bootstrap-button
 //= require twitter/bootstrap/bootstrap-collapse
+//= require slick
+//= require jquery-ui
+//= require jquery-ui/slider
+
 
