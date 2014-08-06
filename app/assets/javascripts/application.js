@@ -15,3 +15,6 @@
 //= require twitter/bootstrap/bootstrap-collapse
 //= require slick
 
+
+//= require jquery.simple-text-rotator
+
