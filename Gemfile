@@ -7,13 +7,8 @@ group :development, :test do
   gem 'launchy'
   gem 'dotenv-rails'
 end
-<<<<<<< HEAD
 
-gem 'slick_rails'
-
-
-gem "font-awesome-rails"
-
+gem 'font-awesome-rails'
 gem 'aws-sdk'
 gem 'omniauth-facebook'
 gem "factory_girl_rails", "~> 4.0"
