@@ -10,11 +10,10 @@ end
 <<<<<<< HEAD
 
 gem 'slick_rails'
-=======
-gem 'slick_rails'
+
+
 gem "font-awesome-rails"
-gem 'jquery-ui-rails'
->>>>>>> tweak_landing_page
+
 gem 'aws-sdk'
 gem 'omniauth-facebook'
 gem "factory_girl_rails", "~> 4.0"
