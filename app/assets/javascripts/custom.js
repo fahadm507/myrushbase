@@ -31,8 +31,19 @@ $(document).ready(function() {
 
   $(document).ready(function(){
     $('.carousel').carousel();
+     $('.carousel').carousel({
+      interval: 8000,
+      speed: 2000,
+      animation: "fade"
+    });
   });
 
+  $(document).ready(function(){
+      $(".rotate").textrotator({
+        separator: ",",
+        speed: 5000
+    });
+  });
 
 
     // $('.comment-form').on('ajax:success', function(e, data, textStatus, jqXHR){
@@ -72,7 +83,7 @@ function scrollToID(id, speed){
   $('html,body').animate({scrollTop:targetOffset}, speed);
   if (mainNav.hasClass("open")) {
     mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-    // mainNav.removeClass("open");
+    mainNav.removeClass("open");
   }
 }
 if (typeof console === "undefined") {

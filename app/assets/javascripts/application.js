@@ -16,5 +16,7 @@
 //= require slick
 //= require jquery-ui
 //= require jquery-ui/slider
+//= require jquery.simple-text-rotator
+
 
 

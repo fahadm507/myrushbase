@@ -22,71 +22,116 @@ ul li {
 }
 
 /************************************** HOME PAGE STYLES ***************/
-/*.jumbotron {
-    background:url("https://s3-us-west-2.amazonaws.com/rushbase-development/classphot.jpg") no-repeat center center;
-    background-size:cover;
-    height:100%;
-    width:100%;
-    margin:auto 0;
-    position:fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -99;
-    background-color:transparent;
-    opacity: .6;
-
-  }*/
 
 #landing-page{
   width:100%;
-  height:500px;
+  height:auto;
   margin:auto 0;
   z-index: -99;
-  background-size:cover;
-
+  height:600px;
 }
 
 #landing-page img {
   width:100%;
-  height:100%
   top: 0;
   left: 0;
-  margin-left:0px;
-  margin-right:0px;
-  padding-top: 0px;
-  padding-right:-20px;
-  background-repeat: no-repeat center center
-  background-color: #fff;
-  background: rgba(39,62,84,0.82);
-   background-size:cover;
-  z-index: 10;
+  background-repeat: no-repeat center top;
+  background-position: top-center;
 
 }
+
 .carousel-caption{
-  top:30%;
+  background-color: #000000;
+  background-color:rgba(0, 0, 0, 0.14);
+  left:0;
+  top:0;
+  bottom: 0;
+  right: 0;
+}
+
+.carousel-caption h1 {
+  font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
+  padding-top: 50px;
+  color:#fff;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #fff;
+  font-size: 62px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.99);
+}
+.rotate {
+  color:#00af54;
+  font-weight: 500;
 
 }
-.new-class{
-  height:120;
-  width:400px;
-  background-color:red;
+.carousel-caption p {
+  line-height: 1.2;
+  font-weight: bold;
+  padding-bottom: 30px;
+  color: #fff;
+  text-shadow:0 1px 2px rgba(243, 234, 234, 1);;
+  font-size: 22px;
+  font-weight: 300;
+  font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
 }
-.home-content h1 {
-  padding-top:150px;
+
+.carousel-caption span {
+  padding:10px;
+}
+.btn-facebook {
+  border-color: #3b5998;
+  border-bottom-color: #263a63;
+  background-color: #3b5998;
+  color: #fff;
+  width:100%;
+  height:100%;
+  padding:10px;
+  border-radius: 5px;
+  margin-top:10px;
+}
+.btn-facebook:hover{
   color:#fff;
-  line-height: 1.1;
-  font-family: "Abel", Arial, sans-serif;
-  font-weight: 400px;
+  background:#3b5998;
+  list-style-type: none;
+  text-decoration: none;
 }
-.home-content p {
-  color:white;
+
+
+.fa-facebook {
+  padding-right:10px;
+  border-right:5px #3b5998;
+}
+.how-it-works-btn a {
+  color: #fff;
+  font-size:18pt;
+  width:200px;
+  height:40px;
+  padding:0px;
+  border-radius: 5px;
+
 }
 
 /************************************* NAVIGATION-BAR STYLING  *************************/
-.navbar {
-  background-color: #5cb85c;
+.header {
+  position: fixed;
+  width: 100%;
+}
+
+.navbar-default {
+   background: rgba(234, 248, 234, 0.56);
+   border-left: none;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: black;
+}
+.row .navbar{
+  border: none;
+}
+.collapse.collapse {
+  border:0;
 }
 .navbar-nav li a{
   color:#fff;
@@ -98,6 +143,10 @@ ul li {
 .navbar ul {
   margin-left:60px;
 }
+.login-link {
+  padding-right:30px;
+}
+
 .dropdown-menu {
   background-color:#5cb85c;
 }
@@ -195,10 +244,12 @@ ul li {
   line-height: 1.2em;
   margin-top:5px;
 }
+
 .user-name {
   font-size: 16pt;
   color:#008f45;
 }
+
 .small {
   text-transform: uppercase;
 }
@@ -424,13 +475,12 @@ ul li {
   margin-top:120px;
 }
 .page-section#how {
-  background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/class-photo5.JPG") bottom center no-repeat;
-  background-size: cover;
-  background-position: top right;
+  background-color: #2d3339;
   position: relative;
   right:0;
   left:0;
   top:0;
+  color:#fff;
 
 }
 #how li {
@@ -448,13 +498,14 @@ ul li {
   right:0;
   left:0;
   padding-top:20px;
-
 }
+
 .page-section#about {
    background-color: #fff ;
    font-family: "Gotham Rounded A", "Gotham Rounded B" !important;
    color:#384047
 }
+
 .most-recent {
   margin-top:80px;
 }

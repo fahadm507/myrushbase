@@ -8,6 +8,7 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 gem 'slick_rails'
+gem "font-awesome-rails"
 gem 'jquery-ui-rails'
 gem 'aws-sdk'
 gem 'omniauth-facebook'
