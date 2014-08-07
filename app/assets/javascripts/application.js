@@ -13,7 +13,5 @@
 //= require twitter/bootstrap/bootstrap-modal
 //= require twitter/bootstrap/bootstrap-button
 //= require twitter/bootstrap/bootstrap-collapse
-
-
 //= require jquery.simple-text-rotator
 
