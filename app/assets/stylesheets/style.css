@@ -28,7 +28,8 @@ ul li {
   height:auto;
   margin:auto 0;
   z-index: -99;
-  height:600px;
+  height: 600px;
+
 }
 
 #landing-page img {
@@ -343,6 +344,7 @@ ul li {
   margin-top: 150px;
 }
 
+
 .posts-area {
   background: #fff;
   box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
@@ -481,6 +483,8 @@ ul li {
   left:0;
   top:0;
   color:#fff;
+  margin-top:30px;
+  padding-top: 20px;
 
 }
 #how li {

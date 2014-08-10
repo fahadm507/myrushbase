@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
     @feed_posts = Post.posts_from_users(current_user).limit(10)
     if current_user
        @user = current_user
