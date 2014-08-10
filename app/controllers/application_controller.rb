@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
    def authenticate!
      unless signed_in?
-       flash[:notice] = 'You need to sign in if you want to do that.'
+       flash[:notice] = 'You need to sign in'
        redirect_to users_path
      end
    end
