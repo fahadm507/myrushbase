@@ -20,7 +20,17 @@ div {
 ul li {
   list-style-type: none;
 }
+#how .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: rgba(94, 100, 94, 0.32);
+  border-color: #D9DBD9;
+}
 
+#how .btn-success {
+  color: #fff;
+  background-color: #BDC4BD;
+  border-color: #DEE4DE;
+}
 /************************************** HOME PAGE STYLES ***************/
 
 #landing-page{
@@ -29,7 +39,6 @@ ul li {
   margin:auto 0;
   z-index: -99;
   height: 600px;
-
 }
 
 #landing-page img {
@@ -295,7 +304,6 @@ ul li {
   padding:40px;
   border-radius:5px;
   text-align: center;
-
 }
 
 .user-log .form-control {
@@ -429,9 +437,8 @@ ul li {
 }
 .page-section {
   width: 100%;
-  min-height: 800px;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  min-height: 500px;
+  padding-bottom: 100px;
 
 }
 .page-section h1 {
@@ -478,7 +485,6 @@ ul li {
 }
 .page-section#how {
   background-color: #2d3339;
-  position: relative;
   right:0;
   left:0;
   top:0;
@@ -487,13 +493,20 @@ ul li {
   padding-top: 20px;
 
 }
-#how li {
-  color:#F8F1F1;
-  font-size: 25pt;
-  padding-left:10px;
-  font-family: 'Tangerine', serif;
+#how h2 {
+  color:#A8A7A7;
 
 }
+#how p {
+  color:#A8A7A7;
+  padding:20px;
+  font-family: 'Tangerine', serif;
+}
+#how .btn-success {
+  margin-top:30px;
+  width:300px;
+}
+
 .page-section#members {
   background: url("https://s3-us-west-2.amazonaws.com/rushbase-development/highfive.jpg") top center no-repeat;
   background-color:#C3DED5;
@@ -503,15 +516,33 @@ ul li {
   left:0;
   padding-top:20px;
 }
-
-.page-section#about {
-   background-color: #fff ;
-   font-family: "Gotham Rounded A", "Gotham Rounded B" !important;
-   color:#384047
-}
-
 .most-recent {
   margin-top:80px;
+}
+
+.page-section#about {
+ color:#fff;
+  background-color: rgba(248, 243, 243, 0);
+  font-family: "Gotham Rounded A", "Gotham Rounded B" !important;
+  color: #969EA5;
+  margin-left:20px;
+  padding-left:20px;
+}
+
+#about h3 {
+  text-align: center;
+  font-weight: 600px;
+  font-size: 26pt;
+}
+#about h4 {
+  margin-left:20px;
+  font-weight: 500px;
+  font-size: 20pt;
+}
+
+#about p {
+  padding :20px;
+  text-align: left;
 }
 
 .user-slider {
