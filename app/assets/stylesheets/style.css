@@ -21,6 +21,7 @@ ul li {
   list-style-type: none;
 }
 
+
 /************************************** HOME PAGE STYLES ***************/
 
 #landing-page{
@@ -356,17 +357,19 @@ ul li {
   border-radius: 10px;
   height:auto;
   width:760px;
-
 }
+
 .post-body {
   padding:20px;
   margin:20px;
   border:3px solid #E3E8E6;
   border-radius:10px;
 }
+
 .poster {
   padding-left:20px;
 }
+
 .image-for-poster {
   padding-right:10px;
   margin-bottom: 30px;
@@ -416,7 +419,8 @@ ul li {
   z-index: 10;
   right: 0;
   left: 0;
-}d
+}
+
 .container {
   width:100%;
 }
@@ -429,8 +433,8 @@ ul li {
 }
 .page-section {
   width: 100%;
-  min-height: 800px;
-  padding-top: 150px;
+  min-height: 500px;
+  padding-top: 50px;
   padding-bottom: 150px;
 
 }
@@ -482,7 +486,7 @@ ul li {
   right:0;
   left:0;
   top:0;
-  color:#fff;
+  color:#B1ADAD;
   margin-top:30px;
   padding-top: 20px;
 
@@ -502,12 +506,6 @@ ul li {
   right:0;
   left:0;
   padding-top:20px;
-}
-
-.page-section#about {
-   background-color: #fff ;
-   font-family: "Gotham Rounded A", "Gotham Rounded B" !important;
-   color:#384047
 }
 
 .most-recent {
@@ -531,11 +529,38 @@ ul li {
   text-align: center;
 }
 
+.page-section#about {
+   background-color: #fff ;
+   font-family: "Gotham Rounded A", "Gotham Rounded B" !important;
+   color:#384047;
+}
 
+#how .btn-success {
+  color: #fff;
+  background-color: #BDC4BD;
+  border-color: #DEE4DE;
+  margin-top: 40px;
+  width:300px;
+}
 
+#how .btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: #2d3339;
 
-
-
+}
+#how h2 {
+  color:#B1ADAD;
+}
+#how p{
+  margin:20px;
+}
+#about .container {
+  padding:0 80px 0 80px;
+}
 
 
 
