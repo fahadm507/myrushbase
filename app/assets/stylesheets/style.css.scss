@@ -38,7 +38,7 @@ $green-color: #449d44;
   height:auto;
   margin:auto 0;
   z-index: -99;
-  height: 600px;
+  height: 500px;
 
     img {
     width:100%;
@@ -51,8 +51,6 @@ $green-color: #449d44;
 
 }
 
-
-
 .carousel-caption{
   background-color: #000000;
   background-color:rgba(0, 0, 0, 0.14);
@@ -60,6 +58,7 @@ $green-color: #449d44;
   top:0;
   bottom: 0;
   right: 0;
+  height:500px;
 
   h1 {
 
@@ -115,7 +114,6 @@ $green-color: #449d44;
   text-decoration: none;
 }
 
-
 .fa-facebook {
   padding-right:10px;
   border-right:5px #3b5998;
@@ -130,69 +128,6 @@ $green-color: #449d44;
 
 }
 
-/************************************* NAVIGATION-BAR STYLING  *************************/
-.header {
-  position: fixed;
-  width: 100%;
-}
-
-.navbar-default {
-   background: rgba(234, 248, 234, 0.56);
-   border-left: none;
-}
-.navbar-inverse .navbar-nav>li>a {
-  color: black;
-}
-.row .navbar{
-  border: none;
-}
-.collapse.collapse {
-  border:0;
-}
-.navbar-nav li a{
-  color:#fff;
-}
-.navbar-brand a {
-  color:#fff;
-}
-
-.navbar ul {
-  margin-left:60px;
-}
-.login-link {
-  padding-right:30px;
-}
-
-.dropdown-menu {
-  background-color:#5cb85c;
-}
-
-.dropdwon-menu li {
-  background-color: #5cb85c;
-}
-.registration-btns li {
-  padding:0 10 0 10;
-  margin-right:10px;
-  border-radius:10px;
-}
-/** Search Bar **/
-
-.form-search {
-  display:block;
-  float:left;
-  text-align: center;
-  display: fixed;
-  margin-right:150px;
-  margin-top:5px;
-  border-radius: 0px;
-}
-.subj  {
-  padding-top:20px;
-
-}
-.navbar-form .form-control {
-  width:350px;
-}
 /************************************ User profile styles  ************************************/
 
 .wrapper {
@@ -346,19 +281,22 @@ $green-color: #449d44;
 .pull-right {
   float:right
 }
+
 .user-post .image-for-poster{
   padding-top:40px;
 }
+
 .comment .btn {
   margin-right:20px;
 }
+
 .user-dashboard {
   margin-top:80px;
 }
+
 .all-members {
   margin-top: 150px;
 }
-
 
 .posts-area {
   background: #fff;
@@ -466,19 +404,23 @@ $green-color: #449d44;
   margin: 0 0 30px;
   text-shadow: 2px 2px 2px #000;
 }
+
 .page-section p {
   font-size: 1.2em;
   font-weight: 200;
   margin: 0 25% 20px 0;
 }
+
 .page-section p.lead {
   font-size: 1.8em;
 }
+
 .page-section p.caption {
   color: #fff;
   padding: 20px;
   text-shadow: 1px 1px 1px #000;
 }
+
 .page-section#home {
   position: relative;
   padding-top: 60px;
@@ -533,6 +475,26 @@ $green-color: #449d44;
   height:260px;
   border-radius:10px;
   margin:10px;
+}
+
+.carousel .item {
+  -webkit-transition: opacity 3s;
+  -moz-transition: opacity 3s;
+  -ms-transition: opacity 3s;
+  -o-transition: opacity 3s;
+  transition: opacity 5s;
+}
+
+.carousel .active.left {
+  left:0;
+  opacity:0;
+  z-index:5;
+}
+
+.carousel .next {
+  left:0;
+  opacity:1;
+  z-index:1;
 }
 
 .user-slider ul li {
