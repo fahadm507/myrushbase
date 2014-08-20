@@ -20,6 +20,15 @@ div {
 ul li {
   list-style-type: none;
 }
+  /*body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, p, blockquote, hr, th, td {
+  margin: 0;
+  padding: 0;
+  font-family: "proxima-nova", arial, sans-serif;
+}*/
+
+/**** Colors ***/
+$main-color: #fff;
+$green-color: #449d44;
 
 
 /************************************** HOME PAGE STYLES ***************/
@@ -31,16 +40,18 @@ ul li {
   z-index: -99;
   height: 600px;
 
+    img {
+    width:100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat center top;
+    background-position: top-center;
+
+  }
+
 }
 
-#landing-page img {
-  width:100%;
-  top: 0;
-  left: 0;
-  background-repeat: no-repeat center top;
-  background-position: top-center;
 
-}
 
 .carousel-caption{
   background-color: #000000;
@@ -49,40 +60,43 @@ ul li {
   top:0;
   bottom: 0;
   right: 0;
+
+  h1 {
+
+    font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
+    padding-top: 50px;
+    line-height: 1.2;
+    font-weight: bold;
+    color:$main-color;
+    font-size: 62px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.99);
+  }
+
+  p {
+    line-height: 1.2;
+    font-weight: bold;
+    padding-bottom: 30px;
+    color: #fff;
+    text-shadow:0 1px 2px rgba(243, 234, 234, 1);;
+    font-size: 22px;
+    font-weight: 300;
+    font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
+  }
+  span {
+    padding:10px;
+  }
+
 }
 
-.carousel-caption h1 {
-  font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
-  padding-top: 50px;
-  color:#fff;
-  line-height: 1.2;
-  font-weight: bold;
-  color: #fff;
-  font-size: 62px;
-  font-weight: 900;
-  margin-bottom: 10px;
-  position: relative;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.99);
-}
 .rotate {
   color:#00af54;
   font-weight: 500;
 
 }
-.carousel-caption p {
-  line-height: 1.2;
-  font-weight: bold;
-  padding-bottom: 30px;
-  color: #fff;
-  text-shadow:0 1px 2px rgba(243, 234, 234, 1);;
-  font-size: 22px;
-  font-weight: 300;
-  font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
-}
 
-.carousel-caption span {
-  padding:10px;
-}
 .btn-facebook {
   border-color: #3b5998;
   border-bottom-color: #263a63;
@@ -483,9 +497,6 @@ ul li {
 .page-section#how {
   background-color: #2d3339;
   position: relative;
-  right:0;
-  left:0;
-  top:0;
   color:#B1ADAD;
   margin-top:30px;
   padding-top: 20px;
@@ -552,16 +563,51 @@ ul li {
   background-color: #2d3339;
 
 }
-#how h2 {
-  color:#B1ADAD;
+#how {
+
+  h2 {
+    color:#B1ADAD;
+  }
+
+  p{
+    margin:20px;
+  }
 }
-#how p{
-  margin:20px;
-}
+
 #about .container {
   padding:0 80px 0 80px;
 }
+#about h3 {
+  text-align: center;
+  font-weight: 600px;
+  font-size: 26pt;
+  color: $green-color;
+}
 
+.about-col {
+
+  p {
+    color: #8f9aa0;
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 19px;
+  }
+
+  img {
+    border-radius:20px;
+    height:300px;
+    width:400px;
+  }
+
+  h4 {
+    font-size:20pt;
+    color:$green-color;
+  }
+}
+
+#about .user-groups {
+  margin-bottom:40px;
+}
 
 
 
