@@ -7,12 +7,12 @@ html, body {
 
 }
 body {
-z-index: 0;
-background-repeat:no-repeat;
+  z-index: 0;
+  background-repeat:no-repeat;
 
-font-family:"Open Sans",helvetica,arial,sans-serif;
-font-weight:400;
-font-size:12.5pt;
+  font-family:"Open Sans",helvetica,arial,sans-serif;
+  font-weight:400;
+  font-size:12.5pt;
 }
 div {
   display:block;
@@ -51,7 +51,7 @@ $green-color: #449d44;
     left: 0;
     background-repeat: no-repeat center top;
     background-position: top-center;
-    height: 500px;
+    height: 550px;
   }
 
 }
@@ -548,8 +548,9 @@ $green-color: #449d44;
   color: #fff;
   background-color: #BDC4BD;
   border-color: #DEE4DE;
-  margin-top: 40px;
+  margin-top: 30px;
   width:300px;
+  margin-bottom: 30px;
 }
 
 #how .btn-success:hover,
@@ -601,6 +602,16 @@ $green-color: #449d44;
     font-size:20pt;
     color:$green-color;
   }
+}
+
+.group-btn .btn {
+  color: #fff;
+  font-size:16pt;
+  width:200px;
+  height:40px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding:5px;
 }
 
 #about .user-groups {
