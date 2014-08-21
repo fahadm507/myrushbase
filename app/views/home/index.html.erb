@@ -23,7 +23,11 @@
   <div class="carousel-caption row">
     <div class="container">
       <h1> Share your learning experience with like minded people</h1>
+<<<<<<< HEAD
       <p>Find <span class="rotate">students, professionals, people </span> in your <span class="rotate">major, career, industry </span> and share knowledge and resources</p>
+=======
+      <p>Find <span class="rotate">students, professionals, people </span> in your <span class="rotate">major, career path, industry </span> and share knowledge and useful resources</p>
+>>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b
 
       <span class="home-buttons">
         <a href="/auth/facebook" class="btn-facebook">
@@ -44,12 +48,19 @@
 
     <div class="row">
       <div class="col-md-4 col-sm-6 col-xs-12">
+<<<<<<< HEAD
 
+=======
+>>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b
         <p >Sign in with facebook, choose a major/Industry that you are pursuing</p>
       </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12">
+<<<<<<< HEAD
           <p>Enter what you are currently learning or what you want to learn, You will be suggested users that are learning the same</p>
+=======
+          <p>Enter what you are currently learning or want to learn, You will be suggested users that might be learning the same.</p>
+>>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
            <p>Follow suggested users or find users to follow and see what resources they are using and what they are sharing</p>
@@ -58,14 +69,22 @@
 
     <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-12">
+<<<<<<< HEAD
            <p>Find/create groups that are related to your learning goals</p>
+=======
+           <p>Find/create study groups that are related to your learning goals</p>
+>>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b
         </div>
 
         <div class="col-md-4 col-sm-6 col-xs-12">
           <p> You can start sharing the resources that you use or what you are learning and people who follow can see it and give you feedback </p>
         </div>
         <div class="col-md-4 col-xs-12 col-xs-12">
+<<<<<<< HEAD
            <p>Ask questions other like minded people in groups or in questions/answers tab to allow everyone in your industry to see it in their feed</p>
+=======
+           <p>Ask questions other like minded people in your industry to get quality feed back</p>
+>>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b
         </div>
     </div>
     <div class="row text-center">
@@ -81,16 +100,64 @@
   <div class="container">
     <h2 class="text-center">Most recent members</h2>
     <div class="most-recent row">
+<<<<<<< HEAD
+=======
+      <% @recent_memebers.each do |user| %>
+      <div class="col-md-3 col-sm-3">
+        <div class="pull-left user-slider">
+          <div class="useravatar text-center"><%= image_tag user.avatar.url(:thumb), :class => "img-circle"%></div>
+          <ul>
+            <li><a class="user-name" href="/users"><%= user.first_name %> <%=user.last_name %></a></li>
+            <li><%= user.location%>
+            <li>
+              <a class="btn btn-success btn-large" href="/users/sign_up">Follow</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+       <%end%>
+>>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b
     </div>
   </div>
 </div>
 
 <div id="about" class="page-section">
+<<<<<<< HEAD
   <div class="container">
     <div class="row user-groups">
       <h3 class="text-center">Rushbase Groups</h3>
       <hr>
       <br/>
+=======
+  <div class="row">
+    <h3 >Rushbase Groups</h3>
+    <hr>
+
+    <div class="col-md-6">
+      <h4 class=""> For Learners</h4>
+      <p>Rushbase allows users to create a group of like minded learners and share information with in a group, rushbase only allows public groups at the moment. Joining a group is the fastest way to engage with people who are learning similar subjects, contribute your ideas on different topics, ask questions, share information that you find useful and relevant with others, etc</p>
+
+
+    </div>
+
+    <div class="col-md-6">
+      <h4 class=""> For Content publishers</h4>
+      <p> Rushbase allows publishers to create a group of learners that use their content to learn, creating a group for your followers on rushbase and allow them to keep helping each other in a group. Tutorial producers are welcome to create a group for their community of learners.  </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <span class="how-it-works-btn col-md-6">
+      <a href="#" class="btn btn-success btn-large"> Find a Group </a>
+    </span>
+
+    <span class="how-it-works-btn col-md-6">
+      <a href="/groups" class="btn btn-success btn-large">Start a group </a>
+    </span>
+  </div>
+</div>
+>>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b
 
       <div class="col-md-6 col-sm-6 col-xs-12 about-col">
         <h4 class=""> For Learners</h4>
