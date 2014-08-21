@@ -43,20 +43,15 @@ $green-color: #449d44;
   height:auto;
   margin:auto 0;
   z-index: -99;
-<<<<<<< HEAD:app/assets/stylesheets/styles.css.scss
   height: 500px;
 
-    img {
+  img {
     width:100%;
     top: 0;
     left: 0;
     background-repeat: no-repeat center top;
     background-position: top-center;
-=======
-  height: 600px;
-}
->>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b:app/assets/stylesheets/style.css
-
+    height: 500px;
   }
 
 }
@@ -103,7 +98,6 @@ $green-color: #449d44;
 .rotate {
   color:#00af54;
   font-weight: 500;
-
 }
 
 .btn-facebook {
