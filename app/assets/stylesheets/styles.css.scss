@@ -20,24 +20,11 @@ div {
 ul li {
   list-style-type: none;
 }
-<<<<<<< HEAD:app/assets/stylesheets/styles.css.scss
-  /*body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, p, blockquote, hr, th, td {
-  margin: 0;
-  padding: 0;
-  font-family: "proxima-nova", arial, sans-serif;
-}*/
 
 /**** Colors ***/
 $main-color: #fff;
 $green-color: #449d44;
 
-=======
-hr {
->>>>>>> d5ae2fff23edd23cba4cd75d17b18885caa0b67b:app/assets/stylesheets/style.css
-
-  width:100%;
-  margin:0;
-}
 #how .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
   color: #fff;
   background-color: rgba(94, 100, 94, 0.32);
