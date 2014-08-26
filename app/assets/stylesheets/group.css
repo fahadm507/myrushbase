@@ -1,0 +1,64 @@
+.group-header {
+  z-index: -99;
+  background-color:#00af54;
+  margin-bottom: 0px;
+}
+
+.group-header h1 {
+  font-family: "Gotham Rounded A", "Gotham Rounded B", Helvetica, Arial, sans-serif !important;
+  color:#fff;
+  line-height: 1.2;
+  font-size: 80px;
+  font-weight: 900;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.99);
+  text-align: center;
+}
+
+.group-header p {
+  color:#fff;
+  font-weight: 400;
+  font-size: 18px;
+  padding-bottom:10px;
+}
+
+.group-stats {
+  background-color:#FAFAFA;
+  width:100%;
+  margin:0 auto;
+  margin-top: -10px;
+}
+
+.group-stats .stat {
+  border-left:2px solid #FEFEFE;
+  text-align: center;
+}
+.group-stats .stat:first-child {
+  border-left:none;
+  text-align: center;
+}
+
+.group-stats .action-btn {
+  border-left:2px solid #FEFEFE;
+  text-align: center;
+}
+
+/**  Group posts section**/
+
+.group-posts {
+  background-color:#f7f7f7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

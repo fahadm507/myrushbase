@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 ">
+      <%= bootstrap_form_for [current_user, @group] do |f| %>
+        <%= f.text_field :name, required: true %>
+        <%= f.text_area :goal, required: true %>
+        <%= f.text_area :description, required: true %>
+        <%= f.text_area :topics%>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

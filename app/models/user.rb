@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
             class_name: 'Relationship', dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   belongs_to :category
+  has_many :groupposts
   has_many :subjects
   has_many :questions
   has_many :answers
@@ -19,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :likes
   has_many :points
+  has_many :groups
   validates :first_name ,presence: true
   validates :last_name, presence: true
 

@@ -15,7 +15,6 @@ class SubjectsController < ApplicationController
   end
 
   def new
-
     @subjects = get_subjects
     @subject = Subject.new
     @user = User.find(params[:user_id])

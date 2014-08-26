@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show] do
     resources :subjects
+    resources :groups do
+       resources :groupposts
+    end
     resources :questions do
       resources :answers
     end
@@ -14,6 +17,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
@@ -28,6 +32,7 @@ Rails.application.routes.draw do
   end
   # You can have the root of your site routed with "root"
   root 'home#index'
+
 
   get '/search' => 'users#search'
 

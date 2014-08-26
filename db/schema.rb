@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140803033227) do
+ActiveRecord::Schema.define(version: 20140824021738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,26 @@ ActiveRecord::Schema.define(version: 20140803033227) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
+  create_table "groupposts", force: true do |t|
+    t.text     "body",       null: false
+    t.integer  "user_id",    null: false
+    t.integer  "group_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.string   "name",        null: false
+    t.text     "goal",        null: false
+    t.text     "description", null: false
+    t.text     "topics"
+    t.string   "url"
+    t.string   "img"
+    t.integer  "user_id",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "likes", force: true do |t|
     t.integer  "user_id",    null: false
     t.integer  "post_id",    null: false
@@ -55,6 +75,13 @@ ActiveRecord::Schema.define(version: 20140803033227) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "memberships", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "group_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -132,6 +159,7 @@ ActiveRecord::Schema.define(version: 20140803033227) do
     t.string   "image",                               null: false
     t.integer  "category_id"
     t.string   "uid",                                 null: false
+    t.integer  "group_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

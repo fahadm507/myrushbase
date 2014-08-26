@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+
+      <h1>All groups directory</h1>
+      <% @groups.each do |group| %>
+        <ul>
+          <li><%= link_to "#{group.name}", [group.user, group] %></li>
+          <li><%= group.goal %></li>
+          <li><%= group.description %></li>
+        </ul>
+      <%end%>
+    </div>
+  </div>
+</div>
