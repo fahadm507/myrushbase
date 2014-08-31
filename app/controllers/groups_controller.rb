@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
     group = user.groups.build(group_params)
 
     if group.save
-      redirect_to user_groups_path
+      redirect_to group_path(group)
     else
       flash.now[:notice] = "Your subject was invalid. Try again!"
       render :'groups/new'
@@ -19,6 +19,10 @@ class GroupsController < ApplicationController
     @groups = Group.all
   end
 
+  def groups
+    @groups = Group.all
+  end
+
   def new
     @group = Group.new
   end
@@ -27,6 +31,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @grouppost = Grouppost.new
     @groupposts = Grouppost.order(created_at: :desc)
+    @membership = Membership.new
   end
 
   def group_params

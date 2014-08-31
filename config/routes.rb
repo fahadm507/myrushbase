@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :subjects
     resources :groups do
-       resources :groupposts
+      resources :memberships
+      resources :groupposts
     end
     resources :questions do
       resources :answers
@@ -33,9 +34,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-
+  get "/<%= user.user_name %>"=> 'users#show'
   get '/search' => 'users#search'
-
+  get '/groups' => 'groups#index'
+  get  '/groups/:id' => 'groups#show'
+  get '/groupposts/:id' => 'groupposts#groupposts'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

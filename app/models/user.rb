@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   has_many :followers, through: :reverse_relationships, source: :follower
   belongs_to :category
   has_many :groupposts
+  belongs_to :groups
+  has_many :groups, through: :memberships
+  has_many :memberships
   has_many :subjects
   has_many :questions
   has_many :answers

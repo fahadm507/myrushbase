@@ -11,7 +11,6 @@ class PointsController < ApplicationController
   end
 
   def destroy
-
     @user = User.find(params[:user_id])
     @point = Point.find(params[:id])
     if @point.destroy

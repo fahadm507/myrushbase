@@ -1,0 +1,5 @@
+<% if Membership.is_member?(current_user, @group) %>
+  <%= render 'groups/unjoin'%>
+<%else%>
+  <%= render 'groups/join'%>
+<%end%>

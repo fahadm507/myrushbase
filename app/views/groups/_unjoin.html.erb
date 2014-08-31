@@ -1,0 +1,4 @@
+
+<div class="liked">
+  <%= button_to 'Member', user_group_membership_path(current_user, @group, Membership.where(user_id: current_user, group_id: @group.id).first), method: :delete %>
+</div>

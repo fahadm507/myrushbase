@@ -20,6 +20,11 @@ class GrouppostsController < ApplicationController
     @grouppost = Grouppost.new
   end
 
+  def groupposts
+    @group= Group.find(params[:id])
+    render 'groupposts'
+  end
+
   def create
     group = Group.find(params[:group_id])
     @grouppost = Grouppost.new(grouppost_params)
@@ -27,7 +32,7 @@ class GrouppostsController < ApplicationController
     @grouppost.group_id = group.id
 
     if @grouppost.save
-      redirect_to user_groups_path(group.id)
+      redirect_to "/groups/#{group.id}"
     else
       flash.now[:notice] = "Your question was invalid. Try again!"
       render :new

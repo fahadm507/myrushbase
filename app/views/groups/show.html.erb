@@ -6,9 +6,9 @@
        </li>
 
       </ul>
-      <h3>About: </h3>
+      <h3>About</h3>
       <p><%= @group.description%></p>
-      <h3>Topics: </h3>
+      <h3>Topics </h3>
       <p><%= @group.topics%></p>
     </div>
     <div class="col-md-8 col-sm-12 col-xs-12">
@@ -20,12 +20,12 @@
         </div>
         <div class="row group-stats">
           <div class="stat col-md-2  col-xs-12">
-            <div class="followers">Posts</div>
-            <div class="count">0</div>
+            <div class="followers"><a href ="/groupposts/<%=@group.id %>"> Posts </a></div>
+            <div class="count"><%= @group.groupposts.count %></div>
           </div>
           <div class="stat col-md-2   col-xs-12">
             <div class="followers">Members</div>
-            <div class="count">0</div>
+            <div class="count"><%= @group.users.count %></div>
           </div>
 
           <div class="stat col-md-2   col-xs-12">
@@ -34,8 +34,7 @@
           </div>
 
           <div class="action-btn col-md-3   col-xs-12">
-            <div class="followers">JOIN</div>
-
+            <div class="followers"><%= render partial: 'groups/join_form', locals: {group: @group}%></div>
           </div>
           <div class="action-btn col-md-3   col-xs-12">
             <div class="followers">Follow</div>
@@ -43,29 +42,32 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-
-          <%=bootstrap_form_for [current_user, @group, @grouppost], html: {class: "form center-block"} do |f| %>
-            <div class="form-group">
-              <%= f.text_area :body, hide_label: true, required: true, placeholder: "paste a link, create a post, post a update, etc", autofocus: "", class: "form-control" %>
-            </div>
-            <%= f.submit "Post", class: "btn btn-success btn-large" %>
-          <%end%>
-        </div>
-      </div>
-
-      <div class="group-posts">
-        <div class="post">
-          <ul>
-            <%@groupposts.each do |grouppost| %>
-            <li><%=link_to (image_tag current_user.image, class: "img-circle nav-image", size:'30x30'), user_path(current_user) %></li></li>
-            <li><%= grouppost.user.name%></li>
-            <li><%= grouppost.body%></li>
-
+      <% if Membership.is_member?(current_user, @group)%>
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <%=bootstrap_form_for [current_user, @group, @grouppost], html: {class: "form center-block"} do |f| %>
+              <div class="form-group">
+                <%= f.text_area :body, hide_label: true, required: true, placeholder: "paste a link, create a post, post a update, etc", autofocus: "", class: "form-control" %>
+              </div>
+              <%= f.submit "Post", class: "btn btn-success btn-large" %>
             <%end%>
-          </ul>
+          </div>
         </div>
+      <%end%>
+
+      <div class="row">
+        <div class="group-posts">
+          <div class="group-post">
+            <ul>
+              <%@groupposts.each do |grouppost| %>
+              <li><%=link_to (image_tag current_user.image, class: "img-circle nav-image", size:'30x30'), user_path(current_user) %></li></li>
+              <li><%= grouppost.user.name%></li>
+              <li><%= grouppost.body%></li>
+
+              <%end%>
+            </ul>
+          </div>
+        </div><!--group post -->
       </div>
     </div>
  </div>
