@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :subjects
     resources :groups do
-      resources :memberships
+      resources :groupfollowers, only: [:index, :show, :create, :destroy]
+      resources :memberships, only: [:index, :show, :create, :destroy]
       resources :groupposts
     end
     resources :questions do

@@ -1,0 +1,4 @@
+<div class="follow">
+  <%= button_to 'Following',user_group_groupfollower_path(current_user, @group, Groupfollower.where(user_id: current_user, group_id: @group.id).first), method: :delete %>
+</div>
+

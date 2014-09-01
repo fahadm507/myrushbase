@@ -32,6 +32,8 @@ class GroupsController < ApplicationController
     @grouppost = Grouppost.new
     @groupposts = Grouppost.order(created_at: :desc)
     @membership = Membership.new
+    @groupfollower = Groupfollower.new
+    @like = Like.new
   end
 
   def group_params

@@ -1,0 +1,5 @@
+<% if Groupfollower.following?(current_user, @group) %>
+  <%= render 'groups/unfollowgroup'%>
+<%else%>
+  <%= render 'groups/groupfollow'%>
+<%end%>

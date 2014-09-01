@@ -1,0 +1,29 @@
+<div class="posts-area">
+    <div class="post-details">
+      <% @groupposts.order(created_at: :desc).each do |post| %>
+        <div class="post">
+          <div class="poster">
+            <div class="image-for-poster pull-left"><%=link_to (image_tag post.user.avatar.url(:thumb), class: "img-circle ", size:'50x50'), user_path(current_user) %></div>
+            <div class="post-image-n-time">
+              <div class="user-name"><%= link_to "#{post.user.first_name} #{post.user.last_name}", user_path(post.user) %></div>
+              <div class="time">posted on <%=post.created_at.strftime("%B %d, %Y, %I:%M %p ") %></div>
+            </div>
+          </div>
+
+          <div class="post-body"><%= post.body %>
+            <ul class="count-comments-n-likes">
+
+             <li class="likes">
+
+              </li>
+
+            </ul>
+
+            <div class="comments-form">
+
+            </div><br><!-- Comments form ends here -->
+
+          </div><!-- Post body ends here-->
+        </div><!-- post -->
+        <%end%>
+    </div>
