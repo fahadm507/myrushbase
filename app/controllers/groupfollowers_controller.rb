@@ -1,6 +1,6 @@
 class GroupfollowersController < ApplicationController
   def create
-
+    authenticate!
     @user = User.find(params[:user_id])
     @group = Group.find(params[:group_id])
     @groupfollower = @group.groupfollowers.build(user_id:@user.id, group_id: @group.id)

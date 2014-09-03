@@ -1,6 +1,6 @@
 <div>
   <div class='join-btn'>
-      <%= bootstrap_form_for [current_user, @group, @membership] do |f| %>
+      <%= bootstrap_form_for [User, @group, @membership] do |f| %>
         <%= f.submit 'JOIN', class: 'btn btn-primary' %>
       <%end%>
   </div>

@@ -34,6 +34,7 @@ class GroupsController < ApplicationController
     @membership = Membership.new
     @groupfollower = Groupfollower.new
     @like = Like.new
+    @user = User.new
   end
 
   def group_params

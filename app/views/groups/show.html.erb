@@ -13,7 +13,6 @@
     <div class="col-md-8 col-sm-12 col-xs-12">
       <div class="group-wrapper">
         <div class="group-header">
-  <!--       <img src="https://s3-us-west-2.amazonaws.com/rushbase-development/people.jpeg"> -->
           <h1 class="text-center"><%= @group.name %></h1>
           <p class="text-center"><%= @group.goal%></p>
         </div>
@@ -42,18 +41,19 @@
           </div>
         </div>
       </div>
-
-      <% if Membership.is_member?(current_user, @group)%>
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <%=bootstrap_form_for [current_user, @group, @grouppost], html: {class: "form center-block"} do |f| %>
-              <div class="form-group">
-                <%= f.text_area :body, hide_label: true, required: true, placeholder: "paste a link, create a post, post a update, etc", autofocus: "", class: "form-control" %>
-              </div>
-              <%= f.submit "Post", class: "btn btn-success btn-large" %>
-            <%end%>
+      <%if current_user %>
+        <% if Membership.is_member?(current_user, @group)%>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <%=bootstrap_form_for [current_user, @group, @grouppost], html: {class: "form center-block"} do |f| %>
+                <div class="form-group">
+                  <%= f.text_area :body, hide_label: true, required: true, placeholder: "paste a link, create a post, post a update, etc", autofocus: "", class: "form-control" %>
+                </div>
+                <%= f.submit "Post", class: "btn btn-success btn-large" %>
+              <%end%>
+            </div>
           </div>
-        </div>
+        <%end%>
       <%end%>
 
       <%= render 'users/group_posts'%>

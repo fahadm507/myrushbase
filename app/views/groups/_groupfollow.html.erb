@@ -1,6 +1,6 @@
 
   <div class='follow-btn'>
-      <%= bootstrap_form_for [current_user, @group, @groupfollower] do |f| %>
+      <%= bootstrap_form_for [User, @group, @groupfollower] do |f| %>
         <%= f.submit 'Follow', class: 'btn btn-primary' %>
       <%end%>
   </div>
