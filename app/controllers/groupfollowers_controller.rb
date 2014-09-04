@@ -13,6 +13,7 @@ class GroupfollowersController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @user = User.find(params[:user_id])
     @group = Group.find(params[:group_id])
     @membership = Groupfollower.find(params[:id])
@@ -22,5 +23,8 @@ class GroupfollowersController < ApplicationController
       flash[:notice]= "like could not be deleted"
       redirect_to user_path(@user)
     end
+  end
+
+  def show
   end
 end

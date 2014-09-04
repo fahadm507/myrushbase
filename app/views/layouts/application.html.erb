@@ -8,11 +8,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-   <% if user_signed_in? %>
-     <%= render 'layouts/logged_in_nav' %>
-    <% else %>
-      <%= render 'layouts/home_nav'%>
-    <% end%>
+<% if user_signed_in? %>
+ <%= render 'layouts/logged_in_nav' %>
+<%end%>
   <!--Errors deplay underneath the header -->
 
     <% if notice %>
@@ -22,7 +20,6 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
       <%= yield %>
-
 
 </body>
 </html>
